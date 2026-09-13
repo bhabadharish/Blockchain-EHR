@@ -57,3 +57,20 @@ def test_tamper_detection_workflow():
     res_tamper = bc.verify_tamper_evidence(event_id, "0xmodified_corrupted_hash")
     assert res_tamper["verdict"] == "TAMPER_DETECTED"
     assert res_tamper["integrity_verified"] is False
+
+
+def test_contract_client_simulation_fallback():
+    from blockchain.contract_client import BlockchainContractClient
+    client = BlockchainContractClient(rpc_url="http://127.0.0.1:99999")
+    assert not client.is_live_ganache
+
+    reg = client.register_ehr_metadata("REC-FALLBACK-001", "0x" + "a"*64, "AES-256-GCM")
+    assert reg["status"] == "SUCCESS"
+    assert reg["mode"] == "PYTHON_SIMULATION_FALLBACK"
+
+    ver = client.verify_integrity("REC-FALLBACK-001", "0x" + "a"*64)
+    assert ver["match"] is True
+
+    inc = client.record_incident("INC-001", "0x" + "a"*64, "MITM", "HIGH", 98.0, "VALID")
+    assert inc["status"] == "SUCCESS"
+

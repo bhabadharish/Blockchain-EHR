@@ -119,7 +119,12 @@ class BlockchainContractClient:
                 print(f"Ganache registerEHR failed ({ex}), using fallback ledger.")
 
         # Fallback
-        res = self.fallback_engine.register_ehr_metadata(record_id, payload_hash, algorithm, key_id, access_policy)
+        if hasattr(self.fallback_engine, "register_ehr_metadata"):
+            res = self.fallback_engine.register_ehr_metadata(record_id, payload_hash, algorithm, key_id, access_policy)
+        else:
+            res = self.fallback_engine.register_ehr(record_id, payload_hash, algorithm, key_id, access_policy)
+        res["record_id"] = record_id
+        res["payload_hash"] = payload_hash
         res["mode"] = "PYTHON_SIMULATION_FALLBACK"
         return res
 

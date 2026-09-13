@@ -81,7 +81,27 @@ class PythonLedgerEngine:
             transactions=[{"tx_hash": tx_hash, "type": "EHR_REGISTRATION", "record_id": record_id}]
         )
         self.chain.append(new_block)
-        return {"status": "SUCCESS", "tx_hash": tx_hash, "block_number": new_block.index, "gas_used": 65420}
+        return {
+            "status": "SUCCESS",
+            "tx_hash": tx_hash,
+            "block_number": new_block.index,
+            "gas_used": 65420,
+            "record_id": record_id,
+            "payload_hash": payload_hash
+        }
+
+    def register_ehr_metadata(
+        self,
+        record_id: str,
+        payload_hash: str,
+        algorithm: str = "AES-256-GCM",
+        key_id: str = "KEY-001",
+        access_policy: str = "DEFAULT",
+        **kwargs
+    ) -> Dict[str, Any]:
+        """Registers EHR metadata in simulated fallback ledger with full metadata fields."""
+        policy = kwargs.get("policy", access_policy)
+        return self.register_ehr(record_id, payload_hash, algorithm, key_id, policy)
 
     def verify_integrity(self, record_id: str, recomputed_hash: str) -> Tuple[bool, str]:
         if record_id not in self.ehr_registry:
