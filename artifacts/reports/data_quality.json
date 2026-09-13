@@ -1,0 +1,63 @@
+{
+  "dataset_name": "Edge-IIoTset",
+  "dataset_path": "data/raw/ML-EdgeIIoT-dataset.csv",
+  "dataset_hash": "53101fad091af20bee815860962a5016b802ee45d456a141042f6183094c3c1a",
+  "file_size_mb": 78.38,
+  "total_rows": 157800,
+  "total_valid_rows": 157800,
+  "total_columns": 63,
+  "numerical_features_count": 42,
+  "categorical_features_count": 19,
+  "constant_columns_count": 8,
+  "constant_columns": [
+    "icmp.unused",
+    "http.tls_port",
+    "dns.qry.type",
+    "dns.retransmit_request_in",
+    "mqtt.msg_decoded_as",
+    "mbtcp.len",
+    "mbtcp.trans_id",
+    "mbtcp.unit_id"
+  ],
+  "suspicious_identifier_columns": [
+    "frame.time",
+    "ip.src_host",
+    "ip.dst_host",
+    "arp.src.proto_ipv4",
+    "arp.dst.proto_ipv4",
+    "http.file_data",
+    "http.request.full_uri",
+    "icmp.transmit_timestamp"
+  ],
+  "missing_values_count": 0,
+  "missing_pct": 0.0,
+  "infinite_values_count": 0,
+  "infinite_pct": 0.0,
+  "duplicate_rows_count": 814,
+  "duplicate_pct": 0.5158,
+  "duplicate_target_consistent": true,
+  "binary_distribution": {
+    "Normal (0)": 24301,
+    "Attack (1)": 133499
+  },
+  "multiclass_distribution": {
+    "Normal": 24301,
+    "DDoS_UDP": 14498,
+    "DDoS_ICMP": 14090,
+    "Ransomware": 10925,
+    "DDoS_HTTP": 10561,
+    "SQL_injection": 10311,
+    "Uploading": 10269,
+    "DDoS_TCP": 10247,
+    "Backdoor": 10195,
+    "Vulnerability_scanner": 10076,
+    "Port_Scanning": 10071,
+    "XSS": 10052,
+    "Password": 9989,
+    "MITM": 1214,
+    "Fingerprinting": 1001
+  },
+  "binary_imbalance_ratio": 5.49,
+  "health_score": 99.2,
+  "status": "HEALTHY"
+}

@@ -1,0 +1,14 @@
+[
+  "http.request.uri.query",
+  "http.request.method",
+  "http.referer",
+  "http.request.version",
+  "tcp.options",
+  "tcp.payload",
+  "tcp.srcport",
+  "dns.qry.name.len",
+  "mqtt.conack.flags",
+  "mqtt.msg",
+  "mqtt.protoname",
+  "mqtt.topic"
+]

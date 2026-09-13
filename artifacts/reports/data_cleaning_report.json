@@ -1,0 +1,18 @@
+{
+  "original_records": 157800,
+  "invalid_records_removed": 0,
+  "valid_records_retained": 157800,
+  "removal_reasons": {
+    "empty_rows": 0,
+    "corrupted_targets": 0,
+    "corrupted_datatypes": 0
+  },
+  "duplicate_analysis": {
+    "exact_duplicate_count": 814,
+    "duplicate_percentage": 0.5158,
+    "target_consistency": "100% Consistent",
+    "nature_of_duplicates": "Genuine repeated network events (periodic sensor telemetries & TCP SYN bursts)",
+    "policy": "Preserved in dataset to retain real-world high-frequency network distribution; evaluated with strict split isolation"
+  },
+  "datatype_corrections": "Categorical hex options (tcp.options, tcp.payload) standardized as strings for robust label encoding"
+}

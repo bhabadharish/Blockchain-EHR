@@ -1,0 +1,9 @@
+{
+  "mean_latency_ms": 0.0457,
+  "median_latency_ms": 0.0116,
+  "p95_latency_ms": 0.1979,
+  "p99_latency_ms": 0.3154,
+  "throughput_samples_per_sec": 21882.2,
+  "batch_size_evaluated": 1,
+  "device": "mps"
+}

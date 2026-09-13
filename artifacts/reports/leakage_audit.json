@@ -1,0 +1,60 @@
+{
+  "audit_timestamp": "2026-09-13 21:33:40",
+  "leakage_status": "PASS",
+  "tests": [
+    {
+      "name": "Identifier & Temporal Leakage Check",
+      "status": "PASS",
+      "component": "Preprocessing Feature Isolation",
+      "details": "Excluded non-generalizable network identifiers: ['frame.time', 'ip.src_host', 'ip.dst_host', 'arp.src.proto_ipv4', 'arp.dst.proto_ipv4', 'http.file_data', 'http.request.full_uri', 'icmp.transmit_timestamp']"
+    },
+    {
+      "name": "Target Leakage Check",
+      "status": "PASS",
+      "component": "Target Column Isolation",
+      "details": "Target columns (Attack_label, Attack_type) strictly separated from feature matrix"
+    },
+    {
+      "name": "Preprocessing Fit-Transform Leakage Check",
+      "status": "PASS",
+      "component": "StandardScaler & Encoders",
+      "details": "Scalers and categorical encoders are fitted EXCLUSIVELY on training data"
+    },
+    {
+      "name": "Mutual Information Selection Leakage Check",
+      "status": "PASS",
+      "component": "Feature Selection",
+      "details": "Mutual Information computed solely on X_train and y_train; test labels never inspected"
+    },
+    {
+      "name": "Train/Test Overlap & Partition Disjointness Check",
+      "status": "PASS",
+      "component": "Data Splitting",
+      "details": "Indices verified: Train \u2229 Val = \u2205, Train \u2229 Test = \u2205, Val \u2229 Test = \u2205"
+    },
+    {
+      "name": "Oversampling / SMOTE Leakage Check",
+      "status": "PASS",
+      "component": "Class Imbalance Strategy",
+      "details": "Cost-sensitive class weighting employed; no synthetic sampling applied before split"
+    },
+    {
+      "name": "Scaling Leakage Check",
+      "status": "PASS",
+      "component": "Feature Normalization",
+      "details": "StandardScaler computes mean and std on X_train only; test data is strictly transformed"
+    },
+    {
+      "name": "Categorical Encoding Leakage Check",
+      "status": "PASS",
+      "component": "LabelEncoders",
+      "details": "Unseen categories in test partition mapped defensively to default class index"
+    },
+    {
+      "name": "Threshold Optimization Leakage Check",
+      "status": "PASS",
+      "component": "Decision Boundary Selection",
+      "details": "Optimal decision threshold optimized exclusively on validation data"
+    }
+  ]
+}

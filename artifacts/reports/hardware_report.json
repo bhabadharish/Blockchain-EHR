@@ -1,0 +1,15 @@
+{
+  "os": "Darwin",
+  "os_release": "27.0.0",
+  "architecture": "arm64",
+  "processor": "arm",
+  "cpu_count_physical": 8,
+  "cpu_count_logical": 8,
+  "ram_total_gb": 16.0,
+  "ram_available_gb": 5.5,
+  "ram_percent_used": 65.6,
+  "python_version": "3.14.7",
+  "torch_device": "mps",
+  "mps_available": true,
+  "cuda_available": false
+}

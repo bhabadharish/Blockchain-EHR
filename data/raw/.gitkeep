@@ -1,0 +1,2 @@
+# This file preserves data/raw/ directory structure in Git.
+# Raw dataset archives (e.g. Edge-IIoTset 1.6GB zip) should be extracted here.

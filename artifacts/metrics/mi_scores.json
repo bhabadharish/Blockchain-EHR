@@ -1,0 +1,539 @@
+{
+  "feature_names": [
+    "arp.opcode",
+    "arp.hw.size",
+    "icmp.checksum",
+    "icmp.seq_le",
+    "icmp.unused",
+    "http.content_length",
+    "http.request.uri.query",
+    "http.request.method",
+    "http.referer",
+    "http.request.version",
+    "http.response",
+    "http.tls_port",
+    "tcp.ack",
+    "tcp.ack_raw",
+    "tcp.checksum",
+    "tcp.connection.fin",
+    "tcp.connection.rst",
+    "tcp.connection.syn",
+    "tcp.connection.synack",
+    "tcp.dstport",
+    "tcp.flags",
+    "tcp.flags.ack",
+    "tcp.len",
+    "tcp.options",
+    "tcp.payload",
+    "tcp.seq",
+    "tcp.srcport",
+    "udp.port",
+    "udp.stream",
+    "udp.time_delta",
+    "dns.qry.name",
+    "dns.qry.name.len",
+    "dns.qry.qu",
+    "dns.qry.type",
+    "dns.retransmission",
+    "dns.retransmit_request",
+    "dns.retransmit_request_in",
+    "mqtt.conack.flags",
+    "mqtt.conflag.cleansess",
+    "mqtt.conflags",
+    "mqtt.hdrflags",
+    "mqtt.len",
+    "mqtt.msg_decoded_as",
+    "mqtt.msg",
+    "mqtt.msgtype",
+    "mqtt.proto_len",
+    "mqtt.protoname",
+    "mqtt.topic",
+    "mqtt.topic_len",
+    "mqtt.ver",
+    "mbtcp.len",
+    "mbtcp.trans_id",
+    "mbtcp.unit_id"
+  ],
+  "ranking": [
+    {
+      "feature": "tcp.options",
+      "mi_binary": 0.3403,
+      "mi_multiclass": 1.9402,
+      "composite_mi": 1.1402,
+      "rank": 1,
+      "cumulative_pct": 10.36
+    },
+    {
+      "feature": "tcp.dstport",
+      "mi_binary": 0.3396,
+      "mi_multiclass": 1.389,
+      "composite_mi": 0.8643,
+      "rank": 2,
+      "cumulative_pct": 18.22
+    },
+    {
+      "feature": "tcp.srcport",
+      "mi_binary": 0.317,
+      "mi_multiclass": 1.3093,
+      "composite_mi": 0.8132,
+      "rank": 3,
+      "cumulative_pct": 25.61
+    },
+    {
+      "feature": "tcp.ack",
+      "mi_binary": 0.2186,
+      "mi_multiclass": 1.314,
+      "composite_mi": 0.7663,
+      "rank": 4,
+      "cumulative_pct": 32.57
+    },
+    {
+      "feature": "tcp.payload",
+      "mi_binary": 0.1422,
+      "mi_multiclass": 1.1054,
+      "composite_mi": 0.6238,
+      "rank": 5,
+      "cumulative_pct": 38.24
+    },
+    {
+      "feature": "tcp.seq",
+      "mi_binary": 0.239,
+      "mi_multiclass": 1.0076,
+      "composite_mi": 0.6233,
+      "rank": 6,
+      "cumulative_pct": 43.9
+    },
+    {
+      "feature": "tcp.flags",
+      "mi_binary": 0.0977,
+      "mi_multiclass": 0.8079,
+      "composite_mi": 0.4528,
+      "rank": 7,
+      "cumulative_pct": 48.02
+    },
+    {
+      "feature": "tcp.ack_raw",
+      "mi_binary": 0.0729,
+      "mi_multiclass": 0.8039,
+      "composite_mi": 0.4384,
+      "rank": 8,
+      "cumulative_pct": 52.0
+    },
+    {
+      "feature": "dns.qry.name.len",
+      "mi_binary": 0.4316,
+      "mi_multiclass": 0.4408,
+      "composite_mi": 0.4362,
+      "rank": 9,
+      "cumulative_pct": 55.96
+    },
+    {
+      "feature": "mqtt.topic",
+      "mi_binary": 0.4329,
+      "mi_multiclass": 0.4356,
+      "composite_mi": 0.4342,
+      "rank": 10,
+      "cumulative_pct": 59.91
+    },
+    {
+      "feature": "mqtt.protoname",
+      "mi_binary": 0.4322,
+      "mi_multiclass": 0.4301,
+      "composite_mi": 0.4312,
+      "rank": 11,
+      "cumulative_pct": 63.83
+    },
+    {
+      "feature": "mqtt.conack.flags",
+      "mi_binary": 0.4323,
+      "mi_multiclass": 0.4295,
+      "composite_mi": 0.4309,
+      "rank": 12,
+      "cumulative_pct": 67.74
+    },
+    {
+      "feature": "mqtt.msg",
+      "mi_binary": 0.4298,
+      "mi_multiclass": 0.4284,
+      "composite_mi": 0.4291,
+      "rank": 13,
+      "cumulative_pct": 71.64
+    },
+    {
+      "feature": "http.request.version",
+      "mi_binary": 0.0883,
+      "mi_multiclass": 0.7145,
+      "composite_mi": 0.4014,
+      "rank": 14,
+      "cumulative_pct": 75.29
+    },
+    {
+      "feature": "http.request.method",
+      "mi_binary": 0.0876,
+      "mi_multiclass": 0.7127,
+      "composite_mi": 0.4001,
+      "rank": 15,
+      "cumulative_pct": 78.93
+    },
+    {
+      "feature": "tcp.len",
+      "mi_binary": 0.1169,
+      "mi_multiclass": 0.6556,
+      "composite_mi": 0.3863,
+      "rank": 16,
+      "cumulative_pct": 82.44
+    },
+    {
+      "feature": "http.referer",
+      "mi_binary": 0.0351,
+      "mi_multiclass": 0.4995,
+      "composite_mi": 0.2673,
+      "rank": 17,
+      "cumulative_pct": 84.87
+    },
+    {
+      "feature": "tcp.checksum",
+      "mi_binary": 0.0367,
+      "mi_multiclass": 0.4355,
+      "composite_mi": 0.2361,
+      "rank": 18,
+      "cumulative_pct": 87.01
+    },
+    {
+      "feature": "http.request.uri.query",
+      "mi_binary": 0.0229,
+      "mi_multiclass": 0.3938,
+      "composite_mi": 0.2083,
+      "rank": 19,
+      "cumulative_pct": 88.91
+    },
+    {
+      "feature": "icmp.checksum",
+      "mi_binary": 0.0198,
+      "mi_multiclass": 0.3112,
+      "composite_mi": 0.1655,
+      "rank": 20,
+      "cumulative_pct": 90.41
+    },
+    {
+      "feature": "tcp.flags.ack",
+      "mi_binary": 0.0204,
+      "mi_multiclass": 0.3099,
+      "composite_mi": 0.1651,
+      "rank": 21,
+      "cumulative_pct": 91.91
+    },
+    {
+      "feature": "udp.stream",
+      "mi_binary": 0.017,
+      "mi_multiclass": 0.3094,
+      "composite_mi": 0.1632,
+      "rank": 22,
+      "cumulative_pct": 93.39
+    },
+    {
+      "feature": "icmp.seq_le",
+      "mi_binary": 0.0154,
+      "mi_multiclass": 0.2906,
+      "composite_mi": 0.153,
+      "rank": 23,
+      "cumulative_pct": 94.78
+    },
+    {
+      "feature": "http.content_length",
+      "mi_binary": 0.0117,
+      "mi_multiclass": 0.1764,
+      "composite_mi": 0.094,
+      "rank": 24,
+      "cumulative_pct": 95.64
+    },
+    {
+      "feature": "mqtt.msgtype",
+      "mi_binary": 0.0665,
+      "mi_multiclass": 0.0643,
+      "composite_mi": 0.0654,
+      "rank": 25,
+      "cumulative_pct": 96.23
+    },
+    {
+      "feature": "mqtt.hdrflags",
+      "mi_binary": 0.0602,
+      "mi_multiclass": 0.0615,
+      "composite_mi": 0.0609,
+      "rank": 26,
+      "cumulative_pct": 96.79
+    },
+    {
+      "feature": "tcp.connection.syn",
+      "mi_binary": 0.0044,
+      "mi_multiclass": 0.1049,
+      "composite_mi": 0.0547,
+      "rank": 27,
+      "cumulative_pct": 97.28
+    },
+    {
+      "feature": "tcp.connection.rst",
+      "mi_binary": 0.0,
+      "mi_multiclass": 0.0924,
+      "composite_mi": 0.0462,
+      "rank": 28,
+      "cumulative_pct": 97.7
+    },
+    {
+      "feature": "mqtt.len",
+      "mi_binary": 0.0458,
+      "mi_multiclass": 0.0399,
+      "composite_mi": 0.0429,
+      "rank": 29,
+      "cumulative_pct": 98.09
+    },
+    {
+      "feature": "http.response",
+      "mi_binary": 0.0084,
+      "mi_multiclass": 0.0621,
+      "composite_mi": 0.0352,
+      "rank": 30,
+      "cumulative_pct": 98.41
+    },
+    {
+      "feature": "tcp.connection.fin",
+      "mi_binary": 0.002,
+      "mi_multiclass": 0.0502,
+      "composite_mi": 0.0261,
+      "rank": 31,
+      "cumulative_pct": 98.65
+    },
+    {
+      "feature": "mqtt.ver",
+      "mi_binary": 0.0172,
+      "mi_multiclass": 0.0192,
+      "composite_mi": 0.0182,
+      "rank": 32,
+      "cumulative_pct": 98.82
+    },
+    {
+      "feature": "arp.hw.size",
+      "mi_binary": 0.0076,
+      "mi_multiclass": 0.021,
+      "composite_mi": 0.0143,
+      "rank": 33,
+      "cumulative_pct": 98.95
+    },
+    {
+      "feature": "mqtt.proto_len",
+      "mi_binary": 0.0133,
+      "mi_multiclass": 0.0142,
+      "composite_mi": 0.0137,
+      "rank": 34,
+      "cumulative_pct": 99.07
+    },
+    {
+      "feature": "arp.opcode",
+      "mi_binary": 0.0027,
+      "mi_multiclass": 0.0241,
+      "composite_mi": 0.0134,
+      "rank": 35,
+      "cumulative_pct": 99.19
+    },
+    {
+      "feature": "mqtt.topic_len",
+      "mi_binary": 0.011,
+      "mi_multiclass": 0.0139,
+      "composite_mi": 0.0124,
+      "rank": 36,
+      "cumulative_pct": 99.3
+    },
+    {
+      "feature": "mqtt.conflags",
+      "mi_binary": 0.0144,
+      "mi_multiclass": 0.0083,
+      "composite_mi": 0.0114,
+      "rank": 37,
+      "cumulative_pct": 99.41
+    },
+    {
+      "feature": "dns.qry.name",
+      "mi_binary": 0.0003,
+      "mi_multiclass": 0.0213,
+      "composite_mi": 0.0108,
+      "rank": 38,
+      "cumulative_pct": 99.51
+    },
+    {
+      "feature": "udp.port",
+      "mi_binary": 0.0027,
+      "mi_multiclass": 0.0188,
+      "composite_mi": 0.0108,
+      "rank": 39,
+      "cumulative_pct": 99.6
+    },
+    {
+      "feature": "mqtt.conflag.cleansess",
+      "mi_binary": 0.0143,
+      "mi_multiclass": 0.0065,
+      "composite_mi": 0.0104,
+      "rank": 40,
+      "cumulative_pct": 99.7
+    },
+    {
+      "feature": "tcp.connection.synack",
+      "mi_binary": 0.0037,
+      "mi_multiclass": 0.0146,
+      "composite_mi": 0.0091,
+      "rank": 41,
+      "cumulative_pct": 99.78
+    },
+    {
+      "feature": "udp.time_delta",
+      "mi_binary": 0.0049,
+      "mi_multiclass": 0.0132,
+      "composite_mi": 0.0091,
+      "rank": 42,
+      "cumulative_pct": 99.86
+    },
+    {
+      "feature": "dns.retransmission",
+      "mi_binary": 0.0012,
+      "mi_multiclass": 0.0054,
+      "composite_mi": 0.0033,
+      "rank": 43,
+      "cumulative_pct": 99.89
+    },
+    {
+      "feature": "dns.retransmit_request",
+      "mi_binary": 0.0022,
+      "mi_multiclass": 0.0024,
+      "composite_mi": 0.0023,
+      "rank": 44,
+      "cumulative_pct": 99.91
+    },
+    {
+      "feature": "dns.qry.type",
+      "mi_binary": 0.0,
+      "mi_multiclass": 0.0044,
+      "composite_mi": 0.0022,
+      "rank": 45,
+      "cumulative_pct": 99.93
+    },
+    {
+      "feature": "mbtcp.len",
+      "mi_binary": 0.0,
+      "mi_multiclass": 0.004,
+      "composite_mi": 0.002,
+      "rank": 46,
+      "cumulative_pct": 99.95
+    },
+    {
+      "feature": "mbtcp.trans_id",
+      "mi_binary": 0.0031,
+      "mi_multiclass": 0.0005,
+      "composite_mi": 0.0018,
+      "rank": 47,
+      "cumulative_pct": 99.97
+    },
+    {
+      "feature": "icmp.unused",
+      "mi_binary": 0.0034,
+      "mi_multiclass": 0.0,
+      "composite_mi": 0.0017,
+      "rank": 48,
+      "cumulative_pct": 99.98
+    },
+    {
+      "feature": "dns.qry.qu",
+      "mi_binary": 0.0,
+      "mi_multiclass": 0.0014,
+      "composite_mi": 0.0007,
+      "rank": 49,
+      "cumulative_pct": 99.99
+    },
+    {
+      "feature": "http.tls_port",
+      "mi_binary": 0.0009,
+      "mi_multiclass": 0.0,
+      "composite_mi": 0.0004,
+      "rank": 50,
+      "cumulative_pct": 99.99
+    },
+    {
+      "feature": "mbtcp.unit_id",
+      "mi_binary": 0.0,
+      "mi_multiclass": 0.0006,
+      "composite_mi": 0.0003,
+      "rank": 51,
+      "cumulative_pct": 100.0
+    },
+    {
+      "feature": "mqtt.msg_decoded_as",
+      "mi_binary": 0.0005,
+      "mi_multiclass": 0.0,
+      "composite_mi": 0.0003,
+      "rank": 52,
+      "cumulative_pct": 100.0
+    },
+    {
+      "feature": "dns.retransmit_request_in",
+      "mi_binary": 0.0,
+      "mi_multiclass": 0.0,
+      "composite_mi": 0.0,
+      "rank": 53,
+      "cumulative_pct": 100.0
+    }
+  ],
+  "total_features": 53,
+  "top_features_ranked": [
+    "tcp.options",
+    "tcp.dstport",
+    "tcp.srcport",
+    "tcp.ack",
+    "tcp.payload",
+    "tcp.seq",
+    "tcp.flags",
+    "tcp.ack_raw",
+    "dns.qry.name.len",
+    "mqtt.topic",
+    "mqtt.protoname",
+    "mqtt.conack.flags",
+    "mqtt.msg",
+    "http.request.version",
+    "http.request.method",
+    "tcp.len",
+    "http.referer",
+    "tcp.checksum",
+    "http.request.uri.query",
+    "icmp.checksum",
+    "tcp.flags.ack",
+    "udp.stream",
+    "icmp.seq_le",
+    "http.content_length",
+    "mqtt.msgtype",
+    "mqtt.hdrflags",
+    "tcp.connection.syn",
+    "tcp.connection.rst",
+    "mqtt.len",
+    "http.response",
+    "tcp.connection.fin",
+    "mqtt.ver",
+    "arp.hw.size",
+    "mqtt.proto_len",
+    "arp.opcode",
+    "mqtt.topic_len",
+    "mqtt.conflags",
+    "dns.qry.name",
+    "udp.port",
+    "mqtt.conflag.cleansess",
+    "tcp.connection.synack",
+    "udp.time_delta",
+    "dns.retransmission",
+    "dns.retransmit_request",
+    "dns.qry.type",
+    "mbtcp.len",
+    "mbtcp.trans_id",
+    "icmp.unused",
+    "dns.qry.qu",
+    "http.tls_port",
+    "mbtcp.unit_id",
+    "mqtt.msg_decoded_as",
+    "dns.retransmit_request_in"
+  ]
+}

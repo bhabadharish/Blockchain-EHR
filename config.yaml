@@ -1,0 +1,79 @@
+system:
+  project_name: "Edge-IIoT-Quantum-Blockchain-IDS"
+  version: "1.0.0-phd"
+  random_seed: 42
+  device: "auto" # "auto", "mps", "cuda", "cpu"
+
+dataset:
+  raw_zip: "data/raw/Edge-IIoTset dataset.zip"
+  target_csv_in_zip: "Selected dataset for ML and DL/ML-EdgeIIoT-dataset.csv"
+  extracted_csv: "data/raw/ML-EdgeIIoT-dataset.csv"
+  cache_parquet: "data/processed/edge_iiot_sampled.parquet"
+  sample_mode: "demo" # "demo", "research", "full"
+  demo_size: 25000
+  research_size: 100000
+  target_col_binary: "Attack_label"
+  target_col_multiclass: "Attack_type"
+  leakage_cols_to_drop:
+    - "frame.time"
+    - "ip.src_host"
+    - "ip.dst_host"
+    - "arp.src.proto_ipv4"
+    - "arp.dst.proto_ipv4"
+    - "http.file_data"
+    - "http.request.full_uri"
+    - "icmp.transmit_timestamp"
+
+preprocessing:
+  scaler: "standard" # "standard", "minmax", "robust"
+  handle_inf: true
+  handle_nan: true
+  test_size: 0.2
+  val_size: 0.1
+  stratify: true
+
+feature_selection:
+  method: "mutual_info"
+  default_top_k: 20
+  cache_file: "artifacts/metrics/mi_scores.json"
+
+models:
+  checkpoint_dir: "artifacts/models"
+  metrics_dir: "artifacts/metrics"
+  proposed_model:
+    architecture: "MI-CNN-BiLSTM-Attention"
+    conv_filters: 64
+    conv_kernel_size: 3
+    lstm_hidden_dim: 64
+    lstm_layers: 2
+    attention_heads: 4
+    dense_dim: 128
+    dropout: 0.25
+    epochs: 12
+    batch_size: 64
+    learning_rate: 0.001
+    early_stopping_patience: 4
+
+blockchain:
+  rpc_url: "http://127.0.0.1:8545"
+  chain_id: 1337
+  simulation_mode: true
+  contract_address: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+  admin_address: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+
+cryptography:
+  tcqc:
+    matrix_dim: 8
+    transformation_order: "non-commutative"
+  qkd:
+    default_qubits: 1000
+    qber_threshold: 0.11
+    eavesdrop_default: false
+
+risk_scoring:
+  weights:
+    attack_prob: 0.35
+    attack_severity: 0.25
+    confidence: 0.15
+    anomaly_score: 0.15
+    asset_criticality: 0.10

@@ -1,0 +1,14 @@
+{
+  "name": "blockchain-ehr-truffle",
+  "version": "1.0.0",
+  "description": "Smart Contract Suite for Privacy-Preserving EHR Metadata Anchoring and Access Control",
+  "scripts": {
+    "compile": "truffle compile",
+    "migrate": "truffle migrate",
+    "test": "truffle test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "truffle": "^5.11.5"
+  }
+}

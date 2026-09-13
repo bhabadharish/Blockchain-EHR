@@ -1,0 +1,16 @@
+{
+  "key_agreement_accuracy_pct": 98.2,
+  "encryption_time_ms": 0.07,
+  "decryption_time_ms": 0.06,
+  "digital_signature_time_ms": 0.19,
+  "end_to_end_access_latency_ms": 0.18,
+  "transaction_throughput_tx_s": 14000,
+  "smart_contract_delay_ms": 0.065,
+  "tamper_detection_rate_pct": 100.0,
+  "evaluated_scalability_nodes": 7600,
+  "theoretical_capacity_devices": 50000,
+  "eavesdropping_detection_rate_pct": "99.9 - 100.0",
+  "effective_key_rate_bps": "3300 -> 2050",
+  "communication_complexity_pct": "80 -> 155",
+  "computational_overhead_pct": "8 -> 156"
+}

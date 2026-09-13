@@ -1,0 +1,11 @@
+{
+  "original_records": 157800,
+  "invalid_records_removed": 0,
+  "valid_records": 157800,
+  "training_records": 110460,
+  "validation_records": 23670,
+  "test_records": 23670,
+  "deployment_training_records": 134130,
+  "total_participating_records": 157800,
+  "percentage_valid_dataset_used": 100.0
+}
