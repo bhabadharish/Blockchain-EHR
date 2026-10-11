@@ -68,6 +68,19 @@ class DataLoader:
             alt_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), zip_path)
             if os.path.exists(alt_path):
                 zip_path = alt_path
+            elif os.path.exists(self.cache_parquet.replace(".parquet", "_demo.parquet")):
+                # Fallback to reconstructing extracted CSV from committed sampled parquet in CI/clean-clone environments
+                df_demo = pd.read_parquet(self.cache_parquet.replace(".parquet", "_demo.parquet"))
+                df_demo.to_csv(self.extracted_csv, index=False)
+                return self.extracted_csv
+            elif os.path.exists(self.cache_parquet):
+                df_cache = pd.read_parquet(self.cache_parquet)
+                df_cache.to_csv(self.extracted_csv, index=False)
+                return self.extracted_csv
+            elif os.path.exists("artifacts/demo/live_samples.csv"):
+                df_live = pd.read_csv("artifacts/demo/live_samples.csv")
+                df_live.to_csv(self.extracted_csv, index=False)
+                return self.extracted_csv
             else:
                 raise FileNotFoundError(f"Raw dataset zip not found at {self.raw_zip}")
 

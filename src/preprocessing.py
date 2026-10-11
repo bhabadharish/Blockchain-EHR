@@ -252,7 +252,10 @@ class PreprocessingPipeline:
                 clean_df[cat_col] = encoder.transform(safe_s)
 
         # Scale
-        scaled_vals = self.scaler.transform(clean_df)
+        if hasattr(self.scaler, "feature_names_in_") and self.scaler.feature_names_in_ is not None:
+            scaled_vals = self.scaler.transform(clean_df)
+        else:
+            scaled_vals = self.scaler.transform(clean_df.values)
         if return_df:
             return pd.DataFrame(scaled_vals, columns=self.feature_names)
         return scaled_vals

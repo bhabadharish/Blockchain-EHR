@@ -145,8 +145,15 @@ def run_verification():
     # 5. LaTeX Manuscript Verification
     # -------------------------------------------------------------
     print("\n--- 5. LaTeX Manuscript vs Source of Truth ---")
-    tex_dir = os.path.join(PROJECT_ROOT, "acadlore_paper", "sections")
-    all_tex_files = glob.glob(os.path.join(tex_dir, "*.tex")) + [os.path.join(PROJECT_ROOT, "acadlore_paper", "main.tex")]
+    paper_base = os.path.join(PROJECT_ROOT, "acadlore_paper")
+    if not os.path.exists(paper_base):
+        alt_base = os.path.join(os.path.dirname(PROJECT_ROOT), "acadlore_paper")
+        if os.path.exists(alt_base):
+            paper_base = alt_base
+
+    tex_dir = os.path.join(paper_base, "sections")
+    all_tex_files = glob.glob(os.path.join(tex_dir, "*.tex")) + [os.path.join(paper_base, "main.tex")]
+    all_tex_files = [f for f in all_tex_files if os.path.exists(f)]
     
     all_tex_content = ""
     for tf in sorted(all_tex_files):
@@ -202,7 +209,7 @@ def run_verification():
     # 7. Figure Files & Format Verification
     # -------------------------------------------------------------
     print("\n--- 7. Manuscript Figure Integrity ---")
-    fig_dir = os.path.join(PROJECT_ROOT, "acadlore_paper", "figures")
+    fig_dir = os.path.join(paper_base, "figures")
     expected_figs = [
         "fig1_architecture.jpg", "fig2_topology.jpg", "fig3_class_distribution.pdf",
         "fig4_attack_distribution.pdf", "fig5_crypto_performance.pdf", "fig6_roc_curve.pdf",
@@ -218,7 +225,7 @@ def run_verification():
     # 8. PDF Page Count & Compilation Audit
     # -------------------------------------------------------------
     print("\n--- 8. PDF Compilation & Page Limit Budget ---")
-    pdf_path = os.path.join(PROJECT_ROOT, "acadlore_paper", "main.pdf")
+    pdf_path = os.path.join(paper_base, "main.pdf")
     assert_check("main.pdf exists", os.path.exists(pdf_path))
     
     if os.path.exists(pdf_path):
