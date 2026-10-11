@@ -205,19 +205,49 @@ The Streamlit dashboard detects Ganache automatically and anchors hashes directl
 
 ---
 
+---
+
+## 📚 Reviewer, Reproducibility & Deployment Guides
+
+Comprehensive documentation packages for peer reviewers, reproducibility auditors, and DevOps engineers:
+- **[Reviewer Verification Guide](docs/REVIEWER_GUIDE.md)**: Independent review checklist, manuscript-to-code traceability matrix, and execution steps.
+- **[Reproducibility Protocol](docs/reproducibility/REPRODUCIBILITY.md)**: Step-by-step reproduction instructions for all benchmark tables, figures, models, and paper compilation.
+- **[Deployment Manual](docs/DEPLOYMENT.md)**: Production containerization, non-root security compliance, healthchecks, and environment variables.
+- **[Verified Submission Manuscript](paper/revised_manuscript.pdf)**: Official 30-page Acadlore publication submission manuscript.
+
+---
+
+## 📝 Compiling the LaTeX Manuscript
+
+To compile the publication manuscript from LaTeX source:
+```bash
+cd paper
+pdflatex revised_manuscript.tex
+# Or compile historical source:
+cd ../acadlore_paper && pdflatex main.tex
+```
+The compiled document produces `paper/revised_manuscript.pdf` (exactly 30 pages, clean layout).
+
+---
+
 ## 🧪 Testing & Verification
 
-Execute the complete 24-test unit, integration, and end-to-end verification suite:
-
-```bash
-pytest -v tests/
-```
-
-Validate cryptographic hashes of all serialized models and preprocessors:
-
-```bash
-python scripts/validate_artifacts.py
-```
+1. **Complete Unit & Integration Test Suite (25 Tests)**:
+   ```bash
+   pytest tests/ -v
+   ```
+2. **Artifact Integrity & Manifest Verification (8 Gates)**:
+   ```bash
+   python scripts/validate_artifacts.py
+   ```
+3. **Repository Primitives & Quantum Simulation Validation (4 Suites)**:
+   ```bash
+   python scripts/phase2_repo_validation.py
+   ```
+4. **Master Global Consistency Auditor (69 Automated Checks)**:
+   ```bash
+   python scripts/verify_results.py
+   ```
 
 ---
 

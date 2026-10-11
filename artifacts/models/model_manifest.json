@@ -4,7 +4,7 @@
   "training_timestamp": "2026-09-13 21:37:17",
   "dataset_name": "Edge-IIoTset",
   "dataset_hash": "53101fad091af20bee815860962a5016b802ee45d456a141042f6183094c3c1a",
-  "model_hash": "d105cae6ac301d9331370d8b8a1eaa9b8af9d86ec87a37ba9e67ba769affddd6",
+  "model_hash": "c420c457a4fdf6df92d739b5e22d2abfd805ebdaa18aabbc63b9a2c52265ce19",
   "feature_count": 20,
   "selected_features": [
     "tcp.options",

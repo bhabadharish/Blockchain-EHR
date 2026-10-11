@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "protocol_stage": "STAGE 11: Final Post-Improvement Verification",
+    "timestamp": "2026-10-02T23:05:31+0530",
+    "evaluation_partition": "Held-Out Test Set (D_test, N=23,670, unblinded after final freeze)",
+    "hardware": "Apple Silicon ARM64 (MPS)",
+    "random_seed": 42
+  },
+  "quality_gate_assessment": {
+    "target_threshold": 0.99,
+    "accuracy": {
+      "value": 0.9994507815800592,
+      "status": "PASS"
+    },
+    "precision": {
+      "value": 0.9995007987220448,
+      "status": "PASS"
+    },
+    "recall": {
+      "value": 0.9998501872659176,
+      "status": "PASS"
+    },
+    "macro_f1": {
+      "value": 0.9989452418742122,
+      "status": "PASS"
+    },
+    "specificity": {
+      "value": 0.9972565157750343,
+      "status": "PASS"
+    },
+    "false_positive_rate": {
+      "value": 0.0027434842249657062,
+      "status": "PASS"
+    },
+    "false_negative_rate": {
+      "value": 0.000149812734082397,
+      "status": "PASS"
+    }
+  },
+  "binary_test_metrics": {
+    "accuracy": 0.9994507815800592,
+    "precision": 0.9995007987220448,
+    "recall": 0.9998501872659176,
+    "specificity": 0.9972565157750343,
+    "macro_f1": 0.9989452418742122,
+    "mcc": 0.9978911278691112,
+    "kappa": 0.9978904841027401,
+    "roc_auc": 0.9997999345810878,
+    "pr_auc": 0.9999367599113994,
+    "tp": 20022,
+    "tn": 3635,
+    "fp": 10,
+    "fn": 3,
+    "fpr": 0.0027434842249657062,
+    "fnr": 0.000149812734082397,
+    "latency_ms": 0.02905263519224431,
+    "parameters": 336961
+  },
+  "multiclass_test_metrics": {
+    "accuracy": 0.9231516687790452,
+    "macro_f1": 0.8606780197316387,
+    "macro_precision": 0.9415895227558309,
+    "macro_recall": 0.8388351773400814,
+    "latency_ms": 0.010883738234075584,
+    "per_class": {
+      "Backdoor": {
+        "Class": "Backdoor",
+        "Support": 1530,
+        "TP": 1487,
+        "FP": 0,
+        "FN": 43,
+        "TN": 22140,
+        "Precision": 1.0,
+        "Recall": 0.9719,
+        "F1_Score": 0.9857,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0281
+      },
+      "DDoS_HTTP": {
+        "Class": "DDoS_HTTP",
+        "Support": 1584,
+        "TP": 1355,
+        "FP": 282,
+        "FN": 229,
+        "TN": 21804,
+        "Precision": 0.8277,
+        "Recall": 0.8554,
+        "F1_Score": 0.8414,
+        "Specificity": 0.9872,
+        "FPR": 0.0128,
+        "FNR": 0.1446
+      },
+      "DDoS_ICMP": {
+        "Class": "DDoS_ICMP",
+        "Support": 2113,
+        "TP": 2113,
+        "FP": 932,
+        "FN": 0,
+        "TN": 20625,
+        "Precision": 0.6939,
+        "Recall": 1.0,
+        "F1_Score": 0.8193,
+        "Specificity": 0.9568,
+        "FPR": 0.0432,
+        "FNR": 0.0
+      },
+      "DDoS_TCP": {
+        "Class": "DDoS_TCP",
+        "Support": 1537,
+        "TP": 1537,
+        "FP": 0,
+        "FN": 0,
+        "TN": 22133,
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1_Score": 1.0,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0
+      },
+      "DDoS_UDP": {
+        "Class": "DDoS_UDP",
+        "Support": 2174,
+        "TP": 1970,
+        "FP": 0,
+        "FN": 204,
+        "TN": 21496,
+        "Precision": 1.0,
+        "Recall": 0.9062,
+        "F1_Score": 0.9508,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0938
+      },
+      "Fingerprinting": {
+        "Class": "Fingerprinting",
+        "Support": 150,
+        "TP": 38,
+        "FP": 0,
+        "FN": 112,
+        "TN": 23520,
+        "Precision": 1.0,
+        "Recall": 0.2533,
+        "F1_Score": 0.4043,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.7467
+      },
+      "MITM": {
+        "Class": "MITM",
+        "Support": 182,
+        "TP": 57,
+        "FP": 0,
+        "FN": 125,
+        "TN": 23488,
+        "Precision": 1.0,
+        "Recall": 0.3132,
+        "F1_Score": 0.477,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.6868
+      },
+      "Normal": {
+        "Class": "Normal",
+        "Support": 3645,
+        "TP": 3638,
+        "FP": 0,
+        "FN": 7,
+        "TN": 20025,
+        "Precision": 1.0,
+        "Recall": 0.9981,
+        "F1_Score": 0.999,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0019
+      },
+      "Password": {
+        "Class": "Password",
+        "Support": 1498,
+        "TP": 1242,
+        "FP": 85,
+        "FN": 256,
+        "TN": 22087,
+        "Precision": 0.9359,
+        "Recall": 0.8291,
+        "F1_Score": 0.8793,
+        "Specificity": 0.9962,
+        "FPR": 0.0038,
+        "FNR": 0.1709
+      },
+      "Port_Scanning": {
+        "Class": "Port_Scanning",
+        "Support": 1511,
+        "TP": 1334,
+        "FP": 0,
+        "FN": 177,
+        "TN": 22159,
+        "Precision": 1.0,
+        "Recall": 0.8829,
+        "F1_Score": 0.9378,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.1171
+      },
+      "Ransomware": {
+        "Class": "Ransomware",
+        "Support": 1639,
+        "TP": 1464,
+        "FP": 0,
+        "FN": 175,
+        "TN": 22031,
+        "Precision": 1.0,
+        "Recall": 0.8932,
+        "F1_Score": 0.9436,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.1068
+      },
+      "SQL_injection": {
+        "Class": "SQL_injection",
+        "Support": 1547,
+        "TP": 1378,
+        "FP": 200,
+        "FN": 169,
+        "TN": 21923,
+        "Precision": 0.8733,
+        "Recall": 0.8908,
+        "F1_Score": 0.8819,
+        "Specificity": 0.991,
+        "FPR": 0.009,
+        "FNR": 0.1092
+      },
+      "Uploading": {
+        "Class": "Uploading",
+        "Support": 1541,
+        "TP": 1403,
+        "FP": 100,
+        "FN": 138,
+        "TN": 22029,
+        "Precision": 0.9335,
+        "Recall": 0.9104,
+        "F1_Score": 0.9218,
+        "Specificity": 0.9955,
+        "FPR": 0.0045,
+        "FNR": 0.0896
+      },
+      "Vulnerability_scanner": {
+        "Class": "Vulnerability_scanner",
+        "Support": 1511,
+        "TP": 1466,
+        "FP": 16,
+        "FN": 45,
+        "TN": 22143,
+        "Precision": 0.9892,
+        "Recall": 0.9702,
+        "F1_Score": 0.9796,
+        "Specificity": 0.9993,
+        "FPR": 0.0007,
+        "FNR": 0.0298
+      },
+      "XSS": {
+        "Class": "XSS",
+        "Support": 1508,
+        "TP": 1369,
+        "FP": 204,
+        "FN": 139,
+        "TN": 21958,
+        "Precision": 0.8703,
+        "Recall": 0.9078,
+        "F1_Score": 0.8887,
+        "Specificity": 0.9908,
+        "FPR": 0.0092,
+        "FNR": 0.0922
+      }
+    }
+  }
+}

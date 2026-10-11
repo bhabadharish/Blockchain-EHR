@@ -1,0 +1,24 @@
+{
+  "binary_confusion_matrix": {
+    "true_positives": 20022,
+    "true_negatives": 3635,
+    "false_positives": 10,
+    "false_negatives": 3
+  },
+  "binary_test_metrics": {
+    "accuracy": 0.9994507815800592,
+    "precision": 0.9995007987220448,
+    "recall": 0.9998501872659176,
+    "specificity": 0.9972565157750343,
+    "macro_f1": 0.9989452418742122,
+    "fpr": 0.0027434842249657062,
+    "fnr": 0.000149812734082397,
+    "mcc": 0.9978911278691112
+  },
+  "multiclass_test_metrics": {
+    "overall_accuracy": 0.9231516687790452,
+    "macro_f1": 0.8606780197316387,
+    "macro_precision": 0.9415895227558309,
+    "macro_recall": 0.8388351773400814
+  }
+}

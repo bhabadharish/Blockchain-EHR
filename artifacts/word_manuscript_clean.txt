@@ -1,0 +1,3376 @@
+Tensor-Categorical Key Expansion and Smart-Contract Orchestration for Secure Electronic Health Record Exchange and Telemetry-Based Network Defense
+
+Abstract
+
+Securing distributed Electronic Health Record (EHR) exchanges across Internet of Medical Things (IoMT) environments presents a structural security trade-off: end-to-end payload encryption ensures clinical confidentiality but eliminates network visibility for perimeter Network Intrusion Detection Systems (NIDS), whereas decrypting payloads for inspection introduces systemic exposure and regulatory non-compliance1. This study evaluates a decoupled two-phase architecture designed to resolve this tension by separating clinical payload protection from perimeter transport telemetry monitoring1. In Phase 1, patient records undergo client-side data minimization, canonical serialization, authenticated AES-256-GCM encryption, software-simulated Tensor-Categorical Quantum Cryptography (TC-QC) key expansion, and software-simulated BB84 Quantum Key Distribution (QKD), with cryptographic digests anchored to Ethereum smart contracts for role-based access governance and tamper detection1. In Phase 2, perimeter gateways extract transport-layer flow telemetry post-encryption, prune candidate attributes from 53 to 20 via training-isolated Mutual Information ranking, and classify threat vectors using HybridIDSNet—a deep neural network integrating 1D convolutional layers, Bidirectional Long Short-Term Memory units, and Multi-Head Self-Attention mechanisms1. Evaluated on 157,800 records from the Edge-IIoTset benchmark, the classifier achieved 100% binary discrimination on the held-out test split () and 99.45% direct multi-class accuracy (0.9912 Macro F1) across 14 cyberattack classes1. Per-sample tensor forward pass latency was 0.0049 ms on accelerator memory, with an end-to-end Python pipeline dispatch latency of 0.0373 ms (26,805.3 predictions/s)1. In software simulation, the BB84 channel detected intercept-resend eavesdropping with a Quantum Bit Error Rate of , and smart-contract access control transactions executed in 8.9 to 11.4 ms on a local EVM testbed1. Global SHAP attributions confirm that classification decisions depend strictly on transport-layer header dynamics rather than application payloads, validating the feasibility of blind network defense in zero-trust healthcare environments1.
+
+Keywords
+
+Electronic Health Records, Authenticated Encryption, Smart Contracts, Network Intrusion Detection, Deep Learning, Edge-IIoTset, Quantum Key Distribution Simulation, Explainable AI
+
+Introduction
+
+The integration of distributed electronic health records and the Internet of Medical Things enables continuous physiological surveillance, decentralized clinical collaboration, and real-time patient monitoring across hospital networks1. This operational connectivity expands the physical attack surface of medical infrastructures, exposing healthcare data repositories to ransomware injection, identity exfiltration, and volumetric service disruptions1. Protected health information demands strict confidentiality, verifiable integrity, uninterrupted availability, non-repudiable auditability, and role-governed authorization under regulatory frameworks such as HIPAA1.
+
+Standard centralized database models and transport-layer security protocols present notable limitations when deployed in decentralized medical architectures1. Traditional perimeter monitoring appliances rely on deep packet inspection to detect malicious commands, payload injections, and lateral malware staging1. When clinical records are encrypted end-to-end to protect patient privacy, intermediate security appliances lose visibility into transit traffic1. Conversely, terminating encryption at edge gateways to facilitate payload inspection introduces severe single-point-of-failure vulnerabilities and exposes private medical records to unauthorized inspection1.
+
+Decentralized ledger technology and smart contracts offer a robust foundation for verifiable access governance and tamper-evident auditing without central authority dependencies1. However, the economic cost of on-chain gas execution, storage scaling limits, and regulatory data-erasure mandates preclude the direct persistence of clinical payloads on public blockchain networks1. Viable decentralized architectures must therefore employ off-chain storage paradigms, persisting encrypted diagnostic files and clinical narratives in distributed file stores while anchoring only cryptographic digests and authorization logic to smart contracts1.
+
+At the cryptographic layer, the impending realization of fault-tolerant quantum computation introduces systemic risks for asymmetric primitives such as RSA and Elliptic Curve Cryptography, which are susceptible to polynomial-time cryptanalysis via Shor's algorithm1. Although symmetric primitives such as AES-256 retain an effective 128-bit security margin against Grover's quantum search algorithm, initial symmetric key establishment requires quantum-resistant key encapsulation mechanisms or quantum key distribution channels1. Research into quantum cryptographic protocols must maintain transparent distinctions between standardized mathematical algorithms (such as NIST FIPS 203 ML-KEM and FIPS 204 ML-DSA)3, physical optical quantum channels, and exploratory software simulations of algebraic tensor transformations and BB84 photon exchanges1.
+
+When clinical payloads cannot be decrypted at the perimeter, network intrusion detection systems must transition entirely to unencrypted flow metadata1. Statistical transport-layer behaviors—such as TCP window scaling dynamics, segment lengths, sequence pacing, protocol option flags, and timing distributions—exhibit distinct structural characteristics capable of revealing malicious network operations without exposing clinical payloads1. Resolving these interconnected challenges requires an architectural framework that simultaneously enforces patient data confidentiality, ensures ledger-anchored integrity, models post-quantum key expansion, and executes line-rate threat detection over transport metadata1.
+
+The two-phase decoupled architecture evaluated in this work addresses these challenges by separating clinical record encryption from perimeter network monitoring1. Phase 1 provides client-side HIPAA data minimization, canonical JSON serialization, authenticated AES-256-GCM encryption, software-simulated TC-QC key expansion, simulated BB84 key exchange, and Ethereum smart-contract state anchoring1. Phase 2 deploys an edge gateway monitoring subsystem that extracts transport-layer telemetry, reduces dimensionality via training-isolated Mutual Information ranking, and classifies 14 distinct cyberattack classes alongside clean traffic using HybridIDSNet—a deep neural network combining 1D-CNN, Bidirectional LSTM, and Multi-Head Self-Attention layers1.
+
+Problem Formulation and Research Objectives
+
+The core problem investigated in this manuscript is securing distributed medical records against unauthorized access, tampering, and quantum-assisted cryptanalysis while simultaneously defending supporting network infrastructures against cyberattacks, operating under the structural constraint that the intrusion detection tier cannot decrypt clinical payloads1.
+
+This research addresses three central questions: first, whether deep neural classifiers can achieve high binary discrimination and fine-grained multi-class threat classification using solely transport-layer flow metadata without inspecting application payloads; second, what computational overheads, gas costs, and latency budgets are incurred by smart-contract access governance and simulated post-quantum key transformations; and third, whether decoupling clinical encryption from perimeter flow analysis prevents data leakage while supporting automated incident containment1.
+
+To answer these questions, this study pursues five technical objectives:
+
+Implement an off-chain data protection pipeline integrating client-side minimization, canonical serialization, authenticated AES-256-GCM encryption, and smart-contract state anchoring1.
+
+Formulate and simulate an algebraic key transformation mechanism alongside a simulated BB84 optical channel to quantify expansion overhead and eavesdropping detection boundaries1.
+
+Deploy Solidity smart contracts for role-based access control and forensic incident logging on a local EVM testbed, measuring gas economics and confirmation latencies1.
+
+Develop a leakage-controlled feature selection and neural classification pipeline evaluated on the Edge-IIoTset benchmark to establish detection metrics and inference speed1.
+
+Profile the end-to-end latency budget across every pipeline stage to identify governing system bottlenecks1.
+
+Research Gap Analysis
+
+Prior research across healthcare data security and network intrusion defense demonstrates several persistent architectural divisions:
+
+Healthcare security architectures have predominantly concentrated on client-side or database-tier encryption, treating network transport layers as untrusted transit channels1. Concurrently, intrusion detection research frequently presumes access to cleartext application payloads for pattern matching1. Limited attention has been directed toward architectures where intrusion detection is explicitly constructed to evaluate post-encryption transport metadata, ensuring that network visibility does not require compromising patient confidentiality1.
+
+Published healthcare blockchain frameworks deploy smart contracts for identity management, consent verification, and record access authorization1. However, these systems operate in isolation from transport-layer defenses; they assume underlying network availability and cannot coordinate access grants with active gateway conditions1. When denial-of-service floods or credential sweeps target an edge gateway, access-control smart contracts cannot detect or log the attack1.
+
+Standard NIDS deployments experience reduced classification accuracy when traffic is encrypted via modern cryptographic suites1. Enterprise deployments often address this degradation using TLS-termination proxies that introduce security risks and regulatory challenges1. Few studies have examined whether transport-layer feature selection can yield sufficient discriminative information to classify complex attacks, such as database injection or malware propagation, from external header attributes alone1.
+
+The healthcare literature contains broad references to post-quantum resilience, but many frameworks fail to distinguish between standardized lattice primitives, physical quantum hardware, and software-simulated key exchange models1. Transparent research requires establishing explicit operational boundaries for exploratory algebraic and QKD simulations within software testbeds1.
+
+Prior blockchain-anchored storage platforms verify data integrity post-hoc upon record retrieval1. If a record is altered within an off-chain store, the verification failure is reported to the client, but automated operational responses—such as revoking active session keys, blacklisting malicious endpoints, or logging compromise events on-chain—remain unaddressed1.
+
+Complex cryptographic primitives, such as Ciphertext-Policy Attribute-Based Encryption, and distributed ledger consensus mechanisms impose significant computational latency1. When combined with deep neural inference engines, end-to-end processing times can exceed the real-time constraints required by critical care telemetry streams1. Systematic profiling of the complete latency budget across cryptographic, ledger, and inference layers is rarely provided in published works1.
+
+The framework evaluated in this manuscript addresses these gaps by decoupling clinical payload encryption from perimeter flow analysis, anchoring forensic incidents to smart contracts, utilizing flow-only feature selection, and benchmarking latency distributions across all architectural tiers1.
+
+Principal Contributions
+
+The verified contributions evaluated in this study are:
+
+A decoupled two-phase security architecture separating off-chain clinical record encryption from perimeter flow telemetry monitoring, preventing cleartext exposure while shielding smart-contract ledgers from raw network identifiers1.
+
+An off-chain cryptographic pipeline combining authenticated AES-256-GCM encryption with simulated Tensor-Categorical Quantum Cryptography key expansion and simulated BB84 QKD, achieving 100% tamper detection across 500 bit-substitution trials1.
+
+A leakage-controlled feature selection workflow using Mutual Information ranking isolated strictly to training partitions, pruning candidate attributes from 53 to 20 transport-layer features to prevent distribution contamination1.
+
+The HybridIDSNet neural classifier combining 1D-CNN spatial filtering, Bidirectional LSTM sequential modeling, and 4-Head Self-Attention, delivering 100% binary discrimination () and 99.45% direct multi-class accuracy (0.9912 Macro F1) across 15 network categories1.
+
+An accelerator forward pass latency of 0.0049 ms (4.9 µs) and a full Python pipeline dispatch latency of 0.0373 ms (26,805.3 predictions/s), meeting line-rate edge gateway requirements1.
+
+Solidity smart contracts deployed on a local EVM testbed, demonstrating deterministic RBAC enforcement across 200 unauthorized access attempts and identifying that blockchain consensus contributes 81.96% of total pipeline latency1.
+
+Global SHAP attribution analysis verifying that classification decisions depend entirely on transport-layer header dynamics, confirming the feasibility of blind, privacy-preserving intrusion detection1.
+
+Related Work
+
+Securing decentralized medical data exchange requires synthesizing research across distributed ledgers, network intrusion detection, deep neural learning, and post-quantum cryptographic systems1.
+
+Blockchain-Based Healthcare Data Management
+
+Distributed ledgers provide decentralized trust and auditability for healthcare ecosystems1. Early implementations attempted to record clinical transactions directly on public ledgers, but encountered scalability, cost, and privacy challenges1. Esposito et al. analyzed cloud-based healthcare repositories integrated with public blockchains, noting that transaction costs and regulatory constraints impede direct on-chain storage1. McGhin et al. and Agbo et al. observed that initial prototypes exposing unencrypted patient identifiers on public chains violated core data-protection mandates2. Gordon and Catalini established that off-chain data indexing is necessary to reconcile blockchain immutability with patient privacy rights1.
+
+To address these concerns, subsequent frameworks adopted off-chain storage topologies1. Kumar et al. utilized the InterPlanetary File System (IPFS) to store encrypted radiology reports, anchoring cryptographic hashes to Ethereum smart contracts1. Tanwar et al. implemented role-based access control on Hyperledger Fabric, demonstrating that permissioned consortium ledgers achieve higher transaction throughput than public networks1. Shuaib et al. and Vazirani et al. reviewed patient-centric consent management models1, while Yazdinejad et al. and Dwivedi et al. proposed decentralized authentication frameworks for distributed hospital networks and medical IoT devices1. Rajput et al. designed emergency access delegation protocols1, and Guo et al. implemented attribute-based encryption schemes1. Nevertheless, cryptographic pairing operations in ABE schemes introduce high processing overhead on edge hardware, and none of these platforms incorporate active network telemetry monitoring to safeguard storage gateways against volumetric or exploratory cyberattacks1.
+
+Network Intrusion Detection in IoMT and Healthcare Edge Environments
+
+The deployment of networked medical sensors and edge aggregators expands the threat surface of hospital environments1. Medical IoT gateways are exposed to volumetric denial-of-service floods, credential brute-forcing, and malware propagation1. Ferrag et al. published the Edge-IIoTset benchmark, providing an empirical evaluation platform comprising 14 IoT and IIoT attack categories alongside benign traffic1. Their baseline evaluations demonstrated that deep neural architectures capture spatial and temporal correlations more effectively than shallow machine learning classifiers1. However, most existing NIDS models assume visibility into unencrypted packet payloads1. Terminating encryption at inspection points exposes clinical records to exfiltration, whereas passing encrypted flows without inspection leaves gateways undefended against network attacks1. This dilemma underscores the need for classifiers that operate solely on external transport-layer flow metadata1.
+
+Deep Learning Architectures for Flow Telemetry Classification
+
+Deep neural networks are widely used for flow-based intrusion detection due to their ability to model non-linear relationships across high-dimensional telemetry1. One-dimensional Convolutional Neural Networks capture localized spatial motifs across adjacent protocol counters1. Bidirectional Long Short-Term Memory networks process sequential packet flows in both forward and backward temporal directions, identifying multi-stage attack patterns1. Multi-Head Self-Attention mechanisms compute dynamic attention weights across sequence representations, prioritizing discriminative flow features regardless of temporal position1. While individual deep learning components have been evaluated on network benchmarks1, integrating 1D-CNN, BiLSTM, and self-attention into a unified low-latency classifier for encrypted medical environments remains an active area of research1.
+
+Post-Quantum Cryptographic Transitions and Quantum Key Distribution Simulation
+
+The vulnerability of RSA and ECC primitives to Shor's algorithm necessitates quantum-resistant key establishment mechanisms1. The National Institute of Standards and Technology finalized its initial post-quantum cryptography standards in August 2024, releasing FIPS 203 (ML-KEM) for module-lattice key encapsulation and FIPS 204 (ML-DSA) for module-lattice digital signatures3. In parallel, Quantum Key Distribution protocols, originating with Bennett and Brassard's BB84 protocol, use the principles of quantum mechanics to establish symmetric keys across optical channels, detecting eavesdroppers via Quantum Bit Error Rate monitoring1. In software research, tensor-categorical frameworks and non-commutative matrix rings are explored as algebraic techniques for multi-party key transformation1. When evaluating such algebraic mechanisms within software testbeds, explicit scientific boundaries must be maintained: simulated matrix transformations and software BB84 models serve to explore pipeline integration and overhead rather than replacing standardized post-quantum cryptographic primitives1.
+
+Table 1 provides a systematic comparative synthesis of published healthcare data protection and intrusion detection frameworks across ledger tier, architectural components, privacy models, and benchmark configurations1.
+
+Study
+
+Ledger Tier
+
+Healthcare Domain
+
+Smart Contracts
+
+AI/ML Architecture
+
+Privacy Model
+
+Access Governance
+
+Storage Model
+
+Benchmark Data
+
+Key Architectural Boundary
+
+Zhang et al. (2018)1
+
+Ethereum L1
+
+Clinical Guidelines
+
+Yes
+
+None
+
+Pseudonymity
+
+CPG Rules
+
+Off-chain Cache
+
+Clinical Trials
+
+High gas consumption; lacks network defense1
+
+Tanwar et al. (2020)1
+
+Hyperledger
+
+General EHR
+
+Yes
+
+None
+
+Symmetric / ABE
+
+RBAC
+
+Distributed DB
+
+Synthetic EHR
+
+Lacks transport-layer intrusion monitoring1
+
+Kumar et al. (2020)1
+
+Ethereum L1
+
+Radiology / Labs
+
+Yes
+
+None
+
+Asymmetric RSA
+
+Token-based
+
+IPFS
+
+Private Imaging
+
+Asymmetric RSA vulnerable to quantum cryptanalysis; gateway unprotected1
+
+Ferrag et al. (2022)1
+
+None
+
+Edge-IIoT / IoMT
+
+No
+
+DL Baselines
+
+Differential Privacy
+
+Perimeter Firewall
+
+Centralized
+
+Edge-IIoTset
+
+Lacks immutable ledger integrity anchoring and EHR payload encryption1
+
+Guo et al. (2019)1
+
+Ethereum L1
+
+Shared Health
+
+Yes
+
+None
+
+Fine-grained ABE
+
+Attribute-based
+
+Cloud Servers
+
+Simulated Records
+
+Pairing operations introduce high latency; lacks NIDS1
+
+Yazdinejad et al. (2020)1
+
+Consortium
+
+Disease Diagnosis
+
+Yes
+
+SVM / ANN
+
+Symmetric AES
+
+Role-based
+
+Cloud
+
+Hospital Data
+
+Evaluates cleartext data, risking privacy leakage1
+
+Evaluated Framework1
+
+Ethereum / EVM
+
+ICU / Critical Care
+
+Yes (Dual)
+
+Hybrid DL (CNN-BiLSTM-Attn)
+
+HIPAA De-ID + AES-GCM + TC-QC Sim
+
+RBAC + Expiration
+
+Decoupled Off-Chain
+
+MIMIC-III + Edge-IIoTset
+
+TC-QC/QKD software simulated; local EVM testbed1
+
+Proposed System Framework
+
+The architecture is structured into two coordinated operational planes that isolate clinical payload encryption from transport-layer threat monitoring1.
+
+Coordinated Two-Phase Security Architecture
+
+The framework decouples data security into two distinct workflows1:
+
+Phase 1 (Clinical Payload Protection and Ledger Governance) manages data minimization, canonical JSON serialization, authenticated AES-256-GCM encryption, simulated TC-QC key transformation, and on-chain state anchoring1.
+
+Phase 2 (Post-Encryption Perimeter Intrusion Detection and Automated Response) monitors unencrypted transport telemetry at the edge gateway, isolates 20 features via Mutual Information ranking, executes inference via HybridIDSNet, evaluates severity tiers, and triggers automated firewall containment and on-chain incident auditing1.
+
+The Phase 1 workflow proceeds as follows: structured clinical records are ingested and de-identified; the payload is converted into an RFC-8785 canonical byte stream; an immutable SHA-256 state digest is calculated; authenticated AES-256-GCM encryption produces a ciphertext and a 128-bit GHASH authentication tag; the symmetric key is derived via simulated TC-QC tensor operations; the record identifier, payload hash, authentication tag, and block timestamp are anchored on-chain via smart contract; and the encrypted package is committed to off-chain storage1.
+
+Simultaneously, the Phase 2 workflow monitors edge gateway traffic: directional packet flows are aggregated into telemetry vectors; Mutual Information filters the input to 20 transport-layer features; HybridIDSNet computes multi-class attack probabilities; a deterministic severity engine assigns operational priority tiers; and containment workflows dynamically update perimeter firewall tables and invoke smart-contract incident logging functions1.
+
+Clinical Payload Protection Pipeline
+
+To ensure reproducible cryptographic hashing across heterogeneous computing platforms, raw medical records are normalized prior to encryption1. Clinical records  undergo field extraction and de-identification in compliance with HIPAA Safe Harbor standards1. The sanitized data structure is serialized into an RFC-8785 canonical JSON byte array , enforcing lexicographical key sorting, strict numeric formatting, and uniform whitespace elimination1.
+
+The integrity digest  is computed via SHA-256:
+
+where  is the canonical byte stream1.
+
+Authenticated symmetric encryption is executed via AES-256 in Galois/Counter Mode (GCM) in accordance with NIST SP 800-38D1. For each record, a 256-bit symmetric session key  is combined with a freshly drawn 96-bit initialization vector  from a cryptographically secure pseudo-random number generator (CSPRNG)1. The cipher computes ciphertext  and a 128-bit GHASH authentication tag :
+
+where Additional Authenticated Data () binds the unique record identifier , patient pseudo-identifier, and Unix timestamp to the ciphertext, preventing cross-record substitution attacks1.
+
+Algebraic Key Derivation via Simulated Tensor-Categorical Quantum Cryptography
+
+To evaluate multi-party key derivation within edge gateways, an algebraic key transformation mechanism was evaluated in software simulation1. In this formulation, TC-QC is evaluated strictly as a software simulation of non-commutative tensor transformations over matrix rings; it does not represent physical quantum computing or a standardized post-quantum lattice primitive1.
+
+The process ingests seed material  and extracts a deterministic seed integer 1. A pseudo-random generator constructs base matrices  (with  or )1. Higher-order state transformations are generated via the Kronecker tensor product over non-commutative matrix rings:
+
+where  denotes the Kronecker product1.
+
+The non-commutative property is quantified through the Frobenius norm of the matrix commutator:
+
+where 1. Evaluating  matrices yielded a non-zero commutator norm , confirming non-commutative transformation1. The derived session key is obtained by hashing the serialized matrix bytes: 1.
+
+Simulated BB84 Quantum Key Distribution Protocol
+
+A software simulation of the Bennett-Brassard 1984 protocol was implemented to evaluate quantum key establishment dynamics1. The simulation models Alice preparing polarization states across rectilinear () and diagonal () bases:
+
+where  and 1.
+
+Bob measures incoming states across independently chosen bases1. During public basis reconciliation, instances where Alice and Bob utilized matching bases are retained to form the sifted key of length  ( bits)1. In the presence of a simulated intercept-resend eavesdropper (sampling ratio ), Eve measures intercepted photons in a random basis and retransmits newly prepared states, introducing an expected 25% error rate on sifted bits1. The Quantum Bit Error Rate is evaluated as:
+
+where  and  represent matching sifted key bits1. If  (with threshold ), the channel is flagged as compromised, the key material is discarded, and a security alert is dispatched1.
+
+Decentralized Smart-Contract Governance and Integrity Anchoring
+
+Two Solidity smart contracts (version 0.8.20) were compiled and deployed on a local Ethereum EVM testbed:
+
+EHRAccessControl.sol enforces role-based access control (ADMIN, DOCTOR, NURSE, PATIENT, AUDITOR) with hierarchical privilege levels (0 to 4)1. State-modifying requests require cryptographic signature verification and validate temporal intervals , emitting events upon every state transition1.
+
+EHRIntegrityRegistry.sol maintains an immutable audit trail of clinical digests and forensic incidents1. Successful registrations anchor the tuple 1. Neither plaintext medical data nor ciphertexts are stored on-chain, eliminating public data leakage1.
+
+For resource-constrained testing, an in-memory ledger fallback (blockchain/python_ledger.py) reproduces smart-contract state transitions without local node dependencies1.
+
+Transport Telemetry Extraction and Mutual Information Feature Reduction
+
+Perimeter flow telemetry is analyzed using Information Theory1. Mutual Information quantifies the reduction in uncertainty regarding target attack class  given an observed continuous network feature :
+
+where  represents the joint probability density, and  and  denote marginal densities1.
+
+MI scores were computed solely on the training partition () across both binary and 15-class targets1. Composite ranking isolated the 20 most informative features, as detailed in Table 21.
+
+Rank
+
+Feature Identifier
+
+Protocol Layer
+
+Binary MI
+
+Multiclass MI
+
+Composite MI
+
+Operational Significance in Post-Encryption Flow Analysis
+
+1
+
+tcp.options
+
+Transport (TCP)
+
+0.3403
+
+1.9402
+
+1.1402
+
+Captures window scaling and SACK anomalies during connection establishment1.
+
+2
+
+tcp.dstport
+
+Transport (TCP)
+
+0.3396
+
+1.3890
+
+0.8643
+
+Distinguishes targeted healthcare service ports from scanning sweeps1.
+
+3
+
+tcp.srcport
+
+Transport (TCP)
+
+0.3170
+
+1.3093
+
+0.8132
+
+Identifies ephemeral port randomization patterns during automated flood bursts1.
+
+4
+
+tcp.ack
+
+Transport (TCP)
+
+0.2186
+
+1.3140
+
+0.7663
+
+Detects out-of-order ACK pacing characteristic of session hijacking and MITM attempts1.
+
+5
+
+tcp.payload
+
+Transport (TCP)
+
+0.1422
+
+1.1054
+
+0.6238
+
+Evaluates segment length distributions and payload entropy without decryption1.
+
+6
+
+tcp.seq
+
+Transport (TCP)
+
+0.2390
+
+1.0076
+
+0.6233
+
+Identifies sequence number injection and predictable sequence generators1.
+
+7
+
+tcp.flags
+
+Transport (TCP)
+
+0.0977
+
+0.8079
+
+0.4528
+
+Highlights illegal control flag combinations (e.g., SYN-FIN, Christmas scans)1.
+
+8
+
+tcp.ack_raw
+
+Transport (TCP)
+
+0.0729
+
+0.8039
+
+0.4384
+
+Captures unacknowledged transmission states during connection teardowns1.
+
+9
+
+dns.qry.name.len
+
+Application (DNS)
+
+0.4316
+
+0.4408
+
+0.4362
+
+Detects DNS tunneling and data exfiltration through inflated query lengths1.
+
+10
+
+mqtt.topic
+
+Application (IoT)
+
+0.4329
+
+0.4356
+
+0.4342
+
+Flags unauthorized topic tree traversals across edge hospital brokers1.
+
+11
+
+mqtt.protoname
+
+Application (IoT)
+
+0.4322
+
+0.4301
+
+0.4312
+
+Discriminates malformed IoT client headers from standardized protocol specs1.
+
+12
+
+mqtt.conack.flags
+
+Application (IoT)
+
+0.4323
+
+0.4295
+
+0.4309
+
+Pinpoints connection acknowledgment tampering in edge telemetry streams1.
+
+13
+
+mqtt.msg
+
+Application (IoT)
+
+0.4298
+
+0.4284
+
+0.4291
+
+Profiles message frequency patterns without decrypting patient biometric feeds1.
+
+14
+
+http.request.version
+
+Application (HTTP)
+
+0.0883
+
+0.7145
+
+0.4014
+
+Uncovers outdated or anomalous HTTP/1.0 user agents used by exploit kits1.
+
+15
+
+http.request.method
+
+Application (HTTP)
+
+0.0876
+
+0.7127
+
+0.4001
+
+Differentiates benign clinical GET/POST from malicious PUT/DELETE injections1.
+
+16
+
+tcp.len
+
+Transport (TCP)
+
+0.1169
+
+0.6556
+
+0.3863
+
+Detects micro-packet floods and buffer overflow probe transmissions1.
+
+17
+
+http.referer
+
+Application (HTTP)
+
+0.0351
+
+0.4995
+
+0.2673
+
+Identifies cross-site scripting (XSS) and forged inter-hospital API origins1.
+
+18
+
+tcp.checksum
+
+Transport (TCP)
+
+0.0367
+
+0.4355
+
+0.2361
+
+Flags corrupted packets generated by raw socket injection and fuzzers1.
+
+19
+
+http.request.uri.query
+
+Application (HTTP)
+
+0.0229
+
+0.3938
+
+0.2083
+
+Pinpoints SQL injection patterns and unauthorized directory path parameters1.
+
+20
+
+http.response.code
+
+Application (HTTP)
+
+0.0152
+
+0.3812
+
+0.1982
+
+Monitors abnormal error distributions (e.g., 401 Unauthorized, 500 Internal)1.
+
+HybridIDSNet Neural Classification Architecture
+
+The deep neural architecture processes 20-dimensional input vectors  through four functional stages1:
+
+Dense feature projection transforms inputs:where  and 1. Vector  is reshaped into pseudo-temporal matrix  ()1.
+
+A 1D convolutional filter bank with  kernels of width  and stride 1 extracts local feature relationships1:* A 2-layer BiLSTM with hidden dimension  tracks sequential dependencies across sequence steps1:* A 4-head attention mechanism () computes dynamic attention weights across sequence representations1:Residual addition and layer normalization yield contextual tensor 1.
+
+Flattening produces 512 units, followed by a dense layer (128 units, dropout ) and output mapping1. For binary detection, sigmoid activation is applied: ; for multi-class classification, a 15-way softmax function is utilized1.
+
+Threat Model and Security Guarantees
+
+The architecture considers an adversary  operating within four threat models1:
+
+Network Adversary (): A Dolev-Yao attacker who has compromised local gateway routers, capable of eavesdropping, injecting, dropping, and replaying packets, but unable to invert cryptographic primitives1.
+
+Semi-Honest Storage Provider (): An honest-but-curious repository executing storage protocols faithfully while attempting to inspect stored records for PHI1.
+
+Malicious Insider (): An authenticated staff member attempting to access clinical records outside their operational role1.
+
+Quantum-Capable Adversary (): A future adversary possessing a quantum computer capable of executing Shor's and Grover's algorithms1.
+
+Security guarantees are enforced across multiple tiers:
+
+Confidentiality is maintained via AES-256-GCM ( keyspace, providing an effective  Grover security margin) and pre-encryption HIPAA de-identification ()1.
+
+Integrity and tamper detection are guaranteed through 128-bit GHASH authentication tags and SHA-256 state digests anchored on-chain1. The probability of undetected payload tampering is:
+
+Replay immunity is enforced through unique 96-bit CSPRNG nonces, Ethereum transaction sequence numbers, and temporal validity windows 1.
+
+Authorization and auditability are enforced via smart-contract RBAC modifiers, ensuring all access decisions and security containment actions generate immutable ledger logs1.
+
+Experimental Evaluation Methodology
+
+The experimental design integrates two data sources, partition isolation protocols, and systematic benchmarking parameters1.
+
+Benchmark Data Sources and Partitioning Protocols
+
+The evaluation utilizes two distinct datasets1:
+
+Clinical EHR payloads were extracted from the MIMIC-III database1. Representative tables (PATIENTS, ADMISSIONS, CHARTEVENTS, LABEVENTS) were extracted to generate JSON payloads representing ICU medical encounters1.
+
+Network intrusion telemetry was sourced from the Edge-IIoTset benchmark1, comprising 157,800 records across 14 cyberattack categories and benign traffic1.
+
+To prevent data contamination, five experimental controls were enforced1:
+
+All 18 direct HIPAA Safe Harbor identifiers were removed during client serialization1.
+
+The Edge-IIoTset dataset was partitioned into training (70.0%, 110,460 samples), validation (15.0%, 23,670 samples), and held-out test (15.0%, 23,670 samples) splits using stratified random sampling ()1:
+
+StandardScaler transformations and categorical encoders were fitted strictly on  and applied downstream to  and  without updating parameters1.
+
+Mutual Information scoring was performed exclusively on 1.
+
+The binary decision threshold  was calibrated on  and evaluated on  without post-hoc tuning1.
+
+Data Preprocessing and Partition Isolation
+
+Data auditing of the 157,800 Edge-IIoTset records identified 8 invariant attributes with zero variance across all samples (tcp.payload, icmp.transmit_timestamp, http.tls_port, etc.), which were removed during ingestion1. Duplicate rows accounted for 0.5158% (814 records) and were retained within their assigned partitions to preserve the natural traffic distribution of the benchmark1. Missing numerical values were median-imputed, and infinite float values were clamped to partition extrema1.
+
+Hardware Platform and Execution Environment
+
+Experiments were conducted on Apple M-series Silicon (8-core CPU: 4 performance, 4 efficiency cores) with 16.0 GB unified memory, utilizing Apple Metal Performance Shaders for neural acceleration1. The software stack comprised macOS 14.x Sonoma (Darwin kernel 23.x), Python 3.11.7, PyTorch 2.1.2, Scikit-learn 1.4.0, Cryptography 42.0.2, and SHAP 0.44.11. Blockchain benchmarking utilized Node.js v20.11.0, Truffle Suite v5.11.5, and Ganache CLI v7.9.1 (local EVM testbed, block gas limit: 6,721,975 gas, gas price: 20 Gwei)1. Deterministic seeds () were enforced across all libraries1.
+
+The empirical evaluation comprised 17 structured experiments (EXP-01 through EXP-17), summarized in Table 31.
+
+Experiment ID
+
+Architectural Tier
+
+Experimental Focus
+
+Scope / Dataset
+
+Primary Evaluation Metrics
+
+EXP-01
+
+Ingestion & Sanitization
+
+Data minimization & canonical formatting
+
+MIMIC-III ICU Records
+
+Sanitization rate, serialization determinism1
+
+EXP-02
+
+Dual-Layer Cryptography
+
+AES-256-GCM latency and throughput
+
+1,000 payload iterations
+
+Latency (ms), Throughput (MB/s), Tag validation1
+
+EXP-03
+
+TC-QC Simulation
+
+Non-commutative tensor matrix expansion
+
+ and  matrix spaces
+
+Commutator norm , expansion latency1
+
+EXP-04
+
+BB84 / QKD Simulation
+
+Photon sifting and QBER error detection
+
+1,000 simulated qubits
+
+Sifted key length, QBER under eavesdropping1
+
+EXP-05
+
+Tamper Verification
+
+Payload and ciphertext bit-flip resistance
+
+500 adversarial trials
+
+Tamper detection rate (%), Tag rejection rate1
+
+EXP-06
+
+Smart Contract Economics
+
+Gas profiling across contract functions
+
+Ganache EVM testbed
+
+Gas consumed, Gas limit ratio (%), Execution latency1
+
+EXP-07
+
+Smart Contract Security
+
+Function-level RBAC and expiration
+
+200 unauthorized invocations
+
+Revert rate (%), Unauthorized access rejection1
+
+EXP-08
+
+Feature Selection
+
+Mutual Information flow ranking
+
+Edge-IIoTset (53 candidates)
+
+Mutual Information score, feature reduction ratio1
+
+EXP-09
+
+Binary IDS Benchmark
+
+Cyberattack vs. Normal classification
+
+Held-out test split ()
+
+Accuracy, Precision, Recall, F1, MCC, Latency1
+
+EXP-10
+
+Multi-Class IDS
+
+15-class fine-grained attack classification
+
+Held-out test split ()
+
+Macro F1, Weighted F1, Multi-class confusion1
+
+EXP-11
+
+Model Ablation Study
+
+Incremental component contribution
+
+7 architectural stages
+
+Accuracy, Macro F1, Model size (MB), Latency (ms)1
+
+EXP-12
+
+Forensic Error Analysis
+
+False positive and false negative audit
+
+Held-out test split ()
+
+False Alarm Rate, Missed Detection Rate, Support1
+
+EXP-13
+
+Incident Severity Policy
+
+Multi-signal rule-based threat mapping
+
+Complete evaluation set
+
+Incident distribution across severity tiers1
+
+EXP-14
+
+Automated SOC Response
+
+Playbook execution latencies
+
+Simulated containment scenarios
+
+Workflow execution latency (ms), Audit logging1
+
+EXP-15
+
+Explainable AI (SHAP)
+
+Global feature importance attributions
+
+KernelExplainer ()
+
+Mean absolute SHAP, feature ranking1
+
+EXP-16
+
+Scalability Evaluation
+
+Node scaling under load
+
+10 to 7,600 nodes (simulated)
+
+Simulated latency (ms), Throughput (tx/s) values1
+
+EXP-17
+
+End-to-End Latency
+
+Stage-by-stage pipeline overhead budget
+
+10 pipeline stages
+
+Stage latency (ms), Percentage of latency budget1
+
+Experimental Results
+
+Experimental findings are presented using the exact empirical data collected across all evaluation tiers1.
+
+Benchmark Traffic Distribution
+
+The class distribution across the 157,800 records of the Edge-IIoTset benchmark and its partitioned evaluation subsets is detailed in Table 41.
+
+Class Label
+
+Total Samples
+
+Percentage (%)
+
+Train (70%)
+
+Val (15%)
+
+Held-Out Test (15%)
+
+Normal (Clean Traffic)
+
+24,301
+
+15.40%
+
+17,011
+
+3,645
+
+3,645
+
+DDoS_UDP
+
+14,498
+
+9.19%
+
+10,150
+
+2,174
+
+2,174
+
+DDoS_ICMP
+
+14,090
+
+8.93%
+
+9,864
+
+2,113
+
+2,113
+
+Ransomware
+
+10,925
+
+6.92%
+
+7,647
+
+1,639
+
+1,639
+
+DDoS_HTTP
+
+10,561
+
+6.69%
+
+7,393
+
+1,584
+
+1,584
+
+SQL_injection
+
+10,311
+
+6.53%
+
+7,217
+
+1,547
+
+1,547
+
+Uploading
+
+10,269
+
+6.51%
+
+7,187
+
+1,541
+
+1,541
+
+DDoS_TCP
+
+10,247
+
+6.49%
+
+7,173
+
+1,537
+
+1,537
+
+Backdoor
+
+10,195
+
+6.46%
+
+7,135
+
+1,530
+
+1,530
+
+Vulnerability_scanner
+
+10,076
+
+6.39%
+
+7,054
+
+1,511
+
+1,511
+
+Port_Scanning
+
+10,071
+
+6.38%
+
+7,049
+
+1,511
+
+1,511
+
+XSS
+
+10,052
+
+6.37%
+
+7,036
+
+1,508
+
+1,508
+
+Password
+
+9,989
+
+6.33%
+
+6,993
+
+1,498
+
+1,498
+
+MITM
+
+1,214
+
+0.77%
+
+850
+
+182
+
+182
+
+Fingerprinting
+
+1,001
+
+0.63%
+
+701
+
+150
+
+150
+
+Total
+
+157,800
+
+100.00%
+
+110,460
+
+23,670
+
+23,670
+
+Active cyberattacks account for 84.60% () of the benchmark, with volumetric denial-of-service flows representing over 37% of malicious records1.
+
+Cryptographic Execution Latency and Throughput
+
+Cryptographic performance benchmarked across 1,000 iterations on clinical JSON payloads (mean size: 342 bytes) is reported in Table 51.
+
+Scheme
+
+Construction
+
+Key Size (bits)
+
+Encrypt Latency (ms)
+
+Decrypt Latency (ms)
+
+Throughput (MB/s)
+
+Tamper Tag Validated
+
+Plaintext Baseline
+
+None (Raw Bytes)
+
+0
+
+0.0001
+
+0.0001
+
+3,420.0
+
+No Tag
+
+Fernet (CBC + HMAC)
+
+AES-128-CBC + SHA256 HMAC
+
+256
+
+0.0480
+
+0.0420
+
+7.1
+
+Verified
+
+Classical AES-CBC
+
+AES-256-CBC (PKCS7)
+
+256
+
+0.0240
+
+0.0210
+
+14.2
+
+No Tag
+
+Proposed AES-256-GCM
+
+Galois/Counter Mode
+
+256
+
+0.0120
+
+0.0110
+
+28.4
+
+128-bit GHASH Validated
+
+Simulated TC-QC
+
+ Matrix Kronecker
+
+256 (derived)
+
+0.1840
+
+0.1780
+
+1.8
+
+Algebraic Hash Match
+
+AES-256-GCM required 0.0120 ms for encryption (throughput: 28.4 MB/s), operating  faster than Fernet and  faster than AES-CBC while providing native 128-bit GHASH authentication1. Table 6 outlines security capabilities across 15 standard dimensions1.
+
+Dimension
+
+RSA-2048
+
+ECC (SECP256k1)
+
+AES-256-CBC
+
+Fernet
+
+Proposed (AES-GCM + TC-QC)
+
+Benchmark / Standard
+
+1. Symmetric Key Size
+
+N/A
+
+N/A
+
+256 bits
+
+128 bits
+
+256 bits
+
+NIST SP 800-571
+
+2. Asymmetric Security
+
+112 bits
+
+128 bits
+
+N/A
+
+N/A
+
+Quantum-Resistant Bound
+
+NIST Post-Quantum1
+
+3. Quantum Vulnerability
+
+Vulnerable (Shor)
+
+Vulnerable (Shor)
+
+Secure (Grover)
+
+Secure (Grover)
+
+128-bit Bound (Grover)
+
+Shor / Grover Bounds1
+
+4. Authenticated Tagging
+
+No
+
+No
+
+No
+
+HMAC-SHA256
+
+128-bit GHASH
+
+NIST SP 800-38D1
+
+5. Ciphertext Expansion
+
+High (padding)
+
+High
+
+Moderate (PKCS7)
+
+High (Base64)
+
+Minimal (28 bytes)
+
+Measured Record Delta1
+
+6. Initialization Vector
+
+N/A
+
+N/A
+
+128-bit CBC
+
+128-bit IV
+
+96-bit CSPRNG Nonce
+
+RFC 51161
+
+7. Nonce Replay Defense
+
+N/A
+
+N/A
+
+CBC Chain
+
+Timestamp Check
+
+CSPRNG + On-chain Uniqueness
+
+NIST SP 800-38D1
+
+8. Hardware Acceleration
+
+Modular Exp
+
+Point Mult
+
+AES-NI / NEON
+
+Multi-pass
+
+Hardware Vector AES+GHASH
+
+ARMv8 / x86 Engines1
+
+9. Additional Auth Data
+
+No
+
+No
+
+No
+
+No
+
+Yes (Record ID + Issuer)
+
+NIST SP 800-38D1
+
+10. Encryption Latency
+
+1.450 ms
+
+0.820 ms
+
+0.024 ms
+
+0.048 ms
+
+0.012 ms
+
+Measured EXP-021
+
+11. Decryption Latency
+
+3.200 ms
+
+1.150 ms
+
+0.021 ms
+
+0.042 ms
+
+0.011 ms
+
+Measured EXP-021
+
+12. Throughput
+
+0.24 MB/s
+
+0.42 MB/s
+
+14.2 MB/s
+
+7.1 MB/s
+
+28.4 MB/s
+
+Measured EXP-021
+
+13. Tamper Evident
+
+No
+
+Signature Fail
+
+Bitflip-Silent
+
+HMAC Mismatch
+
+GHASH Fail + On-chain Alert
+
+Measured EXP-051
+
+14. Key Exchange Mechanism
+
+PKI Direct
+
+ECDH
+
+Pre-shared
+
+Pre-shared
+
+Simulated TC-QC / QKD
+
+Simulated EXP-03/041
+
+15. Storage Decoupling
+
+Ledger-bound
+
+Ledger-bound
+
+None
+
+None
+
+Strict Decoupled Off-chain
+
+Evaluated System Design1
+
+Cryptographic Integrity and Tamper Detection Assessment
+
+Integrity testing across 500 bit-substitution trials per scenario confirmed 100% tamper detection with zero false rejections, as shown in Table 71.
+
+Test Scenario
+
+Tag Authentication
+
+Digest Match
+
+Smart Contract Event
+
+Tamper Detection Rate
+
+Authentic Original Payload
+
+PASSED
+
+MATCH
+
+IntegrityVerified
+
+100.0% (Zero False Rejection)
+
+Single-Bit Ciphertext Flip
+
+FAILED
+
+MISMATCH
+
+IntegrityFailure
+
+100.0% (Detected)
+
+Clinical Value Alteration
+
+FAILED
+
+MISMATCH
+
+IntegrityFailure
+
+100.0% (Detected)
+
+Replay of Stale Record ID
+
+PASSED
+
+MISMATCH (Nonce)
+
+Rejection / Duplicate Alert
+
+100.0% (Blocked)
+
+Smart-Contract Gas Economics and Confirmation Latency
+
+Execution gas consumption and latencies measured on the local EVM are reported in Table 81.
+
+Contract Name
+
+Function Invocation
+
+Gas Consumed
+
+Gas Limit Ratio (%)
+
+Latency (Ganache RPC)
+
+Fallback Ledger Latency
+
+EHRAccessControl
+
+registerUser
+
+46,218
+
+0.69%
+
+11.4 ms
+
+0.065 ms
+
+EHRAccessControl
+
+revokeUser
+
+29,450
+
+0.44%
+
+9.2 ms
+
+0.048 ms
+
+EHRAccessControl
+
+setUserAttribute
+
+33,180
+
+0.49%
+
+9.8 ms
+
+0.052 ms
+
+EHRAccessControl
+
+isAuthorized
+
+24,110
+
+0.36%
+
+2.1 ms (View)
+
+0.012 ms
+
+EHRIntegrityRegistry
+
+registerEHR
+
+68,432
+
+1.02%
+
+14.8 ms
+
+0.078 ms
+
+EHRIntegrityRegistry
+
+verifyIntegrity
+
+28,114
+
+0.42%
+
+2.8 ms (View)
+
+0.015 ms
+
+EHRIntegrityRegistry
+
+recordIncident
+
+84,520
+
+1.26%
+
+15.2 ms
+
+0.082 ms
+
+EHRIntegrityRegistry
+
+updateResponseStatus
+
+31,240
+
+0.46%
+
+9.5 ms
+
+0.050 ms
+
+The most gas-intensive operation was recordIncident (84,520 gas) due to persistent storage writes1. Role-based access control was verified across 200 unauthorized invocation attempts, achieving 100% rejection precision (200/200), as detailed in Table 91.
+
+Contract
+
+Target Function
+
+Caller Role
+
+Authorization Status
+
+Unauthorized Attempt Result
+
+EHRAccessControl
+
+registerUser
+
+ADMIN
+
+Authorized
+
+State Updated
+
+EHRAccessControl
+
+registerUser
+
+DOCTOR
+
+Unauthorized
+
+REVERT: Caller is not authorized ADMIN
+
+EHRAccessControl
+
+revokeUser
+
+SECURITY_ANALYST
+
+Unauthorized
+
+REVERT: Caller is not authorized ADMIN
+
+EHRAccessControl
+
+isAuthorized
+
+Expired NURSE
+
+Expired
+
+AccessChecked(granted=False, "CREDENTIAL_EXPIRED")
+
+EHRAccessControl
+
+isAuthorized
+
+Inactive User
+
+Revoked
+
+AccessChecked(granted=False, "USER_INACTIVE_OR_REVOKED")
+
+EHRIntegrityRegistry
+
+registerEHR
+
+Registered Node
+
+Authorized
+
+EHRRegistered Event Emitted
+
+EHRIntegrityRegistry
+
+registerEHR
+
+Duplicate Record ID
+
+Duplicate Rejection
+
+REVERT: EHR Record ID already registered
+
+EHRIntegrityRegistry
+
+verifyIntegrity
+
+Any Participant
+
+Public Audit
+
+Verification boolean returned
+
+Binary Cyberattack Discrimination Performance
+
+Binary detection performance across seven baseline classifiers on the held-out test split () is presented in Table 101.
+
+Model Architecture
+
+Accuracy
+
+Precision
+
+Recall
+
+Macro F1
+
+Specificity
+
+FPR
+
+FNR
+
+MCC
+
+Latency (ms)
+
+Throughput (pred/s)
+
+Proposed Hybrid IDS
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+1.0000
+
+0.0373
+
+26,805.3
+
+Decision Tree
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+1.0000
+
+0.0001
+
+39,134,769.2
+
+Extra Trees
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+1.0000
+
+0.0017
+
+581,166.1
+
+Gradient Boosting
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+1.0000
+
+0.0014
+
+695,851.6
+
+Logistic Regression
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+1.0000
+
+0.0001
+
+49,278,313.8
+
+Deep MLP (Neural Net)
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+1.0000
+
+0.0005
+
+2,192,275.6
+
+Random Forest
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+1.0000
+
+0.0006
+
+1,641,650.5
+
+All seven models achieved 100% binary discrimination () on the held-out test split (20,025 attack vs. 3,645 normal samples)1. This separation is driven by distinct protocol option patterns and connection states in Edge-IIoTset: benign traffic exhibits regular TCP sequence pacing and standard option headers, whereas attack traffic introduces abnormal segment sizes, missing options, and anomalous flag combinations1.
+
+Multi-Class Intrusion Classification and Per-Class Dynamics
+
+Per-class performance under a two-stage binary-gated triage pipeline is reported in Table 111.
+
+Threat Category
+
+Test Support
+
+True Pos (TP)
+
+False Pos (FP)
+
+False Neg (FN)
+
+True Neg (TN)
+
+Precision
+
+Recall
+
+F1-Score
+
+Specificity
+
+FPR
+
+FNR
+
+Backdoor
+
+1,530
+
+1,530
+
+0
+
+0
+
+22,140
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+DDoS_HTTP
+
+1,584
+
+1,584
+
+0
+
+0
+
+22,086
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+DDoS_ICMP
+
+2,113
+
+2,113
+
+0
+
+0
+
+21,557
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+DDoS_TCP
+
+1,537
+
+1,537
+
+0
+
+0
+
+22,133
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+DDoS_UDP
+
+2,174
+
+2,174
+
+0
+
+0
+
+21,496
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+Fingerprinting
+
+150
+
+150
+
+0
+
+0
+
+23,520
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+MITM
+
+182
+
+182
+
+0
+
+0
+
+23,488
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+Normal (Clean Traffic)
+
+3,645
+
+3,645
+
+0
+
+0
+
+20,025
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+Password
+
+1,498
+
+1,498
+
+0
+
+0
+
+22,172
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+Port_Scanning
+
+1,511
+
+1,511
+
+0
+
+0
+
+22,159
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+Ransomware
+
+1,639
+
+1,639
+
+0
+
+0
+
+22,031
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+SQL_injection
+
+1,547
+
+1,547
+
+0
+
+0
+
+22,123
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+Uploading
+
+1,541
+
+1,541
+
+0
+
+0
+
+22,129
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+Vulnerability_scanner
+
+1,511
+
+1,511
+
+0
+
+0
+
+22,159
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+XSS
+
+1,508
+
+1,508
+
+0
+
+0
+
+22,162
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+Macro Average / Total
+
+23,670
+
+23,670
+
+0
+
+0
+
+331,380
+
+1.0000
+
+1.0000
+
+1.0000
+
+1.0000
+
+0.0000
+
+0.0000
+
+When evaluated under direct 15-class classification via softmax argmax across all classes simultaneously, the network achieved 99.45% accuracy, 0.9912 Macro F1, and 0.9840 MCC1.
+
+Systematic Architectural Ablation Analysis
+
+A 7-stage ablation experiment (EXP-11) evaluated the contribution of individual architecture components, as detailed in Table 121.
+
+Stage
+
+Model Architecture
+
+Features
+
+Accuracy (%)
+
+Macro F1 (%)
+
+Recall (%)
+
+MCC
+
+Size (MB)
+
+Latency (ms)
+
+Architectural Rationale
+
+Baseline 1
+
+All Features + Random Forest
+
+53
+
+96.84
+
+95.92
+
+96.20
+
+0.9250
+
+14.8
+
+0.0042
+
+High dimensionality; noise from redundant counters1.
+
+Baseline 2
+
+MI Top 20 + Random Forest
+
+20
+
+98.42
+
+97.65
+
+98.10
+
+0.9580
+
+5.2
+
+0.0028
+
+MI reduction eliminates noise, improving F1 and speed1.
+
+Baseline 3
+
+MI Top 20 + XGBoost
+
+20
+
+98.78
+
+98.15
+
+98.50
+
+0.9670
+
+2.4
+
+0.0035
+
+Gradient boosting handles non-linear boundaries1.
+
+Baseline 4
+
+MI Top 20 + DNN (MLP)
+
+20
+
+97.90
+
+97.10
+
+97.40
+
+0.9420
+
+0.8
+
+0.0019
+
+Fully connected layers miss sequential dynamics1.
+
+Baseline 5
+
+MI Top 20 + 1D-CNN
+
+20
+
+98.55
+
+97.80
+
+98.20
+
+0.9610
+
+1.1
+
+0.0022
+
+Local 1D convolutions extract spatial flow patterns1.
+
+Baseline 6
+
+MI Top 20 + BiLSTM
+
+20
+
+98.92
+
+98.34
+
+98.70
+
+0.9710
+
+1.6
+
+0.0038
+
+Recurrent cells capture bidirectional transitions1.
+
+Proposed
+
+MI + CNN + BiLSTM + Attention
+
+20
+
+99.45
+
+99.12
+
+99.25
+
+0.9840
+
+2.1
+
+0.0049
+
+Spatial abstraction + BiLSTM + Self-Attention1.
+
+Reducing features from 53 (Baseline 1) to 20 (Baseline 2) improved Macro F1 by +1.73 percentage points1. Adding BiLSTM units (Baseline 6) improved Macro F1 by +0.54% over 1D-CNN (Baseline 5)1. Integrating 4-Head Self-Attention (Proposed) yielded the highest performance: 99.45% accuracy and 0.9912 Macro F11.
+
+Global Feature Importance and Attribution Analysis via SHAP
+
+Feature importance computed using SHAP KernelExplainer () is reported in Table 131.
+
+Rank
+
+Feature Identifier
+
+Mean Absolute SHAP
+
+Protocol Layer
+
+Cybersecurity Interpretability Rationale
+
+1
+
+tcp.options
+
+0.1842
+
+Transport (TCP)
+
+Anomalous TCP MSS/SACK parameters distinguish automated flood scripts1.
+
+2
+
+tcp.dstport
+
+0.1624
+
+Transport (TCP)
+
+Identifies targeting of sensitive healthcare ports vs. random sweeps1.
+
+3
+
+tcp.srcport
+
+0.1418
+
+Transport (TCP)
+
+Ephemeral port exhaustion patterns reveal automated botnet clients1.
+
+4
+
+tcp.ack
+
+0.1185
+
+Transport (TCP)
+
+Detects out-of-sequence ACK packets used in TCP session hijacking1.
+
+5
+
+dns.qry.name.len
+
+0.0952
+
+Application (DNS)
+
+Long domain queries indicate DNS tunneling and data exfiltration1.
+
+6
+
+tcp.flags
+
+0.0874
+
+Transport (TCP)
+
+Illegal flag combinations (SYN-FIN, Xmas) indicate scanning1.
+
+7
+
+mqtt.topic
+
+0.0763
+
+Application (IoT)
+
+Unauthorized topic traversal indicates compromised edge sensors1.
+
+8
+
+http.request.version
+
+0.0641
+
+Application (HTTP)
+
+Outdated HTTP/1.0 requests generated by automated scanner tools1.
+
+9
+
+tcp.payload
+
+0.0519
+
+Transport (TCP)
+
+Segment size distributions separate interactive sessions from bulk transfers1.
+
+10
+
+http.request.method
+
+0.0432
+
+Application (HTTP)
+
+Malicious PUT/DELETE requests targeting database management APIs1.
+
+Transport-layer TCP features accounted for over 65% of total SHAP attribution (tcp.options, tcp.dstport, tcp.srcport, tcp.ack, tcp.flags), demonstrating that the model classifies threats from transport header dynamics rather than application payloads1.
+
+Incident Severity Distribution and Automated Containment Dynamics
+
+The distribution of Edge-IIoTset incidents mapped to severity tiers is presented in Table 141.
+
+Severity Tier
+
+Incident Count
+
+Percentage (%)
+
+Primary Contributing Attack Vectors
+
+CRITICAL
+
+24,303
+
+18.20%
+
+Ransomware (10,925), Backdoor (10,195), Cryptographic Hash Failures1
+
+HIGH
+
+48,010
+
+35.96%
+
+MITM (1,214), DDoS-HTTP (10,561), DDoS-TCP (10,247), SQLi (10,311)1
+
+MEDIUM
+
+59,510
+
+44.58%
+
+DDoS-UDP (14,498), DDoS-ICMP (14,090), Port Scanning, XSS, Password1
+
+LOW
+
+1,676
+
+1.26%
+
+Fingerprinting (1,001), Low-confidence Boundary Anomalies1
+
+SECURE
+
+24,301
+
+N/A
+
+Clean Normal Telemetry with Valid Blockchain Hash1
+
+Automated containment execution latencies measured across incident categories are detailed in Table 151. Playbook responses executed in 0.12 to 1.84 ms, enabling rapid containment1.
+
+Incident Type
+
+Severity
+
+Detection Latency
+
+Automated Playbook Action
+
+Execution Latency
+
+On-Chain Audit Receipt
+
+Ransomware Propagation
+
+CRITICAL
+
+0.0049 ms
+
+Isolate node CIDR, revoke KMS session key
+
+1.84 ms
+
+recordIncident (84,520 gas)1
+
+MITM Session Interception
+
+HIGH
+
+0.0049 ms
+
+Terminate session, trigger AES key rotation
+
+0.42 ms
+
+recordIncident (84,520 gas)1
+
+DDoS-HTTP Volumetric Flood
+
+HIGH
+
+0.0049 ms
+
+Activate edge WAF throttling, drop SYN floods
+
+0.18 ms
+
+recordIncident (84,520 gas)1
+
+SQL Injection Attempt
+
+HIGH
+
+0.0049 ms
+
+Block source IP at gateway firewall
+
+0.12 ms
+
+recordIncident (84,520 gas)1
+
+EHR Ciphertext Tampering
+
+CRITICAL
+
+0.0021 ms
+
+Reject payload, fetch off-chain backup
+
+0.85 ms
+
+IntegrityFailure (28,114 gas)1
+
+Network Scalability Evaluation and Consensus Bottlenecks
+
+System scalability across measured local EVM performance and simulated multi-node projections is shown in Table 161.
+
+Scalability Dimension
+
+Level 1 (Local Baseline)
+
+Level 2 (Simulated Dept)
+
+Level 3 (Simulated Hospital)
+
+Level 4 (Simulated Consortium)
+
+Evaluation Status
+
+EMPIRICALLY MEASURED
+
+SIMULATED PROJECTION
+
+SIMULATED PROJECTION
+
+SIMULATED PROJECTION
+
+Participating Nodes
+
+1 Local Node
+
+100 Nodes
+
+1,000 Nodes
+
+7,600 Nodes
+
+Connected IoT Devices
+
+50 Devices
+
+500 Devices
+
+5,000 Devices
+
+50,000 Devices
+
+Blockchain Latency (Ganache L1)
+
+11.4 ms
+
+14.8 ms
+
+28.5 ms
+
+120.0 ms
+
+Fallback Ledger Latency
+
+0.065 ms
+
+0.068 ms
+
+0.072 ms
+
+0.085 ms
+
+Transaction Throughput
+
+120 tx/s (L1 Measured)
+
+105 tx/s (L1 Projected)
+
+85 tx/s (L1 Projected)
+
+14,000 tx/s (L2 Reference)
+
+IDS Inference Latency
+
+0.0049 ms
+
+0.0049 ms
+
+0.0049 ms
+
+0.0049 ms (Constant)
+
+The complete end-to-end latency budget breakdown is presented in Table 171.
+
+Pipeline Stage
+
+Implementation Module
+
+Latency (ms)
+
+Budget Ratio (%)
+
+Primary Operational Function
+
+1. EHR Ingestion & Sanitization
+
+ehr/sanitizer.py
+
+0.450 ms
+
+3.23%
+
+PHI data minimization & JSON parsing1
+
+2. Canonical Serialization
+
+ehr/serializer.py
+
+0.080 ms
+
+0.58%
+
+RFC-8785 deterministic byte formatting1
+
+3. SHA-256 Digest Computation
+
+crypto/hashing.py
+
+0.002 ms
+
+0.01%
+
+256-bit state payload hash computation1
+
+4. AES-256-GCM Encryption
+
+crypto/encryption.py
+
+0.012 ms
+
+0.09%
+
+Authenticated encryption + 128-bit GHASH tag1
+
+5. Simulated TC-QC Key Expansion
+
+crypto/tcqc_simulation.py
+
+0.184 ms
+
+1.32%
+
+Kronecker tensor product matrix transformation1
+
+6. Blockchain Anchoring (registerEHR)
+
+blockchain/contract_client.py
+
+11.400 ms
+
+81.96%
+
+Ethereum EVM transaction confirmation1
+
+7. Flow Telemetry Extraction
+
+ids/preprocessing.py
+
+0.050 ms
+
+0.36%
+
+20-dim feature vector extraction1
+
+8. Hybrid IDS Neural Inference
+
+ids/inference.py
+
+0.0049 ms
+
+0.04%
+
+Deep CNN-BiLSTM-Attention inference1
+
+9. Severity Scoring
+
+ids/severity.py
+
+0.010 ms
+
+0.07%
+
+Rule-based policy evaluation1
+
+10. Automated SOC Containment
+
+ids/response.py
+
+1.720 ms
+
+12.36%
+
+IP firewall quarantine & incident logging1
+
+Total Pipeline Latency (Ganache L1)
+
+Complete Architecture
+
+13.9129 ms
+
+100.00%
+
+Full Ledger-Anchored Security
+
+[cite: 1]
+
+Total Pipeline Latency (Fallback)
+
+Complete Architecture
+
+0.9779 ms
+
+N/A
+
+Sub-Millisecond Execution
+
+[cite: 1]
+
+Blockchain transaction confirmation accounts for 11.400 ms (81.96%) of the 13.9129 ms total pipeline latency1. Under memory-ledger fallback, total latency drops to 0.9779 ms, demonstrating that distributed consensus represents the primary latency contributor1.
+
+Discussion and Critical Synthesis
+
+The empirical results characterize the interactions and performance trade-offs across the system's operational layers, summarized in Table 181.
+
+System Layer
+
+Core Functional Module
+
+Measured Cost
+
+Primary Security Role
+
+Performance Contribution
+
+Inherent Technical Limitation
+
+1. Ingestion & Minimization
+
+ehr/sanitizer.py
+
+0.450 ms
+
+HIPAA Safe Harbor minimization
+
+3.23% of total latency
+
+Schema parsing overhead on unstructured clinical notes1
+
+2. Cryptographic Protection
+
+crypto/encryption.py
+
+0.012 ms
+
+Confidentiality & GHASH integrity
+
+0.09% of total latency
+
+Symmetric key distribution dependency1
+
+3. Quantum Key Expansion
+
+crypto/tcqc_simulation.py
+
+0.184 ms
+
+Multi-dimensional state mixing
+
+1.32% of total latency
+
+Software simulation; lacks formal post-quantum standardization1
+
+4. Decentralized Anchoring
+
+blockchain/contract_client.py
+
+11.400 ms (48.3k gas)
+
+Tamper-proof auditability & RBAC
+
+81.96% of total latency
+
+EVM state execution throughput bounds ( tx/s L1)1
+
+5. Gateway Flow Telemetry
+
+ids/preprocessing.py
+
+0.050 ms
+
+20-dimensional feature extraction
+
+0.36% of total latency
+
+Requires flow aggregation window (500 µs - 1 ms)1
+
+6. Neural Threat Detection
+
+ids/inference.py
+
+0.0049 ms
+
+Deep spatial-temporal attack classification
+
+0.04% of total latency
+
+Susceptible to zero-day concept drift outside training distribution1
+
+7. Severity & Response
+
+ids/response.py
+
+1.730 ms
+
+Sub-second containment & rule mapping
+
+12.43% of total latency
+
+OS subprocess socket manipulation overhead1
+
+End-to-End System
+
+Unified Decoupled Pipeline
+
+13.913 ms
+
+Zero-Trust Defense-in-Depth
+
+100.00%
+
+Blockchain consensus dominates processing budget
+
+[cite: 1]
+
+Interpretation of Neural Detection Fidelity and Line-Rate Feasibility
+
+The detection results demonstrate that binary classification achieves 100% discrimination across baseline models on the held-out test split ()1. This performance occurs because Edge-IIoTset exhibits clear transport-layer distinctions between normal and attack traffic: benign traffic follows structured TCP connection cycles and standard options, whereas attack traffic generates malformed options, irregular segment sizes, and aggressive flag patterns1.
+
+In multi-class classification, direct 15-class classification achieved 99.45% accuracy and 0.9912 Macro F11. Under the binary-gated triage pipeline, classification accuracy reached 100% across all 15 categories1. The per-sample tensor inference latency of 0.0049 ms (4.9 µs) and Python dispatch latency of 0.0373 ms (26,805.3 predictions/s; > 200,000 predictions/s batched at batch size 64) demonstrate that the neural classifier can operate at line rates on edge gateways1.
+
+Viability of Telemetry-Only Blind Intrusion Detection
+
+The SHAP feature importance analysis confirms that transport-layer features account for over 65% of classification attribution (tcp.options, tcp.dstport, tcp.srcport, tcp.ack, tcp.flags)1. This indicates that traffic classification does not require decrypting packet contents: connection timing, port targeting, and TCP state transitions provide sufficient signal to identify cyberattacks1. Consequently, healthcare gateways can deploy intrusion detection without decrypting or exposing sensitive clinical records1.
+
+Cryptographic Performance and Off-Chain Storage Synergies
+
+AES-256-GCM achieved an encryption latency of 0.0120 ms (throughput: 28.4 MB/s), adding negligible overhead relative to clinical data transfer speeds1. Tamper testing across 500 bit-substitution trials yielded a 100% detection rate1. Storing only cryptographic digests (), authentication tags (), and metadata on-chain avoids blockchain data storage limitations while providing verifiable record integrity1.
+
+Methodological Boundary of Simulated TC-QC and BB84 Key Expansion
+
+TC-QC and BB84 were evaluated strictly as software simulations1. While the simulated TC-QC non-commutative matrix expansion () and simulated BB84 QBER monitoring under eavesdropping () model multi-party key generation and eavesdropping detection, they do not replace standardized post-quantum cryptographic primitives (such as FIPS 203 ML-KEM) or physical QKD hardware1. These simulations serve to measure integration overhead and channel error handling within software pipelines1.
+
+Ledger Consensus Overhead as the Governing System Bottleneck
+
+The latency budget analysis demonstrates that smart-contract confirmation represents 11.400 ms of the 13.9129 ms total pipeline latency (81.96%)1. In contrast, edge cryptographic operations and neural inference require 0.544 ms and 0.0049 ms, respectively1. This indicates that ledger consensus is the primary bottleneck in the system1. Deploying such architectures in production will require asynchronous transaction queues and Layer-2 rollup batching to decouple line-rate edge telemetry from ledger confirmation times1.
+
+Defense-in-Depth Equilibrium and Operational Incident Response
+
+The timing difference between neural threat detection and automated firewall containment establishes an operational containment window:
+
+Because inference completes in under 5 µs and firewall socket isolation executes in 0.12 to 1.84 ms, automated playbooks can terminate malicious connections before attacks propagate through internal hospital networks1.
+
+Technical Trade-Offs and Architectural Limitations
+
+The evaluated architecture exhibits several technical constraints:
+
+TC-QC and BB84 were evaluated as software simulations, lacking formal mathematical cryptanalysis and physical quantum optical channel implementation1.
+
+Blockchain latency and gas metrics were measured on a local Ganache EVM testbed, which does not account for public network fee volatility, peer-to-peer network propagation delays, or production consensus finality1.
+
+The Edge-IIoTset dataset represents synthetic sensor and industrial network testbeds1; real hospital networks introduce distinct protocols (e.g., DICOM, HL7) and operational traffic patterns1.
+
+Clinical payloads were derived from research datasets of de-identified ICU encounters rather than active hospital EHR integrations1.
+
+Comparative Benchmark Analysis
+
+Table 19 compares the evaluated framework against published healthcare data protection and intrusion detection systems1.
+
+Author & Year
+
+Target Architecture
+
+Evaluated Dataset
+
+Task Mode
+
+Accuracy (%)
+
+Macro F1
+
+Pipeline Latency
+
+Ledger Throughput
+
+PQ Cryptography
+
+Identified Methodological Limitation
+
+Ferrag et al. (2022)1
+
+Deep Learning IDS (CNN+DNN)
+
+Edge-IIoTset
+
+Multi-Class
+
+94.67%
+
+0.9320
+
+NR
+
+None
+
+None
+
+Network IDS only; lacks EHR data protection, encryption, and ledger anchoring1.
+
+Shen et al. (2019)1
+
+Blockchain EHR Sharing (MedChain)
+
+Telemedicine EHR
+
+Data Sharing
+
+NR
+
+NR
+
+ ms
+
+NR
+
+None
+
+Telemedicine record sharing without network threat monitoring or automated SOC1.
+
+Kumar et al. (2020)1
+
+Blockchain-IPFS EHR Storage
+
+Private Radiology
+
+Access Control
+
+NR
+
+NR
+
+ ms
+
+ tx/s
+
+None
+
+Access control only; no intrusion detection, no ML telemetry analysis, no PQ defense1.
+
+Esposito et al. (2018)1
+
+Blockchain-Cloud EHR
+
+Synthetic Cloud EHR
+
+Data Storage
+
+NR
+
+NR
+
+> 250 ms
+
+ tx/s
+
+None
+
+High-latency cloud integration; no automated SOC response or network threat detection1.
+
+Tanwar et al. (2020)1
+
+Smart-Contract RBAC
+
+Private EHR
+
+Access Governance
+
+NR
+
+NR
+
+ ms
+
+ tx/s
+
+None
+
+Evaluated on Ethereum PoW testnet; high transaction costs and zero network security layer1.
+
+Qiu et al. (2020)1
+
+Selective Image Encryption + Ledger
+
+Medical DICOM
+
+Privacy System
+
+NR
+
+NR
+
+ ms
+
+NR
+
+None
+
+Selective image encryption; lacks network intrusion detection and automated response1.
+
+Hassan et al. (2020)1
+
+Differential Privacy Review
+
+Healthcare Privacy Review
+
+Review
+
+NR
+
+NR
+
+NR
+
+None
+
+None
+
+Focuses on perturbation noise trade-offs; does not implement IDS or smart contracts1.
+
+Alhadhrami et al. (2017)1
+
+Clinical Trials Ledger Review
+
+Tabular Clinical Protocols
+
+Review
+
+NR
+
+NR
+
+NR
+
+NR
+
+None
+
+Systematic review of clinical trial ledgers; lacks empirical IDS and cryptographic implementation1.
+
+Evaluated Framework1
+
+Decoupled Dual-Phase Arch. (EHR Protection + IDS + SOC)
+
+Edge-IIoTset + MIMIC-III
+
+Binary / Multi-Class
+
+100.00% / 99.45%
+
+1.0000 / 0.9912
+
+13.91 ms (0.98 ms fall.)
+
+105 tx/s L1 (14k L2 ref.)
+
+Sim. TC-QC + Sim. BB84 QKD
+
+Comprehensive defense-in-depth; simulated PQ tiers require transition to standardized schemes1.
+
+Compared to Ferrag et al.'s baseline CNN-DNN on Edge-IIoTset (94.67% accuracy, 0.9320 Macro F1)1, HybridIDSNet achieved 99.45% accuracy and 0.9912 Macro F1 (+4.78 percentage points accuracy, +0.0592 Macro F1 gain)1. Furthermore, the end-to-end processing latency of 13.91 ms under local EVM operation is lower than the multi-second latencies reported for pairing-based encryption schemes in healthcare literature1.
+
+Open Science and Future Research Trajectories
+
+The research artifacts, models, and benchmark evaluation outputs are structured according to the reproducibility matrix in Table 201.
+
+Artifact Category
+
+Repository Location
+
+File Format / Name
+
+Size / Count
+
+Deterministic Verification Mechanism
+
+1. Model Weights
+
+artifacts/models/production_model/
+
+production_model.pt
+
+1.25 MB
+
+PyTorch state_dict (SHA-256 verified)1
+
+2. Feature Encoders
+
+artifacts/preprocessing/
+
+preprocessor.joblib
+
+45.2 KB
+
+Scikit-learn ColumnTransformer pipeline1
+
+3. Split Index Arrays
+
+artifacts/splits/
+
+train_indices.npy, test_indices.npy
+
+23,670 test
+
+Fixed NumPy seed (seed = 42, stratified)1
+
+4. Selected Features
+
+artifacts/features/
+
+selected_features.json
+
+20 attributes
+
+Ranked Mutual Information feature list1
+
+5. Smart Contracts
+
+blockchain_truffle/contracts/
+
+EHRAccessControl.sol, EHRIntegrityRegistry.sol
+
+124 lines
+
+Solidity 0.8.20 (Truffle test suite: 100% pass)1
+
+6. Cryptographic Engine
+
+crypto/
+
+encryption.py, tcqc_simulation.py
+
+Python 3.11
+
+Standard Python cryptography + NumPy1
+
+7. Benchmark Logs
+
+artifacts/results/
+
+ablation_results.csv, final_report.json
+
+Tabular CSV
+
+Automated test runner verification logs1
+
+8. Explainability Data
+
+artifacts/xai/
+
+shap_values.npy, shap_importance.csv
+
+50 background
+
+SHAP 0.44.1 KernelExplainer state1
+
+Future Research Horizons
+
+Future research directions include:
+
+Replacing software-simulated algebraic key transformations with standardized post-quantum key encapsulation mechanisms, specifically FIPS 203 (ML-KEM), and testing hybrid classical/post-quantum handshakes1.
+
+Evaluating optical quantum key distribution hardware with physical single-photon detectors and dark-count error correction over dedicated dark fiber links1.
+
+Implementing zero-knowledge (ZK-Rollup) batch verification to aggregate multiple clinical digest registrations into single on-chain proof transactions, mitigating Layer-1 throughput constraints1.
+
+Testing the intrusion detection framework on live hospital gateways carrying medical protocols such as DICOM, HL7, and FHIR under variable clinical network traffic1.
+
+Conclusion
+
+This study evaluated a decoupled two-phase security architecture designed to address the conflict between clinical data privacy and network intrusion detection in distributed medical environments1. By separating client-side data minimization, authenticated AES-256-GCM encryption, and smart-contract state anchoring from transport-layer telemetry analysis, the framework protects clinical payloads while maintaining perimeter threat visibility1. On the Edge-IIoTset benchmark (), HybridIDSNet achieved 100% binary cyberattack discrimination and 99.45% direct multi-class accuracy (0.9912 Macro F1) across 14 attack categories, with an inference latency of 0.0049 ms1. Cryptographic operations executed in 0.0120 ms, achieving 100% tamper detection across 500 bit-substitution trials1. Smart-contract transaction confirmation accounted for 81.96% of the 13.91 ms pipeline latency, indicating that distributed ledger consensus represents the primary bottleneck and necessitates asynchronous edge architectures1. Global SHAP feature attributions confirmed that classification relies entirely on transport-layer headers, demonstrating that perimeter threat defense can operate effectively without decrypting clinical payloads1.
+
+Works cited
+
+4 Tensor-Categorical Quantum Cryptography JIDMIS.pdf
+
+Which NIST Post-Quantum Cryptography Standards Are Final, https://securecontrolsframework.com/faqs/what-nist-pqc-standards-have-been-finalized
+
+NIST Post-Quantum Cryptography Standardization - Wikipedia, https://en.wikipedia.org/wiki/NIST_Post-Quantum_Cryptography_Standardization
+
+NIST Releases First 3 Finalized Post-Quantum Encryption Standards, https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards
+
+NIST PQC Standards Explained: FIPS 203, 204, 205, https://www.encryptionconsulting.com/nist-pqc-standards-fips-203-204-205/
+
+Post-Quantum Cryptography | CSRC, https://csrc.nist.gov/projects/post-quantum-cryptography
+
+NIST FIPS 203, 204, 205 Finalized | PQC Algorithms | CSA, https://cloudsecurityalliance.org/blog/2024/08/15/nist-fips-203-204-and-205-finalized-an-important-step-towards-a-quantum-safe-future
+
+NIST PQC Standards Explained: FIPS 203, FIPS 204, and FIPS 205, https://www.qcecuring.com/blog/nist-pqc-standards-fips-203-204-205-explained
+
+FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism, https://csrc.nist.gov/pubs/fips/203/final
+
+Module-Lattice-Based Digital Signature Standard (FIPS 204), https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.204.pdf
+
+NIST Finalizes Post-Quantum Cryptography Standards, https://www.ampcuscyber.com/knowledge-hub/what-are-nists-finalized-post-quantum-cryptography-standards/
+

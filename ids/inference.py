@@ -44,11 +44,13 @@ if TORCH_AVAILABLE:
             lstm_layers: int = 2,
             attention_heads: int = 4,
             dense_dim: int = 128,
-            dropout: float = 0.25
+            dropout: float = 0.25,
+            use_residual: bool = True
         ):
             super().__init__()
             self.input_dim = input_dim
             self.num_classes = num_classes
+            self.use_residual = use_residual
             self.seq_len = 8
             self.proj_dim = 16
             self.input_proj = nn.Linear(input_dim, self.seq_len * self.proj_dim)
@@ -75,6 +77,11 @@ if TORCH_AVAILABLE:
             self.attention = SelfAttentionBlock(embed_dim=bilstm_out_dim, num_heads=attention_heads, dropout=dropout)
 
             self.fc1 = nn.Linear(bilstm_out_dim * 4, dense_dim)
+            if self.use_residual:
+                self.res_proj = nn.Linear(conv_filters * 4, dense_dim, bias=False)
+            else:
+                self.res_proj = None
+
             self.bn2 = nn.BatchNorm1d(dense_dim)
             self.dropout_layer = nn.Dropout(dropout)
             self.fc_out = nn.Linear(dense_dim, num_classes if num_classes > 2 else 1)
@@ -87,8 +94,14 @@ if TORCH_AVAILABLE:
             lstm_in = c_out.transpose(1, 2)
             lstm_out, _ = self.bilstm(lstm_in)
             attn_out = self.attention(lstm_out)
-            flat = attn_out.reshape(b, -1)
-            h = self.dropout_layer(self.relu(self.bn2(self.fc1(flat))))
+            flat_attn = attn_out.reshape(b, -1)
+            h_attn = self.fc1(flat_attn)
+            if self.use_residual and self.res_proj is not None:
+                flat_conv = c_out.reshape(b, -1)
+                h_combined = h_attn + self.res_proj(flat_conv)
+            else:
+                h_combined = h_attn
+            h = self.dropout_layer(self.relu(self.bn2(h_combined)))
             return self.fc_out(h)
 
 
@@ -167,6 +180,8 @@ class IDSInferenceEngine:
         if os.path.exists(self.multiclass_model_path):
             try:
                 self.multiclass_model = joblib.load(self.multiclass_model_path)
+                if hasattr(self.multiclass_model, "classes_"):
+                    self.classes = list(self.multiclass_model.classes_)
             except Exception:
                 pass
 

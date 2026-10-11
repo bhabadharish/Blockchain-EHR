@@ -1,0 +1,618 @@
+path,classification,reason,dependency_check_status,proposed_action
+conftest.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+generate_figures.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+LICENSE,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+prepare_dataset.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+requirements.txt,KEEP_CONFIGURATION,System and environment configuration manifest,Verified,KEPT
+run.bat,KEEP_CONFIGURATION,System and environment configuration manifest,Verified,KEPT
+Dockerfile,KEEP_PROJECT,Deployment configuration,Verified,KEPT
+train_offline.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+BASELINE_RESULTS.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+config.yaml,KEEP_CONFIGURATION,System and environment configuration manifest,Verified,KEPT
+evaluate_offline.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+run.sh,KEEP_CONFIGURATION,System and environment configuration manifest,Verified,KEPT
+README.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+.dockerignore,KEEP_PROJECT,Deployment configuration,Verified,KEPT
+.gitignore,KEEP_CONFIGURATION,System and environment configuration manifest,Verified,KEPT
+validate_artifacts.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+app.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+docker-compose.yml,KEEP_PROJECT,Deployment configuration,Verified,KEPT
+.env.example,KEEP_CONFIGURATION,System and environment configuration manifest,Verified,KEPT
+FINAL_RESULTS.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+paper/test_tw.tex,SAFE_TO_DELETE,Ad-hoc LaTeX debug snippet for textwidth,Verified,DELETED
+paper/main.bbl,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/revised_manuscript.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/logo-orcid.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/main.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/references.bib,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/main.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/revised_manuscript.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/main.out,SAFE_TO_DELETE,Intermediate LaTeX compilation cache,Verified,DELETED
+paper/logo.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/acadlore-number.bst,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/acadlore.cls,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/main.aux,SAFE_TO_DELETE,Intermediate LaTeX compilation cache,Verified,DELETED
+paper/acadlore-author-year.bst,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/logo-orcid.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/LaTeX_Submit_Template_for_Acadlore_Journal.synctex.gz,SAFE_TO_DELETE,Intermediate LaTeX compilation cache,Verified,DELETED
+paper/template_vendor/test.bib,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/logo.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/LaTeX_Submit_Template_for_Acadlore_Journal.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/acadlore-number.bst,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/LaTeX_Submit_Template_for_Acadlore_Journal.bbl,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/acadlore.cls,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/LaTeX_Submit_Template_for_Acadlore_Journal.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/acadlore-author-year.bst,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/figs/fig1.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/figs/fig2b.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/template_vendor/figs/fig2a.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table13_ablation_results.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table12_per_class_metrics.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table15_severity_distribution.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table06_crypto_perf.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table10_rbac_audit.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table17_scalability.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table01_related_work.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table09_gas_profiling.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table05_dataset_distribution.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table19_cross_layer.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table18_latency_budget.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table03_top20_mi.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table16_soc_response.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table20_comparative_lit.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table21_reproducibility.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table04_experimental_design.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table02_notation.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table11_binary_benchmark.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table07_crypto_capabilities.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table14_shap_importance.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/original/table08_tamper_eval.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table13_ablation_results.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table12_per_class_metrics.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table15_severity_distribution.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table06_crypto_perf.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table10_rbac_audit.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table17_scalability.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table01_related_work.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table09_gas_profiling.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table05_dataset_distribution.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table19_cross_layer.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table18_latency_budget.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table03_top20_mi.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table16_soc_response.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table20_comparative_lit.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table21_reproducibility.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table04_experimental_design.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table02_notation.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table11_binary_benchmark.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table07_crypto_capabilities.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table14_shap_importance.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/tables/revised/table08_tamper_eval.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/12_nomenclature.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/09_reproducibility.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/11_backmatter.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/01_introduction.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/07_discussion.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/04_mathematical_modelling.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/10_conclusion.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/02_related_work.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/03_system_model.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/06_results.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/08_limitations.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/sections/05_experimental_setup.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/supplementary/4 Tensor-Categorical Quantum Cryptography JIDMIS.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig6_roc_curve.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig6_roc_curve.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig1_architecture.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig1_architecture.jpg,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig8_binary_confusion.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig4_attack_distribution.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig8_binary_confusion.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig4_attack_distribution.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig13_shap_importance.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig3_class_distribution.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig13_shap_importance.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig3_class_distribution.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig10_multiclass_confusion.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig10_multiclass_confusion.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig11_ablation_plot.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig5_crypto_performance.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig11_ablation_plot.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig5_crypto_performance.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig9_learning_curves.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig7_pr_curve.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig12_mi_ranking.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig7_pr_curve.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig12_mi_ranking.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig2_topology.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig2_topology.jpg,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/fig9_learning_curves.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig6_roc_curve.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig6_roc_curve.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig1_architecture.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig1_architecture.jpg,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig8_binary_confusion.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig4_attack_distribution.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig8_binary_confusion.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig4_attack_distribution.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig13_shap_importance.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig3_class_distribution.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig13_shap_importance.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig3_class_distribution.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig10_multiclass_confusion.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig10_multiclass_confusion.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig11_ablation_plot.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig5_crypto_performance.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig11_ablation_plot.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig5_crypto_performance.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig9_learning_curves.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig7_pr_curve.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig12_mi_ranking.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig7_pr_curve.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig12_mi_ranking.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig2_topology.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig2_topology.jpg,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/original/fig9_learning_curves.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/false_positive_analysis.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/ablation_results.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/generate_figures.py,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/model_benchmark.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/pr_curve.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/shap_importance.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/roc_curve.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/primary_benchmarks.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/binary_confusion_matrix.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/test_predictions.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/per_class_metrics.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/mi_scores.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/false_negative_analysis.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/normalized_confusion_matrix.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/multiclass_confusion_matrix.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/confusion_matrix.csv,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/source_of_truth.json,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/source/regenerate_all_paper_figures.py,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig6_roc_curve.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig6_roc_curve.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig1_architecture.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig1_architecture.jpg,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig8_binary_confusion.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig4_attack_distribution.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig8_binary_confusion.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig4_attack_distribution.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig13_shap_importance.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig3_class_distribution.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig13_shap_importance.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig3_class_distribution.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig10_multiclass_confusion.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig10_multiclass_confusion.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig11_ablation_plot.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig5_crypto_performance.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig11_ablation_plot.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig5_crypto_performance.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig9_learning_curves.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig7_pr_curve.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig12_mi_ranking.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig7_pr_curve.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig12_mi_ranking.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig2_topology.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig2_topology.jpg,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/figures/revised/fig9_learning_curves.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+paper/final/main.bbl,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/logo-orcid.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/main.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/references.bib,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/main.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/main.out,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/logo.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/acadlore-number.bst,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/acadlore.cls,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/main.aux,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/acadlore-author-year.bst,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/12_nomenclature.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/09_reproducibility.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/11_backmatter.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/01_introduction.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/07_discussion.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/04_mathematical_modelling.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/10_conclusion.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/02_related_work.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/03_system_model.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/06_results.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/08_limitations.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/sections/05_experimental_setup.tex,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig6_roc_curve.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig6_roc_curve.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig1_architecture.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig1_architecture.jpg,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig8_binary_confusion.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig4_attack_distribution.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig8_binary_confusion.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig4_attack_distribution.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig13_shap_importance.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig3_class_distribution.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig13_shap_importance.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig3_class_distribution.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig10_multiclass_confusion.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig10_multiclass_confusion.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig11_ablation_plot.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig5_crypto_performance.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig11_ablation_plot.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig5_crypto_performance.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig9_learning_curves.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig7_pr_curve.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig12_mi_ranking.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig7_pr_curve.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig12_mi_ranking.pdf,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig2_topology.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig2_topology.jpg,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+paper/final/figures/fig9_learning_curves.png,SAFE_TO_DELETE,Exact duplicate subfolder of acadlore_paper inside paper/ (5.1 MB),Verified,DELETED
+crypto/qkd_simulation.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+crypto/encryption.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+crypto/tcqc_simulation.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+crypto/key_management.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+crypto/signatures.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+crypto/hashing.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+crypto/__pycache__/tcqc_simulation.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+crypto/__pycache__/key_management.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+crypto/__pycache__/hashing.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+crypto/__pycache__/qkd_simulation.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+crypto/__pycache__/encryption.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+crypto/__pycache__/signatures.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+artifacts/word_manuscript_clean.txt,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/extracted_word_doc.txt,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/demo/live_samples.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/metrics/mi_scores.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/iteration3_best_weights.pt,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/test_iteration4.py,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/iteration5_multiclass_results.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/iteration4_best_weights.pt,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/test_iteration5.py,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/test_iteration1.py,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/iteration2_results.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/run_clean_hybrid.py,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/iteration3_results.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/iteration2_best_weights.pt,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/iteration4_results.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/test_iteration2.py,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/test_iteration3.py,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/historical_experiments/iteration5_hgb_model.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/features/selected_features.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/features/mi_scores.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/features/mi_plot.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/mlp_binary.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/gradient_boosting_binary.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/decision_tree_binary.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/random_forest_binary.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/xgboost_binary.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/extra_trees_binary.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/optimal_threshold.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/model_size.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/model_manifest.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/proposed_hybrid_binary.pt,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/baseline_models/mlp.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/baseline_models/logistic_regression.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/baseline_models/gradient_boosting.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/baseline_models/random_forest.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/baseline_models/extra_trees.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/baseline_models/decision_tree.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/research_model/research_model.pt,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/production_model/multiclass_classifier.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/production_model/production_model.pt,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/production_model/model_config.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/production_model/training_history.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/models/production_model/production_model_classical_fallback.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/xai/shap_summary.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/xai/shap_importance.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/xai/background_samples.npy,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/xai/shap_values.npy,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/xai/shap_summary.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/false_positive_analysis.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/ablation_results.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/model_benchmark.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/pr_curve.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/roc_curve.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/primary_benchmarks.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/binary_confusion_matrix.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/test_predictions.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/test_confusion_matrix.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/per_class_metrics.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/false_negative_analysis.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/normalized_confusion_matrix.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/inference_benchmark.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/multiclass_confusion_matrix.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/ablation_plot.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/confusion_matrix.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/results/source_of_truth.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/visualizations/model_internal_layers_3d.jpg,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/visualizations/ehr_soc_3d_architecture.jpg,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/crypto_performance.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/model_comparison.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/ablation_plot.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/class_distribution.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/class_distribution.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/attack_distribution.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/latency_comparison.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/attack_distribution.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/ablation_plot.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/latency_comparison.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/3d/pca_3d.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/3d/mi_3d.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/3d/model_performance_3d.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/learning/learning_curves.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/learning/learning_curves.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/confusion/confusion_matrix.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/confusion/multiclass_confusion_matrix.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/confusion/multiclass_confusion_matrix.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/confusion/confusion_matrix.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/pr/pr_curve.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/pr/pr_curve.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/roc/roc_curve.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/roc/roc_curve.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/feature_importance/mi_ranking.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/feature_importance/feature_importance.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/feature_importance/feature_importance.png,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/figures/feature_importance/mi_ranking.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/benchmarks/improvement_ledger.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/benchmarks/manuscript_reference.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/preprocessing/categorical_encoders.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/preprocessing/preprocessor.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/preprocessing/feature_names.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/preprocessing/label_encoder.joblib,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/preprocessing/numerical_columns.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/preprocessing/feature_schema.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/preprocessing/categorical_columns.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/reports/dataset_utilization_report.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/reports/data_quality.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/reports/final_system_report.html,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/reports/data_cleaning_report.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/reports/hardware_report.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/reports/final_report.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/reports/data_quality.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/reports/leakage_audit.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/splits/test_indices.npy,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/splits/validation_indices.npy,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+artifacts/splits/train_indices.npy,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+.streamlit/config.toml,KEEP_PROJECT,Project source or resource,Verified,KEPT
+contracts/IIoTSecurityRegistry.sol,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+tests/test_end_to_end_demo.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+tests/test_crypto.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+tests/test_blockchain.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+tests/test_end_to_end.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+tests/test_preprocessing.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+tests/test_contract.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+tests/test_models.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+tests/test_data.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+tests/__pycache__/test_models.cpython-314-pytest-9.1.1.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+tests/__pycache__/test_end_to_end_demo.cpython-314-pytest-9.1.1.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+tests/__pycache__/test_data.cpython-314-pytest-9.1.1.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+tests/__pycache__/test_blockchain.cpython-314-pytest-9.1.1.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+tests/__pycache__/test_preprocessing.cpython-314-pytest-9.1.1.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+tests/__pycache__/test_contract.cpython-314-pytest-9.1.1.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+tests/__pycache__/test_end_to_end.cpython-314-pytest-9.1.1.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+tests/__pycache__/test_crypto.cpython-314-pytest-9.1.1.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+blockchain_truffle/package.json,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain_truffle/truffle-config.js,KEEP_CONFIGURATION,System and environment configuration manifest,Verified,KEPT
+blockchain_truffle/migrations/2_deploy_ehr_contracts.js,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain_truffle/migrations/1_initial_migration.js,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain_truffle/test/ehr_contracts.test.js,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain_truffle/contracts/Migrations.sol,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain_truffle/contracts/EHRAccessControl.sol,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain_truffle/contracts/EHRIntegrityRegistry.sol,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain_truffle/build/contracts/EHRAccessControl.json,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain_truffle/build/contracts/EHRIntegrityRegistry.json,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain_truffle/build/contracts/Migrations.json,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+__pycache__/conftest.cpython-314-pytest-9.1.1.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+docs/REVIEWER_GUIDE.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+docs/DEPLOYMENT.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+docs/reproducibility/REPRODUCIBILITY.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+docs/templates/JIDMIS-Word-Template-OTH-Fixed.docx,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+acadlore_paper/main.bbl,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/logo-orcid.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/main.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/references.bib,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/main.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/main.out,SAFE_TO_DELETE,Intermediate LaTeX compilation cache,Verified,DELETED
+acadlore_paper/logo.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/acadlore-number.bst,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/acadlore.cls,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/main.aux,SAFE_TO_DELETE,Intermediate LaTeX compilation cache,Verified,DELETED
+acadlore_paper/acadlore-author-year.bst,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/12_nomenclature.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/09_reproducibility.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/11_backmatter.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/01_introduction.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/07_discussion.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/04_mathematical_modelling.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/10_conclusion.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/02_related_work.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/03_system_model.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/06_results.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/08_limitations.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/sections/05_experimental_setup.tex,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig6_roc_curve.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig6_roc_curve.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig1_architecture.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig1_architecture.jpg,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig8_binary_confusion.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig4_attack_distribution.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig8_binary_confusion.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig4_attack_distribution.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig13_shap_importance.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig3_class_distribution.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig13_shap_importance.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig3_class_distribution.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig10_multiclass_confusion.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig10_multiclass_confusion.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig11_ablation_plot.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig5_crypto_performance.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig11_ablation_plot.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig5_crypto_performance.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig9_learning_curves.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig7_pr_curve.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig12_mi_ranking.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig7_pr_curve.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig12_mi_ranking.pdf,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig2_topology.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig2_topology.jpg,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+acadlore_paper/figures/fig9_learning_curves.png,KEEP_LATEX,"LaTeX manuscript source, figure, table, class, or bibliography asset",Verified,KEPT
+ids/simulation.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+ids/severity.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+ids/__init__.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+ids/response.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+ids/preprocessing.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+ids/inference.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+ids/risk.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+ids/__pycache__/inference.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+ids/__pycache__/risk.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+ids/__pycache__/response.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+ids/__pycache__/severity.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+ids/__pycache__/preprocessing.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+ids/__pycache__/__init__.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+ids/__pycache__/simulation.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+results/verified_metrics.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+results/BASELINE_RESULTS.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+results/source_of_truth.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+results/FINAL_RESULTS.json,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+blockchain/python_ledger.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain/web3_client.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain/contract_client.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+blockchain/__pycache__/python_ledger.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+blockchain/__pycache__/web3_client.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+blockchain/__pycache__/contract_client.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+ehr/sanitizer.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+ehr/payload.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+ehr/loader.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+ehr/serializer.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+ehr/__pycache__/payload.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+ehr/__pycache__/serializer.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+ehr/__pycache__/loader.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+ehr/__pycache__/sanitizer.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+audit/table_evidence_register.csv,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/cleanup_plan.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/old_to_new_mapping.csv,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/deletion_manifest.csv,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/final_manuscript_validation.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/project_inventory.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/change_log.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/file_inventory.csv,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/unresolved_issues.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/manuscript_inventory.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/verified_results.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/claim_evidence_matrix.csv,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/cleanup_report.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/evidence_audit.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/final_figure_validation.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/figure_inventory.csv,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/manuscript_change_log.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/verification_report.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/figure_evidence_register.csv,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/historical/REPOSITORY_AUDIT.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/historical/CLAIM_EVIDENCE_MATRIX.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/historical/BASELINE_REPORT.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/historical/ERROR_ANALYSIS.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/historical/DATA_LEAKAGE_AUDIT.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/historical/CONSISTENCY_AUDIT.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/historical/RESULT_VERIFICATION_REPORT.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/historical/IMPROVEMENT_PLAN.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+audit/historical/FINAL_VERIFICATION_REPORT.md,KEEP_DOCUMENTATION,"Documentation, reproducibility guide, or audit report",Verified,KEPT
+scripts/run_pipeline.sh,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+scripts/reproduce_and_verify_final.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+scripts/verify_results.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+scripts/generate_figures.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+scripts/prepare_dataset.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+scripts/phase2_repo_validation.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+scripts/train_offline.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+scripts/evaluate_offline.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+scripts/generate_source_of_truth.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+scripts/validate_artifacts.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+scripts/run_benchmarks.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+scripts/regenerate_all_paper_figures.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+.github/workflows/ci.yml,KEEP_PROJECT,Project source or resource,Verified,KEPT
+data/dataset.zip,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/PROCEDUREEVENTS_MV.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/CALLOUT.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/D_CPT.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/D_ITEMS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/CAREGIVERS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/MICROBIOLOGYEVENTS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/LABEVENTS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/INPUTEVENTS_CV.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/ADMISSIONS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/D_LABITEMS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/DATETIMEEVENTS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/PRESCRIPTIONS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/PROCEDURES_ICD.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/NOTEEVENTS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/CHARTEVENTS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/TRANSFERS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/DIAGNOSES_ICD.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/SERVICES.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/DRGCODES.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/OUTPUTEVENTS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/PATIENTS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/LICENSE.txt,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/D_ICD_DIAGNOSES.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/ICUSTAYS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/SHA256SUMS.txt,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/INPUTEVENTS_MV.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/D_ICD_PROCEDURES.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/mimic/mimic-iii-clinical-database-demo-1.4/CPTEVENTS.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/processed/edge_iiot_sampled_demo.parquet,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/raw/ML-EdgeIIoT-dataset.csv,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/raw/.gitkeep,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+data/raw/Edge-IIoTset dataset.zip,KEEP_RESEARCH_ARTIFACT,"Experimental evidence, trained models, predictions, or datasets",Verified,KEPT
+assets/architecture/model_internal_layers_3d.jpg,KEEP_PROJECT,Project source or resource,Verified,KEPT
+assets/architecture/iiot_realworld_3d_arch.jpg,KEEP_PROJECT,Project source or resource,Verified,KEPT
+pages/12_Attack_Classification.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/06_Crypto_Comparison.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/14_Severity_Response.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/19_Performance_Benchmarks.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/02_EHR_Data.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/18_Explainable_AI.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/07_Key_Management.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/05_Phase1_After_Encryption.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/13_False_Positives_Negatives.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/20_Complete_Architecture.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/04_Phase1_Encryption.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/03_Phase1_Before_Encryption.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/17_Incident_Timeline.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/08_Blockchain.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/11_IDS_Detection.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/10_Phase2_Breach_Simulation.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/09_Smart_Contract.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/15_Alert_Center.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/16_Recommended_Actions.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+pages/01_Overview.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/leakage_audit.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/smart_contract.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/feature_selection.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/ui_helpers.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/models.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/tcqc.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/evaluation.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/data_loader.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/qkd.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/__init__.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/crypto.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/utils.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/preprocessing.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/deep_models.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/scalability.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/blockchain.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/streaming.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/explainability.py,KEEP_PROJECT,"Source code, tests, or reproducible execution scripts",Verified,KEPT
+src/__pycache__/crypto.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/streaming.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/blockchain.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/data_loader.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/deep_models.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/smart_contract.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/utils.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/qkd.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/evaluation.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/tcqc.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/leakage_audit.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/preprocessing.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/models.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/__init__.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED
+src/__pycache__/feature_selection.cpython-314.pyc,SAFE_TO_DELETE,Operating system metadata or Python bytecode cache,Verified,DELETED

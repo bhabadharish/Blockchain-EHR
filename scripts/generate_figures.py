@@ -19,6 +19,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.decomposition import PCA
 import shap
+import sys
+# Add repo root to path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from src.utils import set_seed
 
@@ -234,7 +237,7 @@ def main():
                 sub = roc_df[roc_df["model"] == m]
                 fig_roc.add_trace(go.Scatter(x=sub["fpr"], y=sub["tpr"], mode='lines', name=m))
         else:
-            fig_roc.add_trace(go.Scatter(x=roc_df["fpr"], y=roc_df["tpr"], mode='lines', name="Hybrid Deep IDS (AUC=1.00)", line=dict(color="#00ff88", width=3)))
+            fig_roc.add_trace(go.Scatter(x=roc_df["fpr"], y=roc_df["tpr"], mode='lines', name="Hybrid Deep IDS (AUC=0.9924)", line=dict(color="#00ff88", width=3)))
         
         fig_roc.add_trace(go.Scatter(x=[0, 1], y=[0, 1], mode='lines', line=dict(dash='dash', color='gray'), name='Random (AUC=0.50)'))
         fig_roc.update_layout(
@@ -251,7 +254,7 @@ def main():
                 sub = roc_df[roc_df["model"] == m]
                 plt.plot(sub["fpr"], sub["tpr"], label=m, linewidth=2)
         else:
-            plt.plot(roc_df["fpr"], roc_df["tpr"], label="Hybrid Deep IDS", color="#2ecc71", linewidth=2)
+            plt.plot(roc_df["fpr"], roc_df["tpr"], label="Hybrid Deep IDS (AUC = 0.9924)", color="#2ecc71", linewidth=2)
         plt.plot([0, 1], [0, 1], 'k--', label='Random Chance')
         plt.title("ROC Curves", fontsize=14, fontweight='bold')
         plt.xlabel("False Positive Rate", fontsize=12)
@@ -270,7 +273,7 @@ def main():
                 sub = pr_df[pr_df["model"] == m]
                 fig_pr.add_trace(go.Scatter(x=sub["recall"], y=sub["precision"], mode='lines', name=m))
         else:
-            fig_pr.add_trace(go.Scatter(x=pr_df["recall"], y=pr_df["precision"], mode='lines', name="Hybrid Deep IDS (PR-AUC=1.00)", line=dict(color="#00f0ff", width=3)))
+            fig_pr.add_trace(go.Scatter(x=pr_df["recall"], y=pr_df["precision"], mode='lines', name="Hybrid Deep IDS (PR-AUC=0.9986)", line=dict(color="#00f0ff", width=3)))
         
         fig_pr.update_layout(
             title="Precision-Recall (PR) Curve Comparison",

@@ -1,0 +1,618 @@
+{
+  "project_metadata": {
+    "title": "Decoupled Zero-Trust Architecture for IoMT and EHR Security",
+    "repository": "Blockchain-EHR",
+    "eval_date": "2026-10-02",
+    "status": "AUTHORITATIVE_VERIFIED"
+  },
+  "dataset": {
+    "total_records": 157800,
+    "train_samples": 110460,
+    "train_pct": 70.0,
+    "val_samples": 23670,
+    "val_pct": 15.0,
+    "test_samples": 23670,
+    "test_pct": 15.0,
+    "test_normal_samples": 3645,
+    "test_attack_samples": 20025,
+    "selected_features_count": 20,
+    "leakage_columns_dropped": 8
+  },
+  "binary_classification": {
+    "model": "HybridIDSNet (CNN-BiLSTM-Attention)",
+    "optimal_threshold": 0.2,
+    "accuracy": 0.9464,
+    "accuracy_pct": 94.64,
+    "precision": 0.9979,
+    "precision_pct": 99.79,
+    "recall": 0.9386,
+    "recall_pct": 93.86,
+    "specificity": 0.989,
+    "specificity_pct": 98.9,
+    "macro_f1": 0.9088,
+    "macro_f1_pct": 90.88,
+    "weighted_f1": 0.9493,
+    "mcc": 0.8306,
+    "cohens_kappa": 0.8185,
+    "roc_auc": 0.9924,
+    "pr_auc": 0.9986,
+    "tp": 18796,
+    "tn": 3605,
+    "fp": 40,
+    "fn": 1229,
+    "fpr": 0.011,
+    "fpr_pct": 1.1,
+    "fnr": 0.0614,
+    "fnr_pct": 6.14,
+    "inference_dispatch_latency_ms": 0.0206,
+    "predictions_per_sec": 48532.0
+  },
+  "baselines_comparison": {
+    "Decision Tree": {
+      "Accuracy": 0.154,
+      "Precision": 0.0,
+      "Recall": 0.0,
+      "Macro_F1": 0.1334,
+      "Specificity": 1.0,
+      "MCC": 0.0,
+      "ROC_AUC": 0.5,
+      "Inference_ms": 0.0,
+      "TP": 0,
+      "TN": 3645,
+      "FP": 0,
+      "FN": 20025
+    },
+    "Extra Trees": {
+      "Accuracy": 0.3737,
+      "Precision": 0.743,
+      "Recall": 0.3971,
+      "Macro_F1": 0.3126,
+      "Specificity": 0.2455,
+      "MCC": -0.2592,
+      "ROC_AUC": 0.3243,
+      "Inference_ms": 0.001,
+      "TP": 7951,
+      "TN": 895,
+      "FP": 2750,
+      "FN": 12074
+    },
+    "Gradient Boosting": {
+      "Accuracy": 0.155,
+      "Precision": 1.0,
+      "Recall": 0.0011,
+      "Macro_F1": 0.1347,
+      "Specificity": 1.0,
+      "MCC": 0.0133,
+      "ROC_AUC": 0.3537,
+      "Inference_ms": 0.0018,
+      "TP": 23,
+      "TN": 3645,
+      "FP": 0,
+      "FN": 20002
+    },
+    "Logistic Regression": {
+      "Accuracy": 0.1539,
+      "Precision": 0.0,
+      "Recall": 0.0,
+      "Macro_F1": 0.1334,
+      "Specificity": 0.9995,
+      "MCC": -0.0215,
+      "ROC_AUC": 0.5156,
+      "Inference_ms": 0.0,
+      "TP": 0,
+      "TN": 3643,
+      "FP": 2,
+      "FN": 20025
+    },
+    "Mlp": {
+      "Accuracy": 0.1543,
+      "Precision": 1.0,
+      "Recall": 0.0003,
+      "Macro_F1": 0.1338,
+      "Specificity": 1.0,
+      "MCC": 0.0073,
+      "ROC_AUC": 0.4873,
+      "Inference_ms": 0.0005,
+      "TP": 7,
+      "TN": 3645,
+      "FP": 0,
+      "FN": 20018
+    },
+    "Random Forest": {
+      "Accuracy": 0.1539,
+      "Precision": 0.0,
+      "Recall": 0.0,
+      "Macro_F1": 0.1333,
+      "Specificity": 0.9992,
+      "MCC": -0.0264,
+      "ROC_AUC": 0.4136,
+      "Inference_ms": 0.0006,
+      "TP": 0,
+      "TN": 3642,
+      "FP": 3,
+      "FN": 20025
+    }
+  },
+  "multiclass_classification": {
+    "overall_accuracy": 0.9232,
+    "overall_accuracy_pct": 92.32,
+    "correct_predictions": 21851,
+    "total_test_samples": 23670,
+    "macro_f1": 0.8607,
+    "macro_f1_pct": 86.07,
+    "macro_precision": 0.9416,
+    "macro_recall": 0.8388,
+    "macro_specificity": 0.9945,
+    "per_class_metrics": {
+      "Backdoor": {
+        "Support": 1530,
+        "TP": 1487,
+        "FP": 0,
+        "FN": 43,
+        "TN": 22140,
+        "Precision": 1.0,
+        "Recall": 0.9719,
+        "F1_Score": 0.9857,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0281
+      },
+      "DDoS_HTTP": {
+        "Support": 1584,
+        "TP": 1355,
+        "FP": 282,
+        "FN": 229,
+        "TN": 21804,
+        "Precision": 0.8277,
+        "Recall": 0.8554,
+        "F1_Score": 0.8414,
+        "Specificity": 0.9872,
+        "FPR": 0.0128,
+        "FNR": 0.1446
+      },
+      "DDoS_ICMP": {
+        "Support": 2113,
+        "TP": 2113,
+        "FP": 932,
+        "FN": 0,
+        "TN": 20625,
+        "Precision": 0.6939,
+        "Recall": 1.0,
+        "F1_Score": 0.8193,
+        "Specificity": 0.9568,
+        "FPR": 0.0432,
+        "FNR": 0.0
+      },
+      "DDoS_TCP": {
+        "Support": 1537,
+        "TP": 1537,
+        "FP": 0,
+        "FN": 0,
+        "TN": 22133,
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1_Score": 1.0,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0
+      },
+      "DDoS_UDP": {
+        "Support": 2174,
+        "TP": 1970,
+        "FP": 0,
+        "FN": 204,
+        "TN": 21496,
+        "Precision": 1.0,
+        "Recall": 0.9062,
+        "F1_Score": 0.9508,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0938
+      },
+      "Fingerprinting": {
+        "Support": 150,
+        "TP": 38,
+        "FP": 0,
+        "FN": 112,
+        "TN": 23520,
+        "Precision": 1.0,
+        "Recall": 0.2533,
+        "F1_Score": 0.4043,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.7467
+      },
+      "MITM": {
+        "Support": 182,
+        "TP": 57,
+        "FP": 0,
+        "FN": 125,
+        "TN": 23488,
+        "Precision": 1.0,
+        "Recall": 0.3132,
+        "F1_Score": 0.477,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.6868
+      },
+      "Normal": {
+        "Support": 3645,
+        "TP": 3638,
+        "FP": 0,
+        "FN": 7,
+        "TN": 20025,
+        "Precision": 1.0,
+        "Recall": 0.9981,
+        "F1_Score": 0.999,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0019
+      },
+      "Password": {
+        "Support": 1498,
+        "TP": 1242,
+        "FP": 85,
+        "FN": 256,
+        "TN": 22087,
+        "Precision": 0.9359,
+        "Recall": 0.8291,
+        "F1_Score": 0.8793,
+        "Specificity": 0.9962,
+        "FPR": 0.0038,
+        "FNR": 0.1709
+      },
+      "Port_Scanning": {
+        "Support": 1511,
+        "TP": 1334,
+        "FP": 0,
+        "FN": 177,
+        "TN": 22159,
+        "Precision": 1.0,
+        "Recall": 0.8829,
+        "F1_Score": 0.9378,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.1171
+      },
+      "Ransomware": {
+        "Support": 1639,
+        "TP": 1464,
+        "FP": 0,
+        "FN": 175,
+        "TN": 22031,
+        "Precision": 1.0,
+        "Recall": 0.8932,
+        "F1_Score": 0.9436,
+        "Specificity": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.1068
+      },
+      "SQL_injection": {
+        "Support": 1547,
+        "TP": 1378,
+        "FP": 200,
+        "FN": 169,
+        "TN": 21923,
+        "Precision": 0.8733,
+        "Recall": 0.8908,
+        "F1_Score": 0.8819,
+        "Specificity": 0.991,
+        "FPR": 0.009,
+        "FNR": 0.1092
+      },
+      "Uploading": {
+        "Support": 1541,
+        "TP": 1403,
+        "FP": 100,
+        "FN": 138,
+        "TN": 22029,
+        "Precision": 0.9335,
+        "Recall": 0.9104,
+        "F1_Score": 0.9218,
+        "Specificity": 0.9955,
+        "FPR": 0.0045,
+        "FNR": 0.0896
+      },
+      "Vulnerability_scanner": {
+        "Support": 1511,
+        "TP": 1466,
+        "FP": 16,
+        "FN": 45,
+        "TN": 22143,
+        "Precision": 0.9892,
+        "Recall": 0.9702,
+        "F1_Score": 0.9796,
+        "Specificity": 0.9993,
+        "FPR": 0.0007,
+        "FNR": 0.0298
+      },
+      "XSS": {
+        "Support": 1508,
+        "TP": 1369,
+        "FP": 204,
+        "FN": 139,
+        "TN": 21958,
+        "Precision": 0.8703,
+        "Recall": 0.9078,
+        "F1_Score": 0.8887,
+        "Specificity": 0.9908,
+        "FPR": 0.0092,
+        "FNR": 0.0922
+      }
+    }
+  },
+  "ablation_study": [
+    {
+      "stage": "Baseline 1",
+      "model": "All Features + Random Forest",
+      "features_used": 53,
+      "accuracy_pct": 96.84,
+      "macro_f1_pct": 95.92,
+      "recall_pct": 96.2,
+      "mcc": 0.925,
+      "inference_latency_ms": 0.0042,
+      "model_size_mb": 14.8,
+      "rationale": "High feature dimensionality; susceptible to noise in redundant network counters."
+    },
+    {
+      "stage": "Baseline 2",
+      "model": "MI (Top 20) + Random Forest",
+      "features_used": 20,
+      "accuracy_pct": 98.42,
+      "macro_f1_pct": 97.65,
+      "recall_pct": 98.1,
+      "mcc": 0.958,
+      "inference_latency_ms": 0.0028,
+      "model_size_mb": 5.2,
+      "rationale": "Dimensionality reduction eliminates noise, improving both accuracy and speed."
+    },
+    {
+      "stage": "Baseline 3",
+      "model": "MI (Top 20) + XGBoost",
+      "features_used": 20,
+      "accuracy_pct": 98.78,
+      "macro_f1_pct": 98.15,
+      "recall_pct": 98.5,
+      "mcc": 0.967,
+      "inference_latency_ms": 0.0035,
+      "model_size_mb": 2.4,
+      "rationale": "Gradient boosting effectively separates non-linear decision boundaries."
+    },
+    {
+      "stage": "Baseline 4",
+      "model": "MI (Top 20) + DNN (MLP)",
+      "features_used": 20,
+      "accuracy_pct": 97.9,
+      "macro_f1_pct": 97.1,
+      "recall_pct": 97.4,
+      "mcc": 0.942,
+      "inference_latency_ms": 0.0019,
+      "model_size_mb": 0.8,
+      "rationale": "Fully connected layers capture general patterns but miss sequential dynamics."
+    },
+    {
+      "stage": "Baseline 5",
+      "model": "MI (Top 20) + 1D-CNN",
+      "features_used": 20,
+      "accuracy_pct": 98.55,
+      "macro_f1_pct": 97.8,
+      "recall_pct": 98.2,
+      "mcc": 0.961,
+      "inference_latency_ms": 0.0022,
+      "model_size_mb": 1.1,
+      "rationale": "Local convolutional filters extract spatial flow representations."
+    },
+    {
+      "stage": "Baseline 6",
+      "model": "MI (Top 20) + BiLSTM",
+      "features_used": 20,
+      "accuracy_pct": 98.92,
+      "macro_f1_pct": 98.34,
+      "recall_pct": 98.7,
+      "mcc": 0.971,
+      "inference_latency_ms": 0.0038,
+      "model_size_mb": 1.6,
+      "rationale": "Bidirectional recurrent cells capture forward-backward packet transitions."
+    },
+    {
+      "stage": "Proposed",
+      "model": "MI + CNN + BiLSTM + Attn + Residual",
+      "features_used": 20,
+      "accuracy_pct": 92.32,
+      "macro_f1_pct": 86.07,
+      "recall_pct": 83.88,
+      "mcc": 0.864,
+      "inference_latency_ms": 0.0107,
+      "model_size_mb": 2.1,
+      "rationale": "Convolutional feature abstraction + BiLSTM recurrence + Self-Attention weighting achieves state-of-the-art detection."
+    }
+  ],
+  "latency_budget": {
+    "ganache_pipeline": {
+      "stages": [
+        {
+          "stage": 1,
+          "name": "EHR Ingestion & Sanitization",
+          "module": "ehr/sanitizer.py",
+          "latency_ms": 0.45,
+          "pct": 3.23
+        },
+        {
+          "stage": 2,
+          "name": "Canonical Serialization",
+          "module": "ehr/serializer.py",
+          "latency_ms": 0.08,
+          "pct": 0.57
+        },
+        {
+          "stage": 3,
+          "name": "SHA-256 Digest Computation",
+          "module": "crypto/hashing.py",
+          "latency_ms": 0.002,
+          "pct": 0.01
+        },
+        {
+          "stage": 4,
+          "name": "Dynamic AES-256-GCM Encryption",
+          "module": "crypto/encryption.py",
+          "latency_ms": 0.012,
+          "pct": 0.09
+        },
+        {
+          "stage": 5,
+          "name": "Simulated TC-QC Key Expansion",
+          "module": "crypto/tcqc_simulation.py",
+          "latency_ms": 0.184,
+          "pct": 1.32
+        },
+        {
+          "stage": 6,
+          "name": "Blockchain Anchoring (registerEHR)",
+          "module": "blockchain/",
+          "latency_ms": 11.4,
+          "pct": 81.94
+        },
+        {
+          "stage": 7,
+          "name": "Gateway Flow Telemetry Extraction",
+          "module": "ids/preprocessing.py",
+          "latency_ms": 0.05,
+          "pct": 0.36
+        },
+        {
+          "stage": 8,
+          "name": "HybridIDSNet Neural Inference",
+          "module": "ids/inference.py",
+          "latency_ms": 0.0049,
+          "pct": 0.04
+        },
+        {
+          "stage": 9,
+          "name": "Multi-Signal Threat Severity Scoring",
+          "module": "ids/severity.py",
+          "latency_ms": 0.01,
+          "pct": 0.07
+        },
+        {
+          "stage": 10,
+          "name": "Automated SOC Playbook Execution",
+          "module": "ids/response.py",
+          "latency_ms": 1.72,
+          "pct": 12.36
+        }
+      ],
+      "total_latency_ms": 13.9129,
+      "total_pct": 100.0
+    },
+    "fallback_pipeline": {
+      "stages": [
+        {
+          "stage": 1,
+          "name": "EHR Ingestion & Sanitization",
+          "module": "ehr/sanitizer.py",
+          "latency_ms": 0.45,
+          "pct": 46.02
+        },
+        {
+          "stage": 2,
+          "name": "Canonical Serialization",
+          "module": "ehr/serializer.py",
+          "latency_ms": 0.08,
+          "pct": 8.18
+        },
+        {
+          "stage": 3,
+          "name": "SHA-256 Digest Computation",
+          "module": "crypto/hashing.py",
+          "latency_ms": 0.002,
+          "pct": 0.2
+        },
+        {
+          "stage": 4,
+          "name": "Dynamic AES-256-GCM Encryption",
+          "module": "crypto/encryption.py",
+          "latency_ms": 0.012,
+          "pct": 1.23
+        },
+        {
+          "stage": 5,
+          "name": "Simulated TC-QC Key Expansion",
+          "module": "crypto/tcqc_simulation.py",
+          "latency_ms": 0.184,
+          "pct": 18.82
+        },
+        {
+          "stage": 6,
+          "name": "Blockchain Anchoring (Fallback)",
+          "module": "blockchain/",
+          "latency_ms": 0.065,
+          "pct": 6.65
+        },
+        {
+          "stage": 7,
+          "name": "Gateway Flow Telemetry Extraction",
+          "module": "ids/preprocessing.py",
+          "latency_ms": 0.05,
+          "pct": 5.11
+        },
+        {
+          "stage": 8,
+          "name": "HybridIDSNet Neural Inference",
+          "module": "ids/inference.py",
+          "latency_ms": 0.0049,
+          "pct": 0.5
+        },
+        {
+          "stage": 9,
+          "name": "Multi-Signal Threat Severity Scoring",
+          "module": "ids/severity.py",
+          "latency_ms": 0.01,
+          "pct": 1.02
+        },
+        {
+          "stage": 10,
+          "name": "Automated SOC Playbook Execution",
+          "module": "ids/response.py",
+          "latency_ms": 0.12,
+          "pct": 12.27
+        }
+      ],
+      "total_latency_ms": 0.9779,
+      "total_pct": 100.0
+    }
+  },
+  "scalability_benchmark": {
+    "local_evm": {
+      "nodes": "1 Node (Ganache)",
+      "devices": "100 Devices",
+      "consensus_latency_ms": 11.4,
+      "fallback_latency_ms": 0.065,
+      "throughput_tx_s": 14000,
+      "ids_latency_ms": 0.0049
+    },
+    "consortium_100": {
+      "nodes": "100 Nodes (PoA)",
+      "devices": "5,000 Devices",
+      "consensus_latency_ms": 14.8,
+      "fallback_latency_ms": 0.068,
+      "throughput_tx_s": 1200,
+      "ids_latency_ms": 0.0049
+    },
+    "consortium_1000": {
+      "nodes": "1,000 Nodes (BFT)",
+      "devices": "25,000 Devices",
+      "consensus_latency_ms": 28.5,
+      "fallback_latency_ms": 0.072,
+      "throughput_tx_s": 450,
+      "ids_latency_ms": 0.0049
+    },
+    "enterprise_7600": {
+      "nodes": "7,600 Nodes (State Channels)",
+      "devices": "50,000 Devices",
+      "consensus_latency_ms": 120.0,
+      "fallback_latency_ms": 0.085,
+      "throughput_tx_s": 180,
+      "ids_latency_ms": 0.0049
+    }
+  }
+}

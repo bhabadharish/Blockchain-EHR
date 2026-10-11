@@ -1,0 +1,618 @@
+Relative path,File type,Size,Likely purpose,Referenced by source code,Referenced by manuscript,Required for execution,Required for research verification,Can be regenerated,Contains sensitive info,Recommended action
+conftest.py,.py,148,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+generate_figures.py,.py,369,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+LICENSE,unknown,1101,"System documentation, reviewer guide, deployment manual",No,No,No,No,No,No,KEEP_DOCUMENTATION
+prepare_dataset.py,.py,363,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+requirements.txt,.txt,460,Repository configuration and dependency manifests,No,No,Yes,No,No,No,KEEP_CONFIGURATION
+run.bat,.bat,987,Repository configuration and dependency manifests,No,No,Yes,No,No,No,KEEP_CONFIGURATION
+Dockerfile,unknown,1528,Containerized deployment configuration,No,No,No,No,No,No,KEEP_DEPLOYMENT
+train_offline.py,.py,364,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+BASELINE_RESULTS.json,.json,11712,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+config.yaml,.yaml,1972,Repository configuration and dependency manifests,No,No,Yes,No,No,No,KEEP_CONFIGURATION
+evaluate_offline.py,.py,378,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+run.sh,.sh,1276,Repository configuration and dependency manifests,No,No,Yes,No,No,No,KEEP_CONFIGURATION
+README.md,.md,13013,"System documentation, reviewer guide, deployment manual",No,No,No,No,No,No,KEEP_DOCUMENTATION
+.dockerignore,unknown,269,Containerized deployment configuration,No,No,No,No,No,No,KEEP_DEPLOYMENT
+.gitignore,unknown,2186,Repository configuration and dependency manifests,No,No,Yes,No,No,No,KEEP_CONFIGURATION
+validate_artifacts.py,.py,386,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+app.py,.py,6278,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+docker-compose.yml,.yml,494,Containerized deployment configuration,No,No,No,No,No,No,KEEP_DEPLOYMENT
+.env.example,.example,231,Repository configuration and dependency manifests,No,No,Yes,No,No,No,KEEP_CONFIGURATION
+FINAL_RESULTS.json,.json,6510,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+paper/test_tw.tex,.tex,104,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/main.bbl,.bbl,7303,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/revised_manuscript.tex,.tex,4245,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/logo-orcid.pdf,.pdf,2825,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/main.pdf,.pdf,2298036,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/references.bib,.bib,9532,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/main.tex,.tex,4245,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/revised_manuscript.pdf,.pdf,2298036,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/main.out,.out,16333,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/logo.pdf,.pdf,124247,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/acadlore-number.bst,.bst,58976,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/acadlore.cls,.cls,17717,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/main.aux,.aux,34375,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/acadlore-author-year.bst,.bst,23582,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/logo-orcid.pdf,.pdf,2825,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/LaTeX_Submit_Template_for_Acadlore_Journal.synctex.gz,.gz,75806,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/test.bib,.bib,2230,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/logo.pdf,.pdf,124247,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/LaTeX_Submit_Template_for_Acadlore_Journal.pdf,.pdf,363500,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/acadlore-number.bst,.bst,58976,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/LaTeX_Submit_Template_for_Acadlore_Journal.bbl,.bbl,1965,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/acadlore.cls,.cls,17701,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/LaTeX_Submit_Template_for_Acadlore_Journal.tex,.tex,31126,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/acadlore-author-year.bst,.bst,23582,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/figs/fig1.pdf,.pdf,92275,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/figs/fig2b.pdf,.pdf,140127,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/template_vendor/figs/fig2a.pdf,.pdf,59689,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table13_ablation_results.tex,.tex,2116,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table12_per_class_metrics.tex,.tex,2166,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table15_severity_distribution.tex,.tex,867,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table06_crypto_perf.tex,.tex,927,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table10_rbac_audit.tex,.tex,978,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table17_scalability.tex,.tex,1066,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table01_related_work.tex,.tex,2284,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table09_gas_profiling.tex,.tex,1360,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table05_dataset_distribution.tex,.tex,2455,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table19_cross_layer.tex,.tex,2236,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table18_latency_budget.tex,.tex,1840,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table03_top20_mi.tex,.tex,2213,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table16_soc_response.tex,.tex,1340,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table20_comparative_lit.tex,.tex,1995,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table21_reproducibility.tex,.tex,2491,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table04_experimental_design.tex,.tex,3683,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table02_notation.tex,.tex,1918,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table11_binary_benchmark.tex,.tex,1941,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table07_crypto_capabilities.tex,.tex,1631,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table14_shap_importance.tex,.tex,1246,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/original/table08_tamper_eval.tex,.tex,764,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table13_ablation_results.tex,.tex,2116,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table12_per_class_metrics.tex,.tex,2166,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table15_severity_distribution.tex,.tex,867,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table06_crypto_perf.tex,.tex,927,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table10_rbac_audit.tex,.tex,978,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table17_scalability.tex,.tex,1066,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table01_related_work.tex,.tex,2284,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table09_gas_profiling.tex,.tex,1360,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table05_dataset_distribution.tex,.tex,2455,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table19_cross_layer.tex,.tex,2236,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table18_latency_budget.tex,.tex,1840,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table03_top20_mi.tex,.tex,2213,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table16_soc_response.tex,.tex,1340,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table20_comparative_lit.tex,.tex,1995,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table21_reproducibility.tex,.tex,2491,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table04_experimental_design.tex,.tex,3683,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table02_notation.tex,.tex,1918,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table11_binary_benchmark.tex,.tex,1941,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table07_crypto_capabilities.tex,.tex,1631,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table14_shap_importance.tex,.tex,1246,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/tables/revised/table08_tamper_eval.tex,.tex,764,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/12_nomenclature.tex,.tex,1505,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/09_reproducibility.tex,.tex,4477,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/11_backmatter.tex,.tex,2326,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/01_introduction.tex,.tex,8024,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/07_discussion.tex,.tex,8647,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/04_mathematical_modelling.tex,.tex,24290,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/10_conclusion.tex,.tex,1662,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/02_related_work.tex,.tex,6597,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/03_system_model.tex,.tex,9691,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/06_results.tex,.tex,30071,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/08_limitations.tex,.tex,2431,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/sections/05_experimental_setup.tex,.tex,11859,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/supplementary/4 Tensor-Categorical Quantum Cryptography JIDMIS.pdf,.pdf,1989279,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig6_roc_curve.pdf,.pdf,26364,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig6_roc_curve.png,.png,37672,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig1_architecture.png,.png,987458,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig1_architecture.jpg,.jpg,448221,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig8_binary_confusion.pdf,.pdf,33068,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig4_attack_distribution.png,.png,37739,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig8_binary_confusion.png,.png,32393,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig4_attack_distribution.pdf,.pdf,26015,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig13_shap_importance.pdf,.pdf,25896,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig3_class_distribution.png,.png,26259,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig13_shap_importance.png,.png,45908,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig3_class_distribution.pdf,.pdf,29647,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig10_multiclass_confusion.png,.png,64631,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig10_multiclass_confusion.pdf,.pdf,43314,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig11_ablation_plot.png,.png,45577,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig5_crypto_performance.png,.png,39959,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig11_ablation_plot.pdf,.pdf,24562,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig5_crypto_performance.pdf,.pdf,28488,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig9_learning_curves.pdf,.pdf,24536,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig7_pr_curve.png,.png,35641,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig12_mi_ranking.png,.png,54798,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig7_pr_curve.pdf,.pdf,23326,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig12_mi_ranking.pdf,.pdf,28424,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig2_topology.png,.png,765232,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig2_topology.jpg,.jpg,402263,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/fig9_learning_curves.png,.png,71851,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig6_roc_curve.pdf,.pdf,26364,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig6_roc_curve.png,.png,37672,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig1_architecture.png,.png,987458,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig1_architecture.jpg,.jpg,448221,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig8_binary_confusion.pdf,.pdf,33068,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig4_attack_distribution.png,.png,37739,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig8_binary_confusion.png,.png,32393,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig4_attack_distribution.pdf,.pdf,26015,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig13_shap_importance.pdf,.pdf,25896,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig3_class_distribution.png,.png,26259,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig13_shap_importance.png,.png,45908,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig3_class_distribution.pdf,.pdf,29647,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig10_multiclass_confusion.png,.png,64631,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig10_multiclass_confusion.pdf,.pdf,43314,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig11_ablation_plot.png,.png,45577,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig5_crypto_performance.png,.png,39959,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig11_ablation_plot.pdf,.pdf,24562,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig5_crypto_performance.pdf,.pdf,28488,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig9_learning_curves.pdf,.pdf,24536,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig7_pr_curve.png,.png,35641,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig12_mi_ranking.png,.png,54798,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig7_pr_curve.pdf,.pdf,23326,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig12_mi_ranking.pdf,.pdf,28424,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig2_topology.png,.png,765232,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig2_topology.jpg,.jpg,402263,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/original/fig9_learning_curves.png,.png,71851,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/false_positive_analysis.csv,.csv,6329,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/ablation_results.csv,.csv,1212,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/generate_figures.py,.py,25233,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/model_benchmark.csv,.csv,1130,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/pr_curve.csv,.csv,465416,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/shap_importance.csv,.csv,641,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/roc_curve.csv,.csv,80010,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/primary_benchmarks.csv,.csv,527,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/binary_confusion_matrix.csv,.csv,72,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/test_predictions.csv,.csv,867993,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/per_class_metrics.csv,.csv,1097,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/mi_scores.csv,.csv,5464,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/false_negative_analysis.csv,.csv,194412,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/normalized_confusion_matrix.csv,.csv,1943,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/multiclass_confusion_matrix.csv,.csv,845,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/confusion_matrix.csv,.csv,72,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/source_of_truth.json,.json,15436,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/source/regenerate_all_paper_figures.py,.py,16312,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig6_roc_curve.pdf,.pdf,26364,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig6_roc_curve.png,.png,37672,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig1_architecture.png,.png,987458,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig1_architecture.jpg,.jpg,448221,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig8_binary_confusion.pdf,.pdf,33068,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig4_attack_distribution.png,.png,37739,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig8_binary_confusion.png,.png,32393,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig4_attack_distribution.pdf,.pdf,26015,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig13_shap_importance.pdf,.pdf,25896,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig3_class_distribution.png,.png,26259,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig13_shap_importance.png,.png,45908,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig3_class_distribution.pdf,.pdf,29647,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig10_multiclass_confusion.png,.png,64631,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig10_multiclass_confusion.pdf,.pdf,43314,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig11_ablation_plot.png,.png,45577,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig5_crypto_performance.png,.png,39959,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig11_ablation_plot.pdf,.pdf,24562,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig5_crypto_performance.pdf,.pdf,28488,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig9_learning_curves.pdf,.pdf,24536,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig7_pr_curve.png,.png,35641,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig12_mi_ranking.png,.png,54798,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig7_pr_curve.pdf,.pdf,23326,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig12_mi_ranking.pdf,.pdf,28424,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig2_topology.png,.png,765232,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig2_topology.jpg,.jpg,402263,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/figures/revised/fig9_learning_curves.png,.png,71851,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/main.bbl,.bbl,7303,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/logo-orcid.pdf,.pdf,2825,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/main.pdf,.pdf,2298036,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/references.bib,.bib,9532,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/main.tex,.tex,4245,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/main.out,.out,16333,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/logo.pdf,.pdf,124247,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/acadlore-number.bst,.bst,58976,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/acadlore.cls,.cls,17717,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/main.aux,.aux,34375,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/acadlore-author-year.bst,.bst,23582,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/12_nomenclature.tex,.tex,1505,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/09_reproducibility.tex,.tex,4477,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/11_backmatter.tex,.tex,2326,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/01_introduction.tex,.tex,8024,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/07_discussion.tex,.tex,8647,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/04_mathematical_modelling.tex,.tex,24290,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/10_conclusion.tex,.tex,1662,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/02_related_work.tex,.tex,6597,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/03_system_model.tex,.tex,9691,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/06_results.tex,.tex,30071,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/08_limitations.tex,.tex,2431,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/sections/05_experimental_setup.tex,.tex,11859,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig6_roc_curve.pdf,.pdf,26364,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig6_roc_curve.png,.png,37672,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig1_architecture.png,.png,987458,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig1_architecture.jpg,.jpg,448221,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig8_binary_confusion.pdf,.pdf,33068,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig4_attack_distribution.png,.png,37739,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig8_binary_confusion.png,.png,32393,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig4_attack_distribution.pdf,.pdf,26015,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig13_shap_importance.pdf,.pdf,25896,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig3_class_distribution.png,.png,26259,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig13_shap_importance.png,.png,45908,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig3_class_distribution.pdf,.pdf,29647,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig10_multiclass_confusion.png,.png,64631,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig10_multiclass_confusion.pdf,.pdf,43314,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig11_ablation_plot.png,.png,45577,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig5_crypto_performance.png,.png,39959,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig11_ablation_plot.pdf,.pdf,24562,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig5_crypto_performance.pdf,.pdf,28488,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig9_learning_curves.pdf,.pdf,24536,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig7_pr_curve.png,.png,35641,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig12_mi_ranking.png,.png,54798,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig7_pr_curve.pdf,.pdf,23326,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig12_mi_ranking.pdf,.pdf,28424,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig2_topology.png,.png,765232,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig2_topology.jpg,.jpg,402263,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+paper/final/figures/fig9_learning_curves.png,.png,71851,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+crypto/qkd_simulation.py,.py,4118,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+crypto/encryption.py,.py,12291,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+crypto/tcqc_simulation.py,.py,2394,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+crypto/key_management.py,.py,5443,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+crypto/signatures.py,.py,3960,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+crypto/hashing.py,.py,1603,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+crypto/__pycache__/tcqc_simulation.cpython-314.pyc,.pyc,4418,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+crypto/__pycache__/key_management.cpython-314.pyc,.pyc,10587,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+crypto/__pycache__/hashing.cpython-314.pyc,.pyc,3279,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+crypto/__pycache__/qkd_simulation.cpython-314.pyc,.pyc,6233,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+crypto/__pycache__/encryption.cpython-314.pyc,.pyc,19445,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+crypto/__pycache__/signatures.cpython-314.pyc,.pyc,7564,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+artifacts/word_manuscript_clean.txt,.txt,68512,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/extracted_word_doc.txt,.txt,79218,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/demo/live_samples.csv,.csv,75078,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/metrics/mi_scores.json,.json,12041,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/iteration3_best_weights.pt,.pt,1231307,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/test_iteration4.py,.py,13796,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/iteration5_multiclass_results.json,.json,4117,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/iteration4_best_weights.pt,.pt,1362712,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/test_iteration5.py,.py,6661,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/test_iteration1.py,.py,7520,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/iteration2_results.json,.json,259,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/run_clean_hybrid.py,.py,7594,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/iteration3_results.json,.json,386,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/iteration2_best_weights.pt,.pt,1231307,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/iteration4_results.json,.json,446,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/test_iteration2.py,.py,8359,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/test_iteration3.py,.py,8102,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/historical_experiments/iteration5_hgb_model.joblib,.joblib,7463096,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/features/selected_features.json,.json,4418,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/features/mi_scores.csv,.csv,5464,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/features/mi_plot.html,.html,4303361,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/mlp_binary.joblib,.joblib,360757,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/gradient_boosting_binary.joblib,.joblib,102024,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/decision_tree_binary.joblib,.joblib,1545,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/random_forest_binary.joblib,.joblib,97945,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/xgboost_binary.joblib,.joblib,214423,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/extra_trees_binary.joblib,.joblib,141465,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/optimal_threshold.json,.json,201,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/model_size.json,.json,105,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/model_manifest.json,.json,2174,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/proposed_hybrid_binary.pt,.pt,1360681,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/baseline_models/mlp.joblib,.joblib,360709,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/baseline_models/logistic_regression.joblib,.joblib,1023,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/baseline_models/gradient_boosting.joblib,.joblib,156888,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/baseline_models/random_forest.joblib,.joblib,53305,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/baseline_models/extra_trees.joblib,.joblib,73305,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/baseline_models/decision_tree.joblib,.joblib,1705,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/research_model/research_model.pt,.pt,1231405,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/production_model/multiclass_classifier.joblib,.joblib,7463096,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/production_model/production_model.pt,.pt,1362319,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/production_model/model_config.json,.json,1026,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/production_model/training_history.json,.json,525,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/models/production_model/production_model_classical_fallback.joblib,.joblib,10162097,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/xai/shap_summary.png,.png,164299,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/xai/shap_importance.csv,.csv,641,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/xai/background_samples.npy,.npy,16128,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/xai/shap_values.npy,.npy,23648,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/xai/shap_summary.html,.html,4302980,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/false_positive_analysis.csv,.csv,6329,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/ablation_results.csv,.csv,1212,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/model_benchmark.csv,.csv,1130,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/pr_curve.csv,.csv,465416,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/roc_curve.csv,.csv,80010,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/primary_benchmarks.csv,.csv,527,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/binary_confusion_matrix.csv,.csv,72,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/test_predictions.csv,.csv,867993,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/test_confusion_matrix.json,.json,656,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/per_class_metrics.csv,.csv,1097,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/false_negative_analysis.csv,.csv,194412,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/normalized_confusion_matrix.csv,.csv,1943,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/inference_benchmark.json,.json,207,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/multiclass_confusion_matrix.csv,.csv,845,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/ablation_plot.html,.html,4302440,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/confusion_matrix.csv,.csv,72,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/results/source_of_truth.json,.json,15436,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/visualizations/model_internal_layers_3d.jpg,.jpg,700872,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/visualizations/ehr_soc_3d_architecture.jpg,.jpg,773108,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/crypto_performance.png,.png,167716,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/model_comparison.html,.html,4303167,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/ablation_plot.png,.png,194484,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/class_distribution.png,.png,93585,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/class_distribution.html,.html,4302056,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/attack_distribution.png,.png,151077,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/latency_comparison.html,.html,4302242,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/attack_distribution.html,.html,4302336,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/ablation_plot.html,.html,4302440,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/latency_comparison.png,.png,147434,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/3d/pca_3d.html,.html,4313444,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/3d/mi_3d.html,.html,4313788,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/3d/model_performance_3d.html,.html,4302404,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/learning/learning_curves.png,.png,236936,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/learning/learning_curves.html,.html,4301716,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/confusion/confusion_matrix.png,.png,125923,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/confusion/multiclass_confusion_matrix.png,.png,255332,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/confusion/multiclass_confusion_matrix.html,.html,4302841,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/confusion/confusion_matrix.html,.html,4301856,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/pr/pr_curve.html,.html,4736995,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/pr/pr_curve.png,.png,121393,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/roc/roc_curve.png,.png,142025,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/roc/roc_curve.html,.html,4370616,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/feature_importance/mi_ranking.png,.png,214145,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/feature_importance/feature_importance.html,.html,4302847,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/feature_importance/feature_importance.png,.png,148616,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/figures/feature_importance/mi_ranking.html,.html,4303361,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/benchmarks/improvement_ledger.json,.json,11334,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/benchmarks/manuscript_reference.json,.json,560,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/preprocessing/categorical_encoders.joblib,.joblib,20151628,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/preprocessing/preprocessor.joblib,.joblib,143623,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/preprocessing/feature_names.json,.json,1034,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/preprocessing/label_encoder.joblib,.joblib,661,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/preprocessing/numerical_columns.json,.json,791,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/preprocessing/feature_schema.json,.json,1518,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/preprocessing/categorical_columns.json,.json,245,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/reports/dataset_utilization_report.json,.json,301,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/reports/data_quality.json,.json,1582,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/reports/final_system_report.html,.html,18301,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/reports/data_cleaning_report.json,.json,725,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/reports/hardware_report.json,.json,334,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/reports/final_report.json,.json,597,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/reports/data_quality.csv,.csv,903,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/reports/leakage_audit.json,.json,2336,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/splits/test_indices.npy,.npy,189488,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/splits/validation_indices.npy,.npy,189488,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+artifacts/splits/train_indices.npy,.npy,883808,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+.streamlit/config.toml,.toml,268,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+contracts/IIoTSecurityRegistry.sol,.sol,10974,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+tests/test_end_to_end_demo.py,.py,12374,Test suite fixtures and unit tests,Yes,No,No,Yes,No,No,KEEP_PROJECT
+tests/test_crypto.py,.py,1580,Test suite fixtures and unit tests,Yes,No,No,Yes,No,No,KEEP_PROJECT
+tests/test_blockchain.py,.py,2392,Test suite fixtures and unit tests,Yes,No,No,Yes,No,No,KEEP_PROJECT
+tests/test_end_to_end.py,.py,5794,Test suite fixtures and unit tests,Yes,No,No,Yes,No,No,KEEP_PROJECT
+tests/test_preprocessing.py,.py,1501,Test suite fixtures and unit tests,Yes,No,No,Yes,No,No,KEEP_PROJECT
+tests/test_contract.py,.py,1219,Test suite fixtures and unit tests,Yes,No,No,Yes,No,No,KEEP_PROJECT
+tests/test_models.py,.py,2036,Test suite fixtures and unit tests,Yes,No,No,Yes,No,No,KEEP_PROJECT
+tests/test_data.py,.py,1195,Test suite fixtures and unit tests,Yes,No,No,Yes,No,No,KEEP_PROJECT
+tests/__pycache__/test_models.cpython-314-pytest-9.1.1.pyc,.pyc,5164,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+tests/__pycache__/test_end_to_end_demo.cpython-314-pytest-9.1.1.pyc,.pyc,44940,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+tests/__pycache__/test_data.cpython-314-pytest-9.1.1.pyc,.pyc,9390,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+tests/__pycache__/test_blockchain.cpython-314-pytest-9.1.1.pyc,.pyc,9771,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+tests/__pycache__/test_preprocessing.cpython-314-pytest-9.1.1.pyc,.pyc,7688,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+tests/__pycache__/test_contract.cpython-314-pytest-9.1.1.pyc,.pyc,4087,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+tests/__pycache__/test_end_to_end.cpython-314-pytest-9.1.1.pyc,.pyc,20762,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+tests/__pycache__/test_crypto.cpython-314-pytest-9.1.1.pyc,.pyc,9066,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+blockchain_truffle/package.json,.json,357,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain_truffle/truffle-config.js,.js,484,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain_truffle/migrations/2_deploy_ehr_contracts.js,.js,698,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain_truffle/migrations/1_initial_migration.js,.js,126,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain_truffle/test/ehr_contracts.test.js,.js,4788,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain_truffle/contracts/Migrations.sol,.sol,417,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain_truffle/contracts/EHRAccessControl.sol,.sol,3768,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain_truffle/contracts/EHRIntegrityRegistry.sol,.sol,6696,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain_truffle/build/contracts/EHRAccessControl.json,.json,734043,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain_truffle/build/contracts/EHRIntegrityRegistry.json,.json,765444,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain_truffle/build/contracts/Migrations.json,.json,43120,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+__pycache__/conftest.cpython-314-pytest-9.1.1.pyc,.pyc,539,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+docs/REVIEWER_GUIDE.md,.md,5339,"System documentation, reviewer guide, deployment manual",No,No,No,No,No,No,KEEP_DOCUMENTATION
+docs/DEPLOYMENT.md,.md,3562,"System documentation, reviewer guide, deployment manual",No,No,No,No,No,No,KEEP_DOCUMENTATION
+docs/reproducibility/REPRODUCIBILITY.md,.md,5173,"System documentation, reviewer guide, deployment manual",No,No,No,No,No,No,KEEP_DOCUMENTATION
+docs/templates/JIDMIS-Word-Template-OTH-Fixed.docx,.docx,3294451,"System documentation, reviewer guide, deployment manual",No,No,No,No,No,No,KEEP_DOCUMENTATION
+acadlore_paper/main.bbl,.bbl,7303,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/logo-orcid.pdf,.pdf,2825,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/main.pdf,.pdf,2298036,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/references.bib,.bib,9532,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/main.tex,.tex,4245,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/main.out,.out,16333,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/logo.pdf,.pdf,124247,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/acadlore-number.bst,.bst,58976,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/acadlore.cls,.cls,17717,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/main.aux,.aux,34375,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/acadlore-author-year.bst,.bst,23582,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/12_nomenclature.tex,.tex,1505,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/09_reproducibility.tex,.tex,4477,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/11_backmatter.tex,.tex,2326,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/01_introduction.tex,.tex,8024,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/07_discussion.tex,.tex,8647,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/04_mathematical_modelling.tex,.tex,24290,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/10_conclusion.tex,.tex,1662,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/02_related_work.tex,.tex,6597,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/03_system_model.tex,.tex,9691,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/06_results.tex,.tex,30071,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/08_limitations.tex,.tex,2431,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/sections/05_experimental_setup.tex,.tex,11859,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig6_roc_curve.pdf,.pdf,26364,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig6_roc_curve.png,.png,37672,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig1_architecture.png,.png,987458,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig1_architecture.jpg,.jpg,448221,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig8_binary_confusion.pdf,.pdf,33068,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig4_attack_distribution.png,.png,37739,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig8_binary_confusion.png,.png,32393,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig4_attack_distribution.pdf,.pdf,26015,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig13_shap_importance.pdf,.pdf,25896,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig3_class_distribution.png,.png,26259,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig13_shap_importance.png,.png,45908,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig3_class_distribution.pdf,.pdf,29647,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig10_multiclass_confusion.png,.png,64631,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig10_multiclass_confusion.pdf,.pdf,43314,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig11_ablation_plot.png,.png,45577,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig5_crypto_performance.png,.png,39959,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig11_ablation_plot.pdf,.pdf,24562,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig5_crypto_performance.pdf,.pdf,28488,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig9_learning_curves.pdf,.pdf,24536,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig7_pr_curve.png,.png,35641,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig12_mi_ranking.png,.png,54798,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig7_pr_curve.pdf,.pdf,23326,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig12_mi_ranking.pdf,.pdf,28424,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig2_topology.png,.png,765232,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig2_topology.jpg,.jpg,402263,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+acadlore_paper/figures/fig9_learning_curves.png,.png,71851,"Research manuscript, figures, tables, or template",No,Yes,No,No,No,No,KEEP_RESEARCH_PAPER
+ids/simulation.py,.py,14539,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+ids/severity.py,.py,5037,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+ids/__init__.py,.py,657,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+ids/response.py,.py,7344,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+ids/preprocessing.py,.py,3722,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+ids/inference.py,.py,10705,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+ids/risk.py,.py,3405,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+ids/__pycache__/inference.cpython-314.pyc,.pyc,15642,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+ids/__pycache__/risk.cpython-314.pyc,.pyc,3668,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+ids/__pycache__/response.cpython-314.pyc,.pyc,7678,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+ids/__pycache__/severity.cpython-314.pyc,.pyc,5084,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+ids/__pycache__/preprocessing.cpython-314.pyc,.pyc,6320,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+ids/__pycache__/__init__.cpython-314.pyc,.pyc,763,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+ids/__pycache__/simulation.cpython-314.pyc,.pyc,16386,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+results/verified_metrics.json,.json,10761,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+results/BASELINE_RESULTS.json,.json,11712,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+results/source_of_truth.json,.json,15436,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+results/FINAL_RESULTS.json,.json,6510,"Experimental evidence, trained models, predictions, or benchmarks",No,Yes,No,Yes,No,No,KEEP_EXPERIMENTAL_EVIDENCE
+blockchain/python_ledger.py,.py,5363,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain/web3_client.py,.py,4163,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain/contract_client.py,.py,13123,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+blockchain/__pycache__/python_ledger.cpython-314.pyc,.pyc,9027,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+blockchain/__pycache__/web3_client.cpython-314.pyc,.pyc,6499,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+blockchain/__pycache__/contract_client.cpython-314.pyc,.pyc,19054,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+ehr/sanitizer.py,.py,5570,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+ehr/payload.py,.py,5256,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+ehr/loader.py,.py,8762,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+ehr/serializer.py,.py,2183,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+ehr/__pycache__/payload.cpython-314.pyc,.pyc,8245,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+ehr/__pycache__/serializer.cpython-314.pyc,.pyc,4565,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+ehr/__pycache__/loader.cpython-314.pyc,.pyc,13234,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+ehr/__pycache__/sanitizer.cpython-314.pyc,.pyc,7998,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+audit/table_evidence_register.csv,.csv,5050,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/cleanup_plan.md,.md,5701,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/old_to_new_mapping.csv,.csv,4900,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/deletion_manifest.csv,.csv,2326,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/final_manuscript_validation.md,.md,6169,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/project_inventory.md,.md,7602,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/change_log.md,.md,3346,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/file_inventory.csv,.csv,88936,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/unresolved_issues.md,.md,4941,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/manuscript_inventory.md,.md,12914,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/verified_results.md,.md,12071,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/claim_evidence_matrix.csv,.csv,8654,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/cleanup_report.md,.md,8638,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/evidence_audit.md,.md,9955,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/final_figure_validation.md,.md,11900,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/figure_inventory.csv,.csv,7653,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/manuscript_change_log.md,.md,8532,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/verification_report.md,.md,6499,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/figure_evidence_register.csv,.csv,3732,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/historical/REPOSITORY_AUDIT.md,.md,19251,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/historical/CLAIM_EVIDENCE_MATRIX.md,.md,8767,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/historical/BASELINE_REPORT.md,.md,14807,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/historical/ERROR_ANALYSIS.md,.md,14886,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/historical/DATA_LEAKAGE_AUDIT.md,.md,15807,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/historical/CONSISTENCY_AUDIT.md,.md,6585,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/historical/RESULT_VERIFICATION_REPORT.md,.md,20222,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/historical/IMPROVEMENT_PLAN.md,.md,13080,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+audit/historical/FINAL_VERIFICATION_REPORT.md,.md,10925,"Audit logs, evidence matrices, change registers",No,No,No,Yes,No,No,KEEP_DOCUMENTATION
+scripts/run_pipeline.sh,.sh,1807,"Verification, reproduction, and figure generation scripts",Yes,No,No,Yes,No,No,KEEP_PROJECT
+scripts/reproduce_and_verify_final.py,.py,20895,"Verification, reproduction, and figure generation scripts",Yes,No,No,Yes,No,No,KEEP_PROJECT
+scripts/verify_results.py,.py,13552,"Verification, reproduction, and figure generation scripts",Yes,No,No,Yes,No,No,KEEP_PROJECT
+scripts/generate_figures.py,.py,25233,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+scripts/prepare_dataset.py,.py,13478,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+scripts/phase2_repo_validation.py,.py,6731,"Verification, reproduction, and figure generation scripts",Yes,No,No,Yes,No,No,KEEP_PROJECT
+scripts/train_offline.py,.py,24947,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+scripts/evaluate_offline.py,.py,21918,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+scripts/generate_source_of_truth.py,.py,11361,"Verification, reproduction, and figure generation scripts",Yes,No,No,Yes,No,No,KEEP_PROJECT
+scripts/validate_artifacts.py,.py,8883,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+scripts/run_benchmarks.py,.py,6521,"Verification, reproduction, and figure generation scripts",Yes,No,No,Yes,No,No,KEEP_PROJECT
+scripts/regenerate_all_paper_figures.py,.py,16312,"Verification, reproduction, and figure generation scripts",Yes,No,No,Yes,No,No,KEEP_PROJECT
+.github/workflows/ci.yml,.yml,991,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/dataset.zip,.zip,11351942,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/PROCEDUREEVENTS_MV.csv,.csv,134284,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/CALLOUT.csv,.csv,13820,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/D_CPT.csv,.csv,12717,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/D_ITEMS.csv,.csv,853168,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/CAREGIVERS.csv,.csv,178142,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/MICROBIOLOGYEVENTS.csv,.csv,221959,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/LABEVENTS.csv,.csv,4762074,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/INPUTEVENTS_CV.csv,.csv,4737419,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/ADMISSIONS.csv,.csv,26823,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/D_LABITEMS.csv,.csv,37760,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/DATETIMEEVENTS.csv,.csv,1782801,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/PRESCRIPTIONS.csv,.csv,1667845,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/PROCEDURES_ICD.csv,.csv,13512,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/NOTEEVENTS.csv,.csv,95,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/CHARTEVENTS.csv,.csv,984771,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/TRANSFERS.csv,.csv,47199,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/DIAGNOSES_ICD.csv,.csv,48997,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/SERVICES.csv,.csv,7464,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/DRGCODES.csv,.csv,23122,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/OUTPUTEVENTS.csv,.csv,1014449,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/PATIENTS.csv,.csv,8605,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/LICENSE.txt,.txt,25815,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/D_ICD_DIAGNOSES.csv,.csv,1313178,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/ICUSTAYS.csv,.csv,13495,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/SHA256SUMS.txt,.txt,2187,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/INPUTEVENTS_MV.csv,.csv,3391394,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/D_ICD_PROCEDURES.csv,.csv,289912,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/mimic/mimic-iii-clinical-database-demo-1.4/CPTEVENTS.csv,.csv,149024,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/processed/edge_iiot_sampled_demo.parquet,.parquet,4506129,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/raw/ML-EdgeIIoT-dataset.csv,.csv,82184390,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/raw/.gitkeep,unknown,139,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+data/raw/Edge-IIoTset dataset.zip,.zip,1741481351,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+assets/architecture/model_internal_layers_3d.jpg,.jpg,700872,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+assets/architecture/iiot_realworld_3d_arch.jpg,.jpg,720138,Repository file,No,No,No,No,No,No,KEEP_PROJECT
+pages/12_Attack_Classification.py,.py,6293,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/06_Crypto_Comparison.py,.py,8789,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/14_Severity_Response.py,.py,7850,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/19_Performance_Benchmarks.py,.py,7452,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/02_EHR_Data.py,.py,9631,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/18_Explainable_AI.py,.py,3672,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/07_Key_Management.py,.py,6282,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/05_Phase1_After_Encryption.py,.py,8106,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/13_False_Positives_Negatives.py,.py,9306,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/20_Complete_Architecture.py,.py,36157,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/04_Phase1_Encryption.py,.py,7514,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/03_Phase1_Before_Encryption.py,.py,7258,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/17_Incident_Timeline.py,.py,5003,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/08_Blockchain.py,.py,9335,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/11_IDS_Detection.py,.py,10769,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/10_Phase2_Breach_Simulation.py,.py,8903,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/09_Smart_Contract.py,.py,6856,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/15_Alert_Center.py,.py,4702,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/16_Recommended_Actions.py,.py,3654,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+pages/01_Overview.py,.py,17853,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/leakage_audit.py,.py,7542,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/smart_contract.py,.py,11917,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/feature_selection.py,.py,4542,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/ui_helpers.py,.py,19568,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/models.py,.py,6276,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/tcqc.py,.py,6598,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/evaluation.py,.py,6855,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/data_loader.py,.py,8957,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/qkd.py,.py,8104,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/__init__.py,.py,47,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/crypto.py,.py,10318,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/utils.py,.py,3022,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/preprocessing.py,.py,11992,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/deep_models.py,.py,12134,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/scalability.py,.py,11051,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/blockchain.py,.py,8531,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/streaming.py,.py,12584,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/explainability.py,.py,5711,"Project source code, neural models, cryptography, or web UI",Yes,No,Yes,No,No,No,KEEP_PROJECT
+src/__pycache__/crypto.cpython-314.pyc,.pyc,14942,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/streaming.cpython-314.pyc,.pyc,17929,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/blockchain.cpython-314.pyc,.pyc,12020,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/data_loader.cpython-314.pyc,.pyc,15493,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/deep_models.cpython-314.pyc,.pyc,17762,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/smart_contract.cpython-314.pyc,.pyc,16803,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/utils.cpython-314.pyc,.pyc,6697,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/qkd.cpython-314.pyc,.pyc,9989,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/evaluation.cpython-314.pyc,.pyc,8625,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/tcqc.cpython-314.pyc,.pyc,11149,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/leakage_audit.cpython-314.pyc,.pyc,8258,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/preprocessing.cpython-314.pyc,.pyc,17329,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/models.cpython-314.pyc,.pyc,9329,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/__init__.cpython-314.pyc,.pyc,208,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE
+src/__pycache__/feature_selection.cpython-314.pyc,.pyc,7269,OS metadata or bytecode cache,No,No,No,No,Yes,No,SAFE_TO_REMOVE

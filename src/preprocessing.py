@@ -208,6 +208,25 @@ class PreprocessingPipeline:
             else:
                 clean_df[col] = clean_df[col].fillna(0.0)
 
+        # Sanitize numeric fields (RFC options abstraction, payload hex handling, port clipping, log1p)
+        if "tcp.srcport" in clean_df.columns:
+            clean_df["tcp.srcport"] = pd.to_numeric(clean_df["tcp.srcport"], errors="coerce").fillna(0.0).clip(0, 65535)
+        if "tcp.payload" in clean_df.columns:
+            clean_df["tcp.payload"] = clean_df["tcp.payload"].astype(str).map(
+                lambda s: 0.0 if s in ["0", "0.0", "nan", "", "NULL_ZERO"] else float(len(s))
+            )
+        if "tcp.options" in clean_df.columns:
+            clean_df["tcp.options"] = clean_df["tcp.options"].astype(str).map(
+                lambda s: 0.0 if s in ["0", "0.0", "nan", "", "NULL_ZERO"] else float(len(s) // 2)
+            )
+        for num_c in ["tcp.dstport", "tcp.flags", "tcp.flags.ack", "tcp.checksum"]:
+            if num_c in clean_df.columns:
+                clean_df[num_c] = pd.to_numeric(clean_df[num_c], errors="coerce").fillna(0.0)
+        skew_cols = ["tcp.len", "tcp.seq", "tcp.ack", "tcp.ack_raw", "tcp.payload", "tcp.options"]
+        for sc in skew_cols:
+            if sc in clean_df.columns:
+                clean_df[sc] = np.log1p(np.maximum(0, pd.to_numeric(clean_df[sc], errors="coerce").fillna(0.0).values))
+
         # Encode categoricals
         for cat_col, encoder in self.categorical_encoders.items():
             if cat_col in clean_df.columns:

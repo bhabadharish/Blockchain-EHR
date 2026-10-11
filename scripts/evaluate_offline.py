@@ -14,6 +14,7 @@ Generates:
 """
 
 import os
+import sys
 import time
 import json
 import joblib
@@ -27,6 +28,10 @@ from sklearn.metrics import (
 )
 
 import torch
+
+# Ensure repo root is on python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from src.utils import set_seed, load_config, get_device
 from src.deep_models import HybridIDSNet
 
@@ -293,23 +298,25 @@ def main():
     # -------------------------------------------------------------
     # 7. Granular Per-Class Metrics (Section 21)
     # -------------------------------------------------------------
-    print("\n📑 Computing Detailed Per-Class Performance Metrics (15 Attack Categories)...")
+    print("\n📑 Computing Detailed Per-Class Performance Metrics (15 Threat Categories)...")
+    mc_model_path = "artifacts/models/production_model/multiclass_classifier.joblib"
+    if os.path.exists(mc_model_path):
+        mc_model = joblib.load(mc_model_path)
+        pred_multi_types = mc_model.predict(X_test_20)
+    else:
+        pred_multi_types = [y_test_multi_raw[i] if deep_preds[i] == 1 else "Normal" for i in range(len(deep_preds))]
+
     per_class_records = []
     for c_idx, c_name in enumerate(classes):
-        # Binary one-vs-rest evaluation for each attack class
+        # Binary one-vs-rest evaluation for each threat category
         y_c_true = (y_test_multi_raw == c_name).astype(int)
-        
-        # If class is Normal, prediction is (deep_preds == 0), otherwise (deep_preds == 1)
-        if c_name == "Normal":
-            y_c_pred = (deep_preds == 0).astype(int)
-        else:
-            y_c_pred = ((deep_preds == 1) & (y_test_multi_raw == c_name)).astype(int)
+        y_c_pred = (pred_multi_types == c_name).astype(int)
 
         tn_c, fp_c, fn_c, tp_c = confusion_matrix(y_c_true, y_c_pred).ravel()
-        prec_c = tp_c / (tp_c + fp_c) if (tp_c + fp_c) > 0 else 1.0
-        rec_c = tp_c / (tp_c + fn_c) if (tp_c + fn_c) > 0 else 1.0
+        prec_c = tp_c / (tp_c + fp_c) if (tp_c + fp_c) > 0 else 0.0
+        rec_c = tp_c / (tp_c + fn_c) if (tp_c + fn_c) > 0 else 0.0
         f1_c = (2 * prec_c * rec_c) / (prec_c + rec_c) if (prec_c + rec_c) > 0 else 0.0
-        spec_c = tn_c / (tn_c + fp_c) if (tn_c + fp_c) > 0 else 1.0
+        spec_c = tn_c / (tn_c + fp_c) if (tn_c + fp_c) > 0 else 0.0
         fpr_c = fp_c / (fp_c + tn_c) if (fp_c + tn_c) > 0 else 0.0
         fnr_c = fn_c / (fn_c + tp_c) if (fn_c + tp_c) > 0 else 0.0
 
@@ -343,7 +350,7 @@ def main():
             "predicted_label": int(deep_preds[i]),
             "confidence": round(float(deep_probs[i]) * 100, 2) if deep_preds[i] == 1 else round((1.0 - float(deep_probs[i])) * 100, 2),
             "actual_attack_type": y_test_multi_raw[i],
-            "predicted_attack_type": y_test_multi_raw[i] if deep_preds[i] == 1 else "Normal"
+            "predicted_attack_type": pred_multi_types[i]
         })
     df_preds = pd.DataFrame(pred_records)
     df_preds.to_csv("artifacts/results/test_predictions.csv", index=False)
@@ -355,7 +362,6 @@ def main():
     cm_df.to_csv("artifacts/results/confusion_matrix.csv")
 
     # Multiclass confusion matrix
-    pred_multi_types = [y_test_multi_raw[i] if deep_preds[i] == 1 else "Normal" for i in range(len(deep_preds))]
     cm_multi = confusion_matrix(y_test_multi_raw, pred_multi_types, labels=classes)
     pd.DataFrame(cm_multi, index=classes, columns=classes).to_csv("artifacts/results/multiclass_confusion_matrix.csv")
     

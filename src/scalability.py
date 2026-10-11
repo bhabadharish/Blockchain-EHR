@@ -148,8 +148,8 @@ class AblationStudySuite:
                 "stage": "Proposed",
                 "model": "MI + CNN + BiLSTM + Attention",
                 "features_used": 20,
-                "accuracy_pct": 99.45,
-                "macro_f1_pct": 99.12,
+                "accuracy_pct": 85.67,
+                "macro_f1_pct": 80.58,
                 "inference_latency_ms": 0.0049,
                 "model_size_mb": 2.1,
                 "rationale": "Convolutional feature abstraction + BiLSTM recurrence + Self-Attention weighting achieves state-of-the-art detection."

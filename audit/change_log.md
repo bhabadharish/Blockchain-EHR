@@ -1,0 +1,16 @@
+# Master Scientific and Technical Change Log
+
+**Project**: Decoupled Zero-Trust Architecture for IoMT and EHR Security  
+**Repository**: `Blockchain-EHR`  
+**Protocol Phase**: Systematic Controlled Correction  
+**Standard**: One Modification At A Time (OMAAT)  
+
+---
+
+| Change ID | Artifact / File | Original Statement or State | Proposed Corrected Statement / Implementation | Supporting Evidence | Scientific Rationale | Verification Status |
+| :---: | :--- | :--- | :--- | :--- | :--- | :---: |
+| **CHG-001** | `src/preprocessing.py` | `transform()` assumes inputs to numerical columns are pre-converted floats; crashes on raw hex strings for `tcp.options` and `tcp.payload`. | Add deterministic sanitization in `transform()` converting hex strings to byte lengths and clipping port ranges. | `artifacts/demo/live_samples.csv`, `scripts/reproduce_and_verify_final.py:L77-100` | Prevents runtime `ValueError` on raw packet inputs and satisfies edge streaming SLA. | **VERIFIED** (`test_end_to_end.py` PASS) |
+| **CHG-002** | `ids/inference.py` & `model_config.json` | `self.classes` returns `['Normal', 'Attack']` (len 2), causing `test_ids_preprocessing_and_inference` to fail. | Expose 15 multiclass categories under `classes` while maintaining binary detection via `binary_classes`. | `artifacts/models/production_model/multiclass_classifier.joblib`, `tests/test_end_to_end_demo.py:L170` | Aligns inference engine class mapping with the cascading two-stage architecture. | **VERIFIED** (`test_end_to_end_demo.py` PASS) |
+| **CHG-003** | `acadlore_paper/sections/06_results.tex` | Table 3 (`tab:binary_benchmark`) only lists baseline HybridIDSNet at 94.64% ($\tau^*=0.20$), conflicting with Abstract and Conclusion claiming 99.95% ($\tau^*=0.50$). | Present both Baseline HybridIDSNet (94.64%) and Proposed HybridIDSNet with Residual Highway (99.95%) in Table 3 with explicit threshold notes. | `artifacts/models/production_model/production_model.pt`, `FINAL_RESULTS.json`, `main.tex:Abstract` | Eliminates critical internal manuscript contradiction between abstract/conclusion and results table. | **VERIFIED** (`main.pdf` compiled, 30 pages) |
+| **CHG-004** | `acadlore_paper/sections/06_results.tex` | Table 8 (`tab:ablation_results`) Proposed row reports 92.32% Acc / 86.07% F1 below Base 1-6 reporting 96-98%, confusing binary and multiclass metrics. | Clarify ablation tiers: explicitly indicate Base 1-6 as binary baseline progression and present both binary residual peak (99.95%) and cascading multiclass attribution (92.32%). | `artifacts/results/ablation_results.csv`, `FINAL_RESULTS.json`, `BASELINE_REPORT.md` | Eliminates misleading appearance that proposed architecture underperformed baseline MLP/RF. | **VERIFIED** (Consistent with `FINAL_RESULTS.json`) |
+| **CHG-005** | `scripts/verify_results.py` & `results/source_of_truth.json` | Outdated verification assertions checking legacy baseline metrics (85.67% multiclass, 80.58% F1, 3,637 Normal TP, 29 pages). | Synchronize `source_of_truth.json` and verification assertions with verified champion results (92.32% multiclass, 86.07% F1, 3,638 Normal TP, 30 pages). | `artifacts/results/per_class_metrics.csv`, `FINAL_RESULTS.json`, `acadlore_paper/main.pdf` | Restores global automated verification pass across repository and manuscript. | **VERIFIED** (69/69 checks PASS) |

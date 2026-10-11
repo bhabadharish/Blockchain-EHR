@@ -34,7 +34,7 @@ class SelfAttentionBlock(nn.Module):
 class HybridIDSNet(nn.Module):
     """
     Proposed Deep Hybrid Architecture:
-    Dense Projection -> 1D CNN -> BiLSTM -> Self-Attention -> Dense Head -> Classification.
+    Dense Projection -> 1D CNN -> BiLSTM -> Self-Attention -> Dense Head + Conv1D Residual Highway.
     """
     def __init__(
         self,
@@ -46,11 +46,13 @@ class HybridIDSNet(nn.Module):
         lstm_layers: int = 2,
         attention_heads: int = 4,
         dense_dim: int = 128,
-        dropout: float = 0.25
+        dropout: float = 0.25,
+        use_residual: bool = True
     ):
         super().__init__()
         self.input_dim = input_dim
         self.num_classes = num_classes
+        self.use_residual = use_residual
 
         # 1. Feature projection into sequence space (Batch, Seq_len, Dim)
         # We project input vector of length K into a (Seq_len=8, Dim=16) representation
@@ -83,8 +85,13 @@ class HybridIDSNet(nn.Module):
         # 4. Multi-Head Self-Attention Block
         self.attention = SelfAttentionBlock(embed_dim=bilstm_out_dim, num_heads=attention_heads, dropout=dropout)
 
-        # 5. Dense Classification Head
+        # 5. Dense Classification Head with Conv1D Residual Highway
         self.fc1 = nn.Linear(bilstm_out_dim * 4, dense_dim)
+        if self.use_residual:
+            self.res_proj = nn.Linear(conv_filters * 4, dense_dim, bias=False)
+        else:
+            self.res_proj = None
+
         self.bn2 = nn.BatchNorm1d(dense_dim)
         self.dropout_layer = nn.Dropout(dropout)
         self.fc_out = nn.Linear(dense_dim, num_classes if num_classes > 2 else 1)
@@ -105,11 +112,19 @@ class HybridIDSNet(nn.Module):
         # Attention
         attn_out = self.attention(lstm_out) # (B, 4, bilstm_out_dim)
         
-        # Flatten and classify
-        flat = attn_out.reshape(b, -1)
-        h = self.dropout_layer(self.relu(self.bn2(self.fc1(flat))))
+        # Flatten and combine with Conv1D Residual Highway
+        flat_attn = attn_out.reshape(b, -1)
+        h_attn = self.fc1(flat_attn)
+        if self.use_residual and self.res_proj is not None:
+            flat_conv = c_out.reshape(b, -1)
+            h_combined = h_attn + self.res_proj(flat_conv)
+        else:
+            h_combined = h_attn
+
+        h = self.dropout_layer(self.relu(self.bn2(h_combined)))
         out = self.fc_out(h)
         return out
+
 
 
 class DeepLearningTrainer:
